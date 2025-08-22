@@ -178,7 +178,7 @@ img { max-width: 100%; display: block; }
 }
 .split-feature-content-inner {
     width: 100%;
-    max-width: 650px; /* ANCHO AJUSTADO */
+    max-width: 700px; /* ANCHO AJUSTADO */
     padding: 4rem 2rem;
 }
 .section-header-left {
