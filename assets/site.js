@@ -106,22 +106,23 @@ window.submitLead = submitLead;
 })();
 
 /* =========================================================
-   FUNCIONALIDAD PARA EL ACORDEÓN DE SERVICIOS (SPLIT VIEW)
+   FUNCIONALIDAD PARA MÚLTIPLES ACORDEONES
    ========================================================= */
 (function() {
-  const accordionContainer = document.querySelector('.accordion-container');
-  if (!accordionContainer) return;
+  const accordionContainers = document.querySelectorAll('.accordion-container');
+  if (!accordionContainers.length) return;
 
-  const items = accordionContainer.querySelectorAll('.accordion-item');
-
-  items.forEach(item => {
-    const header = item.querySelector('.accordion-header');
-    header.addEventListener('click', () => {
-      const currentActive = accordionContainer.querySelector('.accordion-item.active');
-      if (currentActive && currentActive !== item) {
-        currentActive.classList.remove('active');
-      }
-      item.classList.toggle('active');
+  accordionContainers.forEach(container => {
+    const items = container.querySelectorAll('.accordion-item');
+    items.forEach(item => {
+      const header = item.querySelector('.accordion-header');
+      header.addEventListener('click', () => {
+        const currentActive = container.querySelector('.accordion-item.active');
+        if (currentActive && currentActive !== item) {
+          currentActive.classList.remove('active');
+        }
+        item.classList.toggle('active');
+      });
     });
   });
 })();
