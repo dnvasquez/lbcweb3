@@ -31,24 +31,33 @@
     <p class="lead">Una muestra de proyectos ejecutados con altos estándares técnicos y foco en resultados.</p>
     <hr class="sep" />
 
-    <section class="grid cards" style="margin-top:12px">
-      <article class="card">
-        <img alt="Proyecto 1" src="https://dummyimage.com/640x360/11261f/9fb8ad&text=Monitoreo+fauna" />
-        <h3>Monitoreo de fauna en áreas de interfaz</h3>
-        <p>Diseño y ejecución de monitoreo con cámaras trampa para evaluar conectividad ecológica.</p>
-        <a href="#">Ficha técnica (PDF)</a>
+    <section class="grid projects-grid" style="margin-top:12px">
+      <article class="project-card" data-project="fauna">
+        <div class="card-image-wrap">
+          <img alt="Monitoreo fauna en áreas de interfaz" src="https://dummyimage.com/640x360/11261f/9fb8ad&text=Monitoreo+fauna" />
+        </div>
+        <div class="card-content">
+          <h3 class="card-title">Monitoreo de fauna</h3>
+          <p class="card-subtitle">Conectividad ecológica en áreas de interfaz</p>
+        </div>
       </article>
-      <article class="card">
-        <img alt="Proyecto 2" src="https://dummyimage.com/640x360/11261f/9fb8ad&text=Zonificaci%C3%B3n+SIG" />
-        <h3>Zonificación SIG para restauración</h3>
-        <p>Modelo espacial multicriterio para priorizar restauración y corredores de biodiversidad.</p>
-        <a href="#">Ficha técnica (PDF)</a>
+      <article class="project-card" data-project="zonificacion">
+        <div class="card-image-wrap">
+          <img alt="Zonificación SIG para restauración" src="https://dummyimage.com/640x360/11261f/9fb8ad&text=Zonificaci%C3%B3n+SIG" />
+        </div>
+        <div class="card-content">
+          <h3 class="card-title">Zonificación SIG</h3>
+          <p class="card-subtitle">Priorización de corredores de biodiversidad</p>
+        </div>
       </article>
-      <article class="card">
-        <img alt="Proyecto 3" src="https://dummyimage.com/640x360/11261f/9fb8ad&text=Cumplimiento+Ambiental" />
-        <h3>Apoyo a cumplimiento y reportabilidad</h3>
-        <p>Plan de gestión y tablero de indicadores para trazabilidad y auditoría.</p>
-        <a href="#">Ficha técnica (PDF)</a>
+      <article class="project-card" data-project="cumplimiento">
+        <div class="card-image-wrap">
+          <img alt="Apoyo a cumplimiento y reportabilidad" src="https://dummyimage.com/640x360/11261f/9fb8ad&text=Cumplimiento+Ambiental" />
+        </div>
+        <div class="card-content">
+          <h3 class="card-title">Cumplimiento Ambiental</h3>
+          <p class="card-subtitle">Trazabilidad y preparación para auditorías</p>
+        </div>
       </article>
     </section>
 
@@ -87,5 +96,22 @@
 
   <script src="assets/site.js"></script>
 
+  <div id="projectModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" aria-label="Cerrar">&times;</span>
+      <div class="modal-body">
+        <div class="modal-image-col">
+          <img id="modalImage" src="" alt="Imagen del proyecto" />
+        </div>
+        <div class="modal-text-col">
+          <h2 id="modalTitle"></h2>
+          <p id="modalSubtitle"></p>
+          <hr/>
+          <p id="modalDescription"></p>
+          <a id="modalLink" href="#" class="btn btn-primary">Ver ficha completa</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
