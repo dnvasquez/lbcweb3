@@ -162,27 +162,33 @@
            <p>Casos de éxito que demuestran nuestro compromiso con la excelencia y los resultados.</p>
         </div>
         <div class="grid projects-grid">
-          <a href="#" class="project-card">
-            <div class="project-card-content">
-              <span class="project-main-title">Monitoreo</span>
-              <h3>Monitoreo de Fauna</h3>
-              <p>Conectividad ecológica en áreas de interfaz</p>
+          <article class="project-card" data-project="fauna">
+            <div class="card-image-wrap">
+              <img alt="Monitoreo fauna en áreas de interfaz" src="https://dummyimage.com/640x360/11261f/9fb8ad&text=Monitoreo+fauna" />
             </div>
-          </a>
-          <a href="#" class="project-card">
-            <div class="project-card-content">
-              <span class="project-main-title">Restauración</span>
-              <h3>Zonificación SIG para Restauración</h3>
-              <p>Priorización de corredores de biodiversidad</p>
+            <div class="card-content">
+              <h3 class="card-title">Monitoreo de fauna</h3>
+              <p class="card-subtitle">Conectividad ecológica en áreas de interfaz</p>
             </div>
-          </a>
-          <a href="#" class="project-card">
-            <div class="project-card-content">
-              <span class="project-main-title">Cumplimiento</span>
-              <h3>Apoyo a Cumplimiento y Reportabilidad</h3>
-              <p>Trazabilidad y preparación para auditorías</p>
+          </article>
+          <article class="project-card" data-project="zonificacion">
+            <div class="card-image-wrap">
+              <img alt="Zonificación SIG para restauración" src="https://dummyimage.com/640x360/11261f/9fb8ad&text=Zonificaci%C3%B3n+SIG" />
             </div>
-          </a>
+            <div class="card-content">
+              <h3 class="card-title">Zonificación SIG</h3>
+              <p class="card-subtitle">Priorización de corredores de biodiversidad</p>
+            </div>
+          </article>
+          <article class="project-card" data-project="cumplimiento">
+            <div class="card-image-wrap">
+              <img alt="Apoyo a cumplimiento y reportabilidad" src="https://dummyimage.com/640x360/11261f/9fb8ad&text=Cumplimiento+Ambiental" />
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">Cumplimiento Ambiental</h3>
+              <p class="card-subtitle">Trazabilidad y preparación para auditorías</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -271,7 +277,7 @@
         </div>
         <div class="logo-scroller">
           <div class="logo-track">
-            <img src="assets/clientes/1.png" alt="Logo Cliente Altas Cumbres" /><img src="assets/clientes/2.png" alt="Logo Cliente oEnergy" /><img src="assets/clientes/3.png" alt="Logo Cliente Renova" /><img src="assets/clientes/4.png" alt="Logo Cliente Tottus" /><img src="assets/clientes/5.png" alt="Logo Cliente Urbano Proyectos" /><img src="assets/clientes/6.png" alt="Logo Cliente Universidad San Sebastián" /><img src="assets/clientes/7.png" alt="Logo Cliente Verdeplantas" /><img src="assets/clientes/8.png" alt="Logo Cliente Constructora Los Romeros" /><img src="assets/clientes/9.png" alt="Logo Cliente Orionpower" /><img src="assets/clientes/10.png" alt="Logo Cliente Westfalia Fruit" /><img src="assets/clientes/1.png" alt="Logo Cliente Altas Cumbres" /><img src="assets/clientes/2.png" alt="Logo Cliente oEnergy" /><img src="assets/clientes/3.png" alt="Logo Cliente Renova" /><img src="assets/clientes/4.png" alt="Logo Cliente Tottus" /><img src="assets/clientes/5.png" alt="Logo Cliente Urbano Proyectos" /><img src="assets/clientes/6.png" alt="Logo Cliente Universidad San Sebastián" /><img src="assets/clientes/7.png" alt="Logo Cliente Verdeplantas" /><img src="assets/clientes/8.png" alt="Logo Cliente Constructora Los Romeros" /><img src="assets/clientes/9.png" alt="Logo Cliente Orionpower" /><img src="assets/clientes/10.png" alt="Logo Cliente Westfalia Fruit" />
+            <img src="assets/clientes/1.png" alt="Logo Cliente Altas Cumbres" /><img src="assets/clientes/2.png" alt="Logo Cliente oEnergy" /><img src="assets/clientes/3.png" alt="Logo Cliente Renova" /><img src="assets/clientes/4.png" alt="Logo Cliente Tottus" /><img src="assets/clientes/5.png" alt="Logo Cliente Urbano Proyectos" /><img src="assets/clientes/6.png" alt="Logo Cliente Universidad San Sebastián" /><img src="assets/clientes/7.png" alt="Logo Cliente Verdeplantas" /><img src="assets/clientes/8.png" alt="Logo Cliente Constructora Los Romeros" /><img src="assets/clientes/9.png" alt="Logo Cliente Orionpower" /><img src="assets/clientes/10.png" alt="Logo Cliente Westfalia Fruit" /><img src="assets/clientes/1.png" alt="Logo Cliente Altas Cumbres" /><img src="assets/clientes/2.png" alt="Logo Cliente oEnergy" /><img src="assets/clientes/3.png" alt="Logo Cliente Renova" /><img src="assets/clientes/4.png" alt="Logo Cliente Tottus" /><img src="assets/clientes/5.png" alt="Logo Cliente Urbano Proyectos" /><img src="assets/clientes/6.png" alt="Logo Cliente Universidad San Sebastián" /><img src="assets/clientes/7.png" alt="Logo Cliente Verdeplantas" /><img src="assets/8.png" alt="Logo Cliente Constructora Los Romeros" /><img src="assets/clientes/9.png" alt="Logo Cliente Orionpower" /><img src="assets/clientes/10.png" alt="Logo Cliente Westfalia Fruit" />
           </div>
         </div>
       </div>
@@ -293,6 +299,24 @@
       <p class="footer-contact"><a href="mailto:contacto@lbconservation.org">contacto@lbconservation.org</a></p>
     </div>
   </footer>
+
+  <div id="projectModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" aria-label="Cerrar">&times;</span>
+      <div class="modal-body">
+        <div class="modal-image-col">
+          <img id="modalImage" src="" alt="Imagen del proyecto" />
+        </div>
+        <div class="modal-text-col">
+          <h2 id="modalTitle"></h2>
+          <p id="modalSubtitle"></p>
+          <hr/>
+          <p id="modalDescription"></p>
+          <a id="modalLink" href="#" class="btn btn-primary">Ver ficha completa</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="assets/site.js"></script>
   <script>
