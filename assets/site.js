@@ -126,3 +126,77 @@ window.submitLead = submitLead;
     });
   });
 })();
+
+/* =========================================================
+   FUNCIONALIDAD PARA MODAL DE PROYECTOS
+   ========================================================= */
+(function() {
+    const modal = document.getElementById('projectModal');
+    const closeBtn = $('.close-btn');
+    const projectCards = $$('.project-card');
+
+    // Datos de los proyectos
+    const projectData = {
+        fauna: {
+            title: 'Monitoreo de fauna',
+            subtitle: 'Conectividad ecológica en áreas de interfaz',
+            image: 'https://dummyimage.com/800x600/11261f/9fb8ad&text=Monitoreo+Fauna+Detalle',
+            description: 'Diseño y ejecución de monitoreos con cámaras trampa, transectos y análisis de hábitat. Este proyecto se enfocó en evaluar la conectividad en zonas de transición entre áreas protegidas y zonas productivas, proporcionando recomendaciones para la gestión y mitigación de impactos. La información recolectada es crucial para la conservación de especies clave.',
+            link: '#'
+        },
+        zonificacion: {
+            title: 'Zonificación SIG',
+            subtitle: 'Priorización de corredores de biodiversidad',
+            image: 'https://dummyimage.com/800x600/11261f/9fb8ad&text=Zonificaci%C3%B3n+SIG+Detalle',
+            description: 'Creación de modelos espaciales multicriterio para identificar las zonas óptimas para proyectos de restauración. Se integraron variables como la calidad del suelo, la cobertura vegetal, la distancia a fuentes de agua y la conectividad del paisaje para generar mapas estratégicos que maximizan el retorno de la inversión en conservación.',
+            link: '#'
+        },
+        cumplimiento: {
+            title: 'Cumplimiento Ambiental',
+            subtitle: 'Trazabilidad y preparación para auditorías',
+            image: 'https://dummyimage.com/800x600/11261f/9fb8ad&text=Cumplimiento+Ambiental+Detalle',
+            description: 'Desarrollo de un plan de gestión y un tablero de indicadores para simplificar los procesos de trazabilidad y reportabilidad ambiental. Esta solución digital permite a las empresas prepararse de manera proactiva para las auditorías, asegurando el cumplimiento normativo y mejorando la transparencia de sus operaciones.',
+            link: '#'
+        }
+    };
+
+    function openModal(projectKey) {
+        const data = projectData[projectKey];
+        if (!data) return;
+
+        $('#modalTitle').textContent = data.title;
+        $('#modalSubtitle').textContent = data.subtitle;
+        $('#modalImage').src = data.image;
+        $('#modalDescription').textContent = data.description;
+        $('#modalLink').href = data.link;
+
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Evita el scroll del fondo
+    }
+
+    function closeModal() {
+        modal.style.display = 'none';
+        document.body.style.overflow = ''; // Habilita el scroll del fondo
+    }
+
+    // Escuchar clics en las fichas de proyectos
+    projectCards.forEach(card => {
+        card.addEventListener('click', (e) => {
+            const projectKey = card.dataset.project;
+            if (projectKey) {
+                openModal(projectKey);
+            }
+        });
+    });
+
+    // Escuchar clic en el botón de cierre
+    closeBtn.addEventListener('click', closeModal);
+
+    // Cerrar si el usuario hace clic fuera del modal
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+})();
