@@ -168,7 +168,6 @@ window.submitLead = submitLead;
         $('#modalSubtitle').textContent = data.subtitle;
         $('#modalImage').src = data.image;
         $('#modalDescription').textContent = data.description;
-        $('#modalLink').href = data.link;
 
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden'; // Evita el scroll del fondo
