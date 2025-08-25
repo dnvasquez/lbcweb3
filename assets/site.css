@@ -214,7 +214,7 @@ img { max-width: 100%; display: block; }
   position: relative;
   color: var(--surface-white);
   padding: 100px 0;
-background-image: linear-gradient(rgba(14, 35, 31, 0.8), rgba(14, 35, 31, 0.8)), url('img/fondo_servicios.jpg');
+background-image: linear-gradient(rgba(14, 35, 31, 0.8), rgba(14, 35, 31, 0.8)), url('assets/img/fondo_servicios.jpg');
   background-attachment: fixed;
   background-size: cover;
   background-position: 50% 0;
@@ -222,26 +222,67 @@ background-image: linear-gradient(rgba(14, 35, 31, 0.8), rgba(14, 35, 31, 0.8)),
 #proyectos .container { position: relative; z-index: 2; }
 #proyectos .section-header h2, #proyectos .section-header p, #proyectos .section-header .section-tag { color: var(--surface-white); }
 #proyectos .section-header .section-tag { opacity: 0.8; }
+/* NUEVOS ESTILOS PARA LOS PANELES DE PROYECTOS */
+.grid.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0; /* Eliminado el espacio entre los paneles */
+}
+
 #proyectos .project-card {
-  display: flex; flex-direction: column; justify-content: flex-end;
-  padding: 1.5rem; background: rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.2); border-radius: var(--radius);
-  min-height: 320px; backdrop-filter: blur(5px);
-  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0; /* Eliminado el borde redondeado */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
 }
-#proyectos .project-card:hover { background: rgba(0, 0, 0, 0.45); border-color: rgba(255, 255, 255, 0.4); transform: translateY(-8px); }
-#proyectos .project-card-content { text-align: left; }
-#proyectos .project-card .project-main-title {
-  font-family: var(--font-display); font-size: 2.8rem; font-weight: 700;
-  line-height: 1.1; color: rgba(255, 255, 255, 0.85); display: block; margin-bottom: 1rem;
+
+#proyectos .project-card:hover {
+    transform: none; /* Se elimina el movimiento de la tarjeta, solo queda el zoom de la imagen */
 }
-#proyectos .project-card h3 {
-  color: var(--surface-white); font-size: 1.25rem; margin-bottom: 0.5rem;
-  font-family: var(--font-sans); text-transform: none; font-weight: 700;
+
+#proyectos .project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    display: block;
 }
-#proyectos .project-card p {
-  color: rgba(255, 255, 255, 0.8); margin: 0; font-family: var(--font-sans);
-  text-transform: none; font-size: 0.95rem;
+
+#proyectos .project-card:hover img {
+    transform: scale(1.1); /* Efecto de zoom */
+}
+
+#proyectos .project-card .card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* Movido el fondo y el filtro de la tarjeta al contenido para que aparezca en el hover */
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    color: white;
+    padding: 1.5rem 1rem;
+    transition: opacity 0.4s ease;
+    opacity: 0;
+}
+
+#proyectos .project-card:hover .card-content {
+    opacity: 1;
+}
+
+#proyectos .project-card .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+#proyectos .project-card .card-subtitle {
+    margin: 0;
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.8);
 }
 
 /* =========================================================
