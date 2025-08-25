@@ -222,9 +222,14 @@ img { max-width: 100%; display: block; }
 #proyectos .container { position: relative; z-index: 2; }
 /* NUEVOS ESTILOS PARA LOS PANELES DE PROYECTOS */
 .grid.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); /* Cambio: 5 columnas en lugar de 3 */
-    gap: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 columnas */
+  gap: 0;
+}
+
+.grid.projects-grid > div {
+  aspect-ratio: 16 / 9; /* o 4/3, ajusta según lo que quieras */
+  width: 100%;
 }
 
 #proyectos .project-card {
