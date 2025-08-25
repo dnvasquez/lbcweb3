@@ -214,7 +214,7 @@ img { max-width: 100%; display: block; }
   position: relative;
   color: var(--surface-white);
   padding: 100px 0;
-background-image: linear-gradient(rgba(14, 35, 31, 0.8), rgba(14, 35, 31, 0.8)), url('assets/img/fondo_servicios.jpg');
+  background-image: linear-gradient(rgba(14, 35, 31, 0.8), rgba(14, 35, 31, 0.8)), url('assets/img/fondo_servicios.jpg');
   background-attachment: fixed;
   background-size: cover;
   background-position: 50% 0;
@@ -226,20 +226,20 @@ background-image: linear-gradient(rgba(14, 35, 31, 0.8), rgba(14, 35, 31, 0.8)),
 .grid.projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0; /* Eliminado el espacio entre los paneles */
+    gap: 0;
 }
 
 #proyectos .project-card {
     position: relative;
     overflow: hidden;
-    border-radius: 0; /* Eliminado el borde redondeado */
+    border-radius: 0;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
     cursor: pointer;
 }
 
 #proyectos .project-card:hover {
-    transform: none; /* Se elimina el movimiento de la tarjeta, solo queda el zoom de la imagen */
+    transform: none;
 }
 
 #proyectos .project-card img {
@@ -251,7 +251,7 @@ background-image: linear-gradient(rgba(14, 35, 31, 0.8), rgba(14, 35, 31, 0.8)),
 }
 
 #proyectos .project-card:hover img {
-    transform: scale(1.1); /* Efecto de zoom */
+    transform: scale(1.1);
 }
 
 #proyectos .project-card .card-content {
@@ -259,30 +259,49 @@ background-image: linear-gradient(rgba(14, 35, 31, 0.8), rgba(14, 35, 31, 0.8)),
     bottom: 0;
     left: 0;
     right: 0;
-    /* Movido el fondo y el filtro de la tarjeta al contenido para que aparezca en el hover */
-    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    background: transparent;
     color: white;
     padding: 1.5rem 1rem;
-    transition: opacity 0.4s ease;
+    transition: opacity 0.4s ease, background-color 0.4s ease;
     opacity: 0;
+    /* Necesario para posicionar la línea de acento */
+    position: relative;
 }
-
+/* Efecto de capa sólida al pasar el cursor */
 #proyectos .project-card:hover .card-content {
     opacity: 1;
+    background-color: rgba(0,0,0,0.85);
+}
+/* Creación de la línea de acento */
+#proyectos .project-card .card-content::before {
+    content: '';
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    width: 40px;
+    height: 3px;
+    background-color: #FFBA08;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+/* Animación de la línea al pasar el cursor */
+#proyectos .project-card:hover .card-content::before {
+    transform: scaleX(1);
 }
 
 #proyectos .project-card .card-title {
     font-size: 1.5rem;
     font-weight: bold;
     margin: 0;
+    text-transform: uppercase; /* Título en mayúsculas */
 }
 
 #proyectos .project-card .card-subtitle {
     margin: 0;
     font-size: 0.95rem;
     color: rgba(255,255,255,0.8);
+    font-family: var(--font-sans); /* Fuente similar a la de preguntas frecuentes */
 }
 
 /* =========================================================
