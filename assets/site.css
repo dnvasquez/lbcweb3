@@ -213,19 +213,17 @@ img { max-width: 100%; display: block; }
 #proyectos.section-full-bg {
   position: relative;
   color: var(--surface-white);
-  padding: 100px 0;
+  padding: 0; /* Cambio: Eliminado el padding vertical */
   background-image: linear-gradient(rgba(14, 35, 31, 0.8), rgba(14, 35, 31, 0.8)), url('assets/img/fondo_servicios.jpg');
   background-attachment: fixed;
   background-size: cover;
   background-position: 50% 0;
 }
 #proyectos .container { position: relative; z-index: 2; }
-#proyectos .section-header h2, #proyectos .section-header p, #proyectos .section-header .section-tag { color: var(--surface-white); }
-#proyectos .section-header .section-tag { opacity: 0.8; }
 /* NUEVOS ESTILOS PARA LOS PANELES DE PROYECTOS */
 .grid.projects-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr); /* Cambio: 5 columnas en lugar de 3 */
     gap: 0;
 }
 
