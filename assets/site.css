@@ -228,7 +228,7 @@ img { max-width: 100%; display: block; }
 }
 
 .grid.projects-grid > div {
-  aspect-ratio: 16 / 9; /* o 4/3, ajusta según lo que quieras */
+  aspect-ratio: 4 / 3; /* o 4/3, ajusta según lo que quieras */
   width: 100%;
 }
 
