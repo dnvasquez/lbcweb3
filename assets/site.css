@@ -488,7 +488,7 @@ img { max-width: 100%; display: block; }
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
     font-family: var(--font-sans); /* Cambiado a fuente sans-serif */
-    font-color: #136F63; 
+    color: var(--brand-teal);
     text-transform: uppercase;
     font-weight: 700; /* Peso de fuente en negrita */
     line-height: 1.1;
