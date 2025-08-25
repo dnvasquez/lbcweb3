@@ -254,54 +254,66 @@ img { max-width: 100%; display: block; }
     transform: scale(1.1);
 }
 
+/* El contenedor del texto ahora ocupa el 100% y usa Flexbox para centrar el contenido */
 #proyectos .project-card .card-content {
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     right: 0;
+    bottom: 0;
     background: transparent;
     color: white;
     padding: 1.5rem 1rem;
     transition: opacity 0.4s ease, background-color 0.4s ease;
     opacity: 0;
-    /* Necesario para posicionar la línea de acento */
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
-/* Efecto de capa sólida al pasar el cursor */
+
 #proyectos .project-card:hover .card-content {
     opacity: 1;
     background-color: rgba(0,0,0,0.85);
 }
-/* Creación de la línea de acento */
+
+/* La línea de acento ahora está centrada */
 #proyectos .project-card .card-content::before {
     content: '';
-    position: absolute;
-    top: 1.5rem;
-    left: 1.5rem;
+    display: block; /* Convertido a bloque para centrar con margin */
     width: 40px;
     height: 3px;
     background-color: #FFBA08;
     transform: scaleX(0);
-    transform-origin: left;
+    transform-origin: center; /* Cambiado para que el zoom sea desde el centro */
     transition: transform 0.4s ease;
+    margin: 0 auto 10px; /* Centrado y con margen inferior */
 }
-/* Animación de la línea al pasar el cursor */
+
 #proyectos .project-card:hover .card-content::before {
     transform: scaleX(1);
 }
 
+/* Ajustes de tipografía para el título */
 #proyectos .project-card .card-title {
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 500; /* Peso de fuente más ligero */
     margin: 0;
-    text-transform: uppercase; /* Título en mayúsculas */
+    text-transform: uppercase;
+    letter-spacing: 2px; /* Espaciado entre letras */
+    line-height: 1.2;
 }
 
+/* Ajustes de tipografía para el subtítulo */
 #proyectos .project-card .card-subtitle {
     margin: 0;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     color: rgba(255,255,255,0.8);
-    font-family: var(--font-sans); /* Fuente similar a la de preguntas frecuentes */
+    font-family: var(--font-sans);
+    letter-spacing: 1.5px; /* Espaciado entre letras */
+    text-transform: uppercase;
+    line-height: 1.2;
 }
 
 /* =========================================================
