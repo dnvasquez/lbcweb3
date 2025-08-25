@@ -137,13 +137,13 @@ window.submitLead = submitLead;
 
     // Datos de los proyectos
     const projectData = {
-        fauna: {
-            title: 'Monitoreo de fauna',
-            subtitle: 'Conectividad ecológica en áreas de interfaz',
-            image: 'https://dummyimage.com/800x600/11261f/9fb8ad&text=Monitoreo+Fauna+Detalle',
-            description: 'Diseño y ejecución de monitoreos con cámaras trampa, transectos y análisis de hábitat. Este proyecto se enfocó en evaluar la conectividad en zonas de transición entre áreas protegidas y zonas productivas, proporcionando recomendaciones para la gestión y mitigación de impactos. La información recolectada es crucial para la conservación de especies clave.',
-            link: '#'
-        },
+        agricultura: {
+  title: 'Agricultura y Biodiversidad',
+  subtitle: 'Plan de Fomento y Conservación de la Biodiversidad',
+  image: 'assets/img/proyecto1.jpg',
+  description: 'Diseño y ejecución de monitoreos con cámaras trampa, transectos y análisis de hábitat. Este proyecto se enfocó en evaluar la conectividad en zonas de transición entre áreas protegidas y zonas productivas, proporcionando recomendaciones para la gestión y mitigación de impactos. La información recolectada es crucial para la conservación de especies clave.',
+  link: '#'
+},
         zonificacion: {
             title: 'Zonificación SIG',
             subtitle: 'Priorización de corredores de biodiversidad',
