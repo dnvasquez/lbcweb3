@@ -485,16 +485,19 @@ img { max-width: 100%; display: block; }
 }
 
 .modal-text-col h2 {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     margin-bottom: 0.5rem;
-    font-family: var(--font-display); /* Fuente del título de FAQ */
-    text-transform: uppercase; /* Título en mayúsculas */
+    font-family: var(--font-sans); /* Cambiado a fuente sans-serif */
+    text-transform: uppercase;
+    font-weight: 700; /* Peso de fuente en negrita */
+    line-height: 1.1;
 }
 
+/* Ajustes para el texto de la descripción */
 .modal-text-col p {
     margin-bottom: 1rem;
     line-height: 1.6;
-    text-align: justify; /* Justificación del texto */
+    text-align: left; /* Alineado a la izquierda, como en el ejemplo */
 }
 .modal-text-col hr {
   border: 0;
