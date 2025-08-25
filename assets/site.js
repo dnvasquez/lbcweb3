@@ -138,10 +138,10 @@ window.submitLead = submitLead;
     // Datos de los proyectos
     const projectData = {
         agricultura: {
-  title: 'Agricultura y Biodiversidad',
-  subtitle: 'Plan de Fomento y Conservación de la Biodiversidad',
+  title: 'Plan de Fomento y Conservación de la Biodiversidad',
+  subtitle: 'Auditoría y Planes de Conservación en Predios Agrícolas',
   image: 'assets/img/proyecto1.jpg',
-  description: 'Diseño y ejecución de monitoreos con cámaras trampa, transectos y análisis de hábitat. Este proyecto se enfocó en evaluar la conectividad en zonas de transición entre áreas protegidas y zonas productivas, proporcionando recomendaciones para la gestión y mitigación de impactos. La información recolectada es crucial para la conservación de especies clave.',
+  description: 'En el contexto de auditoría de la norma LEAF 16.1, se desarrolló un levantamiento integral de flora, fauna y condición biológica de suelos en cinco predios agrícolas de las regiones Metropolitana y de Coquimbo, con superficies que van desde 80 hasta más de 1.000 hectáreas. El proyecto incluyó la identificación de formaciones vegetacionales, el registro de especies nativas y endémicas, y la evaluación de la calidad del suelo. Con base en esta información se elaboraron planes de mejora y conservación para cada predio, que contemplan capacitación, monitoreo de especies clave y acciones de restauración ecológica. El trabajo constituye un modelo replicable para armonizar la producción agrícola con la conservación del paisaje y la biodiversidad en distintas escalas territoriales.',
   link: '#'
 },
         zonificacion: {
