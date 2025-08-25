@@ -448,8 +448,8 @@ img { max-width: 100%; display: block; }
     background-color: var(--surface-white);
     margin: 5% auto;
     padding: 0;
-    border-radius: var(--radius);
-    max-width: 900px;
+    border-radius: 0; /* Eliminado el borde redondeado */
+    max-width: 1000px; /* Ampliado el tamaño máximo */
     position: relative;
     box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 }
@@ -481,17 +481,20 @@ img { max-width: 100%; display: block; }
 }
 
 .modal-image-col img {
-    border-radius: var(--radius);
+    border-radius: 0; /* Eliminado el borde redondeado */
 }
 
 .modal-text-col h2 {
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
+    font-family: var(--font-display); /* Fuente del título de FAQ */
+    text-transform: uppercase; /* Título en mayúsculas */
 }
 
 .modal-text-col p {
     margin-bottom: 1rem;
     line-height: 1.6;
+    text-align: justify; /* Justificación del texto */
 }
 .modal-text-col hr {
   border: 0;
