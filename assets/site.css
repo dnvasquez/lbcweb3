@@ -291,6 +291,7 @@ img { max-width: 100%; display: block; }
     transform-origin: center; /* Cambiado para que el zoom sea desde el centro */
     transition: transform 0.4s ease;
     margin: 0 auto 10px; /* Centrado y con margen inferior */
+    background-color: #FFBA08;
 }
 
 #proyectos .project-card:hover .card-content::before {
