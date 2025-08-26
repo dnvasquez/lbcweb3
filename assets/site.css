@@ -599,7 +599,8 @@ img { max-width: 100%; display: block; }
 }
 
 .preloader-logo {
-  max-width: 150px;
+  width: 300px;   /* ajusta a lo que necesites */
+  height: auto;   /* mantiene proporción */
 }
 
 @keyframes fadeIn {
