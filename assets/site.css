@@ -56,17 +56,44 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 2px 15px rgba(0,0,0,0.05);
   backdrop-filter: blur(8px);
 }
-.nav-inner { display: flex; align-items: center; justify-content: space-between; }
-.logo img { height: 90px; }
-.menu { display: flex; gap: 1.5rem; align-items: center; }
-.menu a { font-weight: 600; color: var(--ink-light); transition: color 0.2s ease; font-family: var(--font-sans);}
-.menu a:hover { color: var(--brand-teal); }
-.menu a.cta {
-  background-color: var(--ink-dark); color: var(--surface-white);
-  padding: 0.6rem 1.2rem; border-radius: 99px; transition: background-color 0.2s;
+/* Ajusta el ancho para que el logo y el menú estén más cerca de los bordes. */
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 98%; /* Aumenta este valor para acercar el contenido a los bordes. */
+  margin: 0 auto; /* Centra el contenedor horizontalmente. */
 }
-.menu a.cta:hover { background-color: var(--brand-teal); }
-.menu-toggle { display: none; }
+
+/* El resto de las reglas para el logo y el menú permanecen igual */
+.logo img {
+  height: 90px;
+}
+
+.menu {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.menu a {
+  font-weight: 600;
+  color: var(--ink-light);
+  transition: color 0.2s ease;
+  font-family: var(--font-sans);
+}
+
+.menu a:hover {
+  color: var(--brand-teal);
+}
+
+.menu a.cta {
+  background-color: var(--ink-dark);
+  color: var(--surface-white);
+  padding: 0.6rem 1.2rem;
+  border-radius: 99px;
+  transition: background-color 0.2s;
+}
 
 /* --- HERO CON COMPROMISOS INTEGRADOS --- */
 .hero-fullscreen {
