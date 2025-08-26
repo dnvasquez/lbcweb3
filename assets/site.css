@@ -56,14 +56,12 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 2px 15px rgba(0,0,0,0.05);
   backdrop-filter: blur(8px);
 }
-.nav-inner { display: flex; align-items: center; justify-content: space-between; }
-.logo img { height: 70px; }
-.menu { display: flex; gap: 1.5rem; align-items: center; }
-.menu a { font-weight: 600; color: var(--ink-light); transition: color 0.2s ease; font-family: var(--font-sans);}
-.menu a:hover { color: var(--brand-teal); }
-.menu a.cta {
-  background-color: var(--ink-dark); color: var(--surface-white);
-  padding: 0.6rem 1.2rem; border-radius: 99px; transition: background-color 0.2s;
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(98%, var(--container)); /* Ajuste a 98% para un ajuste más pegado */
+  margin-inline: auto;
 }
 .menu a.cta:hover { background-color: var(--brand-teal); }
 .menu-toggle { display: none; }
@@ -616,13 +614,4 @@ img { max-width: 100%; display: block; }
     to {
         opacity: 0;
     }
-}
-/* Update site.css */
-/* In the nav section, find the .nav-inner class */
-.nav-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: min(98%, var(--container)); /* Adjust to 98% for a tighter fit */
-  margin-inline: auto;
 }
