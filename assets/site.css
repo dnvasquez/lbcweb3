@@ -17,7 +17,7 @@
 
   /* Tipografía */
   --font-sans: 'Atkinson Hyperlegible', sans-serif; /* <-- NUEVA FUENTE PARA CONTENIDO */
-  --font-display: 'Bodoni Moda SC', serif;
+  --font-display: 'Playfair Display', serif;
   
   /* Geometría */
   --radius: 12px;
