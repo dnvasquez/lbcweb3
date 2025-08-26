@@ -617,3 +617,12 @@ img { max-width: 100%; display: block; }
         opacity: 0;
     }
 }
+/* Update site.css */
+/* In the nav section, find the .nav-inner class */
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(98%, var(--container)); /* Adjust to 98% for a tighter fit */
+  margin-inline: auto;
+}
