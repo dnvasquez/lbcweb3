@@ -178,7 +178,7 @@ img { max-width: 100%; display: block; }
 }
 
 .hero-fullscreen {
-    padding-top: 120px; /* Este valor empuja el contenido hacia abajo. Puedes ajustarlo si es necesario. */
+    padding-top: 100px; /* Este valor empuja el contenido hacia abajo. Puedes ajustarlo si es necesario. */
   }
 
   .nav-inner {
