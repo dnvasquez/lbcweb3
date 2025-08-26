@@ -3,7 +3,7 @@
    ========================================================= */
 
 /* --- IMPORTACIÓN DE FUENTES --- */
-@import url('https://www.google.com/search?q=https://fonts.googleapis.com/css2%3Ffamily%3DLora:ital,wght%400,400..700%3B1,400..700%26display%3Dswap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap');
 
 :root {
@@ -17,7 +17,7 @@
 
   /* Tipografía */
   --font-sans: 'Atkinson Hyperlegible', sans-serif; /* <-- NUEVA FUENTE PARA CONTENIDO */
-  --font-display: 'Lora', serif; /* <--- FUENTE PARA TÍTULOS */
+  --font-display: 'Montserrat', serif; /* <--- FUENTE PARA TÍTULOS */
   
   /* Geometría */
   --radius: 12px;
