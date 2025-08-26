@@ -320,11 +320,11 @@ img { max-width: 100%; display: block; }
 }
 
 /* Colores de las líneas para cada proyecto en la página de inicio */
-#index #project-agricultura .card-content::before { background-color: #FFBA08; }
-#index #project-paitur .card-content::before { background-color: #136F63; }
-#index #project-delhum .card-content::before { background-color: #3F88C5; }
-#index #project-municipalidad .card-content::before { background-color: #D00000; }
-#index #project-saneamientoambiental .card-content::before { background-color: #F2E6DC; }
+#index #proyectos .project-card[data-project="agricultura"] .card-content::before { background-color: #FFBA08; }
+#index #proyectos .project-card[data-project="paitur"] .card-content::before { background-color: #136F63; }
+#index #proyectos .project-card[data-project="delhum"] .card-content::before { background-color: #3F88C5; }
+#index #proyectos .project-card[data-project="municipalidad"] .card-content::before { background-color: #D00000; }
+#index #proyectos .project-card[data-project="saneamientoambiental"] .card-content::before { background-color: #F2E6DC; }
 
 /* Colores de las líneas para los proyectos de la página "Proyectos" */
 #proyectos-page #project-fauna .card-content::before { background-color: #4CAF50; }
@@ -526,3 +526,5 @@ img { max-width: 100%; display: block; }
         gap: 1rem;
     }
 }
+"""
+)
