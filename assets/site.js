@@ -200,3 +200,12 @@ window.submitLead = submitLead;
     });
 
 })();
+/* =========================================================
+   FUNCIONALIDAD DE PRELOADER
+   ========================================================= */
+document.addEventListener('DOMContentLoaded', () => {
+    const preloader = document.querySelector('.preloader');
+    if (preloader) {
+        preloader.classList.add('hidden');
+    }
+});
