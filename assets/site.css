@@ -3,7 +3,7 @@
    ========================================================= */
 
 /* --- IMPORTACIÓN DE FUENTES --- */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap');
 
 :root {
@@ -17,7 +17,7 @@
 
   /* Tipografía */
   --font-sans: 'Atkinson Hyperlegible', sans-serif; /* <-- NUEVA FUENTE PARA CONTENIDO */
-  --font-display: 'IBM Plex Sans', serif; /* <--- FUENTE PARA TÍTULOS */
+  --font-display: 'DM Serif Display', serif; /* <--- FUENTE PARA TÍTULOS */
   
   /* Geometría */
   --radius: 12px;
