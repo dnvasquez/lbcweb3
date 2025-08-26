@@ -584,32 +584,38 @@ img { max-width: 100%; display: block; }
     pointer-events: none;
 }
 
-.preloader-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  animation: fadeIn 1s ease-in-out;
-}
-
-.welcome-message {
-  font-family: var(--font-display);
-  font-size: 2.5rem;
-  color: var(--ink-dark);
-}
-
 .preloader-logo {
-  width: 500px;   /* ajusta a lo que necesites */
-  height: auto;   /* mantiene proporción */
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+  width: 500px;
+  height: auto;
+  /* Estado inicial para la animación de entrada */
+  opacity: 0;
+  transform: scale(0.8);
 }
 
 @keyframes spin {
     to {
         transform: rotate(360deg);
+    }
+}
+
+@keyframes logoFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes logoFadeOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.8);
     }
 }
