@@ -3,7 +3,7 @@
    ========================================================= */
 
 /* --- IMPORTACIÓN DE FUENTES --- */
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap');
 
 :root {
@@ -17,7 +17,7 @@
 
   /* Tipografía */
   --font-sans: 'Atkinson Hyperlegible', sans-serif; /* <-- NUEVA FUENTE PARA CONTENIDO */
-  --font-display: 'Quicksand', serif; /* <--- FUENTE PARA TÍTULOS */
+  --font-display: 'Quicksand', sans-serif; /* <--- FUENTE PARA TÍTULOS */
   
   /* Geometría */
   --radius: 12px;
