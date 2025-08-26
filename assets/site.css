@@ -61,7 +61,7 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 90%; /* Aumenta este valor para acercar el contenido a los bordes. */
+  width: 92%; /* Aumenta este valor para acercar el contenido a los bordes. */
   margin: 0 auto; /* Centra el contenedor horizontalmente. */
 }
 
