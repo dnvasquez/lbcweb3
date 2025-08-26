@@ -202,20 +202,30 @@ window.submitLead = submitLead;
 })();
 
 /* =========================================================
-   FUNCIONALIDAD DE PRELOADER
+   FUNCIONALIDAD DE PRELOADER CON ANIMACIÓN DE LOGO
    ========================================================= */
-const preloader = $('.preloader');
-const heroVideo = $('#hero-video');
+const preloader = document.querySelector('.preloader');
+const logo = document.querySelector('.preloader-logo');
+const content = document.getElementById('content'); // Asumiendo que el contenido principal está en un elemento con ID 'content'
 
-if (preloader && heroVideo) {
-    heroVideo.addEventListener('canplaythrough', () => {
-        preloader.classList.add('hidden');
-    });
+window.addEventListener('load', function() {
+    // 1. Animación de Entrada del logo
+    logo.style.animation = 'logoFadeIn 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards';
 
-    // Fallback en caso de que el evento no se active (por ejemplo, en errores de red)
-    setTimeout(() => {
-        if (!preloader.classList.contains('hidden')) {
-            preloader.classList.add('hidden');
-        }
-    }, 5000); // 5 segundos de espera máxima
-}
+    // 2. Espera 2 segundos y luego inicia la animación de salida del logo y el preloader
+    setTimeout(function() {
+        // Animación de Salida del logo
+        logo.style.animation = 'logoFadeOut 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) forwards';
+
+        // Oculta el preloader completo después de un breve retraso
+        setTimeout(function() {
+            preloader.style.opacity = '0';
+            preloader.addEventListener('transitionend', function() {
+                preloader.style.display = 'none';
+                if (content) {
+                    content.style.display = 'block'; // Muestra el contenido principal
+                }
+            }, { once: true });
+        }, 800); // Espera 0.8s para que el logo se desvanezca
+    }, 2000); // Muestra el logo por 2s
+});
