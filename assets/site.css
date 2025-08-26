@@ -87,14 +87,6 @@ img { max-width: 100%; display: block; }
   color: var(--brand-teal);
 }
 
-.menu a.cta {
-  background-color: var(--ink-dark);
-  color: var(--surface-white);
-  padding: 0.6rem 1.2rem;
-  border-radius: 99px;
-  transition: background-color 0.2s;
-}
-
 /* --- HERO CON COMPROMISOS INTEGRADOS --- */
 .hero-fullscreen {
   position: relative; height: 100vh; min-height: 750px;
