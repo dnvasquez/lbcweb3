@@ -3,7 +3,7 @@
    ========================================================= */
 
 /* --- IMPORTACIÓN DE FUENTES --- */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap');
 
 :root {
@@ -17,7 +17,7 @@
 
   /* Tipografía */
   --font-sans: 'Atkinson Hyperlegible', sans-serif; /* <-- NUEVA FUENTE PARA CONTENIDO */
-  --font-display: 'Playfair Display', serif;
+  --font-display: 'Playfair Display', serif; /* <--- FUENTE PARA TÍTULOS */
   
   /* Geometría */
   --radius: 12px;
