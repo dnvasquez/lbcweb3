@@ -200,12 +200,22 @@ window.submitLead = submitLead;
     });
 
 })();
+
 /* =========================================================
    FUNCIONALIDAD DE PRELOADER
    ========================================================= */
-document.addEventListener('DOMContentLoaded', () => {
-    const preloader = document.querySelector('.preloader');
-    if (preloader) {
+const preloader = $('.preloader');
+const heroVideo = $('#hero-video');
+
+if (preloader && heroVideo) {
+    heroVideo.addEventListener('canplaythrough', () => {
         preloader.classList.add('hidden');
-    }
-});
+    });
+
+    // Fallback en caso de que el evento no se active (por ejemplo, en errores de red)
+    setTimeout(() => {
+        if (!preloader.classList.contains('hidden')) {
+            preloader.classList.add('hidden');
+        }
+    }, 5000); // 5 segundos de espera máxima
+}
