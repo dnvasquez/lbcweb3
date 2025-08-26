@@ -144,18 +144,19 @@ window.submitLead = submitLead;
   description: 'En el contexto de auditoría de la norma LEAF 16.1, se desarrolló un levantamiento integral de flora, fauna y condición biológica de suelos en cinco predios agrícolas de las regiones Metropolitana y de Coquimbo, con superficies que van desde 80 hasta más de 1.000 hectáreas. El proyecto incluyó la identificación de formaciones vegetacionales, el registro de especies nativas y endémicas, y la evaluación de la calidad del suelo. Con base en esta información se elaboraron planes de mejora y conservación para cada predio, que contemplan capacitación, monitoreo de especies clave y acciones de restauración ecológica. El trabajo constituye un modelo replicable para armonizar la producción agrícola con la conservación del paisaje y la biodiversidad en distintas escalas territoriales.',
   link: '#'
 },
-        zonificacion: {
-            title: 'Zonificación SIG',
-            subtitle: 'Priorización de corredores de biodiversidad',
-            image: 'https://dummyimage.com/800x600/11261f/9fb8ad&text=Zonificaci%C3%B3n+SIG+Detalle',
+        paitur: {
+            title: 'Paisaje y Turismo',
+            subtitle: 'Determinación del Valor Paisajístico y Turístico',
+            image: 'assets/img/proyecto2.jpg',
             description: 'Creación de modelos espaciales multicriterio para identificar las zonas óptimas para proyectos de restauración. Se integraron variables como la calidad del suelo, la cobertura vegetal, la distancia a fuentes de agua y la conectividad del paisaje para generar mapas estratégicos que maximizan el retorno de la inversión en conservación.',
             link: '#'
         },
-        cumplimiento: {
-            title: 'Cumplimiento Ambiental',
-            subtitle: 'Trazabilidad y preparación para auditorías',
-            image: 'https://dummyimage.com/800x600/11261f/9fb8ad&text=Cumplimiento+Ambiental+Detalle',
-            description: 'Desarrollo de un plan de gestión y un tablero de indicadores para simplificar los procesos de trazabilidad y reportabilidad ambiental. Esta solución digital permite a las empresas prepararse de manera proactiva para las auditorías, asegurando el cumplimiento normativo y mejorando la transparencia de sus operaciones.',
+      
+        delhum: {
+            title: 'Delimitación de Humedales Urbanos',
+            subtitle: 'Cumplimiento de la Ley N°21.202',
+            image: 'assets/img/proyecto3.jpg',
+            description: 'En el marco de la Ley N°21.202 de Delimitación de Humedales Urbanos, desarrollamos un estudio especializado de delimitación y caracterización de humedales urbanos en un área de 1,5 hectáreas ubicada en la comuna de Valdivia, Región de Los Ríos. El proyecto aplicó la metodología establecida por el Reglamento de la Ley N° 21.202 y la Guía de Delimitación y Caracterización de Humedales Urbanos de Chile, evaluando tres criterios técnicos fundamentales: presencia de vegetación hidrófila, suelos hídricos y régimen hidrológico de saturación. A través de 17 calicatas de suelo, 10 parcelas de muestreo florístico y 17 puntos de evaluación hidrológica, se identificaron 31 especies vegetales (29% nativas), 8 especies hidrófilas y 4 unidades vegetacionales diferenciadas. El estudio determinó que 0,85 hectáreas del área cumplen con los criterios de humedal urbano, estableciendo una delimitación técnica precisa mediante superposición cartográfica aditiva de los tres criterios evaluados. El trabajo constituye un modelo metodológico riguroso para la identificación y protección de humedales urbanos en contextos periurbanos del sur de Chile.',
             link: '#'
         }
     };
