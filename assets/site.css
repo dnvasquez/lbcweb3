@@ -52,7 +52,7 @@ img { max-width: 100%; display: block; }
   padding: 0.7rem 0; transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 .nav.scrolled {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.7);
   box-shadow: 0 2px 15px rgba(0,0,0,0.05);
   backdrop-filter: blur(8px);
 }
