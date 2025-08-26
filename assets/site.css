@@ -609,13 +609,11 @@ img { max-width: 100%; display: block; }
     }
 }
 
-@keyframes logoFadeOut {
+@keyframes logoPureFadeOut {
     from {
         opacity: 1;
-        transform: scale(1);
     }
     to {
         opacity: 0;
-        transform: scale(0.8);
     }
 }
