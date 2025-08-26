@@ -215,7 +215,7 @@ window.addEventListener('load', function() {
     // 2. Espera 2 segundos y luego inicia la animación de salida del logo y el preloader
     setTimeout(function() {
         // Animación de Salida del logo
-        logo.style.animation = 'logoFadeOut 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) forwards';
+        logo.style.animation = 'logoPureFadeOut 0.8s ease-out forwards';
 
         // Oculta el preloader completo después de un breve retraso
         setTimeout(function() {
