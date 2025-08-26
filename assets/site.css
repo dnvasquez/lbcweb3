@@ -287,7 +287,6 @@ img { max-width: 100%; display: block; }
     display: block; /* Convertido a bloque para centrar con margin */
     width: 40px;
     height: 3px;
-    background-color: #FFBA08;
     transform: scaleX(0);
     transform-origin: center; /* Cambiado para que el zoom sea desde el centro */
     transition: transform 0.4s ease;
@@ -330,7 +329,6 @@ img { max-width: 100%; display: block; }
 #proyectos-page #project-fauna .card-content::before { background-color: #4CAF50; }
 #proyectos-page #project-zonificacion .card-content::before { background-color: #2196F3; }
 #proyectos-page #project-cumplimiento .card-content::before { background-color: #FF9800; }
-
 
 /* =========================================================
    ESTILOS MEJORADOS PARA SECCIÓN DE EQUIPO
