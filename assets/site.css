@@ -67,7 +67,7 @@ img { max-width: 100%; display: block; }
 
 /* El resto de las reglas para el logo y el menú permanecen igual */
 .logo img {
-  height: 100px;
+  height: 90px;
 }
 
 .menu {
