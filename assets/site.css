@@ -61,13 +61,13 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 98%; /* Aumenta este valor para acercar el contenido a los bordes. */
+  width: 90%; /* Aumenta este valor para acercar el contenido a los bordes. */
   margin: 0 auto; /* Centra el contenedor horizontalmente. */
 }
 
 /* El resto de las reglas para el logo y el menú permanecen igual */
 .logo img {
-  height: 90px;
+  height: 100px;
 }
 
 .menu {
@@ -85,6 +85,14 @@ img { max-width: 100%; display: block; }
 
 .menu a:hover {
   color: var(--brand-teal);
+}
+
+.menu a.cta {
+  background-color: var(--ink-dark);
+  color: var(--surface-white);
+  padding: 0.6rem 1.2rem;
+  border-radius: 99px;
+  transition: background-color 0.2s;
 }
 
 /* --- HERO CON COMPROMISOS INTEGRADOS --- */
