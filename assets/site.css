@@ -177,16 +177,6 @@ img { max-width: 100%; display: block; }
   .projects-grid, .team-grid { grid-template-columns: 1fr; }
 }
 
-.hero-fullscreen {
-    padding-top: 100px; /* Este valor empuja el contenido hacia abajo. Puedes ajustarlo si es necesario. */
-  }
-
-  .nav-inner {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-}
-
 /* =========================================================
    ESTILOS PARA SECCIÓN SERVICIOS (VERSIÓN SPLIT CON ACORDEÓN)
    ========================================================= */
