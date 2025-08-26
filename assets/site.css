@@ -287,7 +287,6 @@ img { max-width: 100%; display: block; }
     display: block; /* Convertido a bloque para centrar con margin */
     width: 40px;
     height: 3px;
-    background-color: #FFBA08;
     transform: scaleX(0);
     transform-origin: center; /* Cambiado para que el zoom sea desde el centro */
     transition: transform 0.4s ease;
@@ -320,21 +319,16 @@ img { max-width: 100%; display: block; }
 }
 
 /* Colores de las líneas para cada proyecto */
-#project-agricultura .card-content::before {
-    background-color: #FFBA08; /* Amarillo */
-}
-#project-paitur .card-content::before {
-    background-color: #0F766E; /* Verde azulado */
-}
-#project-delhum .card-content::before {
-    background-color: #A0C4FF; /* Azul claro */
-}
-#project-municipalidad .card-content::before {
-    background-color: #FF5A5F; /* Rojo */
-}
-#project-saneamientoambiental .card-content::before {
-    background-color: #8C52FF; /* Púrpura */
-}
+#project-agricultura .card-content::before { background-color: #FFBA08; /* Amarillo */ }
+#project-paitur .card-content::before { background-color: #0F766E; /* Verde azulado */ }
+#project-delhum .card-content::before { background-color: #A0C4FF; /* Azul claro */ }
+#project-municipalidad .card-content::before { background-color: #FF5A5F; /* Rojo */ }
+#project-saneamientoambiental .card-content::before { background-color: #8C52FF; /* Púrpura */ }
+
+/* Colores de las líneas para los proyectos de la página "Proyectos" */
+#project-fauna .card-content::before { background-color: #4CAF50; /* Verde */ }
+#project-zonificacion .card-content::before { background-color: #2196F3; /* Azul */ }
+#project-cumplimiento .card-content::before { background-color: #FF9800; /* Naranja */ }
 
 /* =========================================================
    ESTILOS MEJORADOS PARA SECCIÓN DE EQUIPO
