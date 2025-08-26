@@ -60,8 +60,6 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: min(98%, var(--container)); /* Ajuste a 98% para un ajuste más pegado */
-  margin-inline: auto;
 }
 .menu a.cta:hover { background-color: var(--brand-teal); }
 .menu-toggle { display: none; }
