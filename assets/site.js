@@ -69,11 +69,23 @@ if (location.pathname.endsWith('/') || location.pathname.endsWith('index.html'))
 // Envío simulado de formularios
 function submitLead(form, statusId = 'leadStatus') {
   const status = document.getElementById(statusId);
-  if (status) { status.textContent = 'Enviando…'; }
-  setTimeout(() => {
-    if (status) { status.style.color = 'var(--brand)'; status.textContent = '¡Gracias! Te contactaremos muy pronto.'; }
-    form.reset();
-  }, 700);
+  if (status) { status.textContent = 'Preparando tu correo...'; }
+
+  const service = form.querySelector('select[name="servicio"]').value;
+  const userEmail = form.querySelector('input[name="email"]').value;
+
+  const mailtoLink = `mailto:david.vasquez@lbconservation.org` +
+    `?subject=${encodeURIComponent(`Solicitud de - ${service}`)}` +
+    `&body=${encodeURIComponent(`Han solicitado una propuesta de servicio.\n\nCorreo de contacto: ${userEmail}`)}`;
+
+  window.location.href = mailtoLink;
+  
+  if (status) {
+      setTimeout(() => {
+        status.textContent = '¡Gracias! Serás redirigido a tu cliente de correo.';
+        form.reset();
+      }, 800);
+  }
 }
 window.submitLead = submitLead;
 
