@@ -66,28 +66,42 @@ if (location.pathname.endsWith('/') || location.pathname.endsWith('index.html'))
   })();
 }
 
-// Envío simulado de formularios
-function submitLead(form, statusId = 'leadStatus') {
-  const status = document.getElementById(statusId);
-  if (status) { status.textContent = 'Preparando tu correo...'; }
+// Envío de formularios con Netlify
+const contactForm = document.querySelector('form[name="contact"]');
 
-  const service = form.querySelector('select[name="servicio"]').value;
-  const userEmail = form.querySelector('input[name="email"]').value;
+if (contactForm) {
+  contactForm.addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita que la página se recargue
 
-  const mailtoLink = `mailto:david.vasquez@lbconservation.org` +
-    `?subject=${encodeURIComponent(`Solicitud de - ${service}`)}` +
-    `&body=${encodeURIComponent(`Han solicitado una propuesta de servicio.\n\nCorreo de contacto: ${userEmail}`)}`;
+    const status = document.getElementById('leadStatusHome');
+    const formData = new FormData(contactForm);
+    
+    if (status) {
+      status.textContent = 'Enviando...';
+      status.style.color = 'var(--ink-dark)';
+    }
 
-  window.location.href = mailtoLink;
-  
-  if (status) {
-      setTimeout(() => {
-        status.textContent = '¡Gracias! Serás redirigido a tu cliente de correo.';
-        form.reset();
-      }, 800);
-  }
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString()
+    })
+    .then(() => {
+      if (status) {
+        status.textContent = '¡Gracias! Te contactaremos muy pronto.';
+        status.style.color = 'var(--brand-teal)';
+      }
+      contactForm.reset();
+    })
+    .catch((error) => {
+      if (status) {
+        status.textContent = 'Hubo un error al enviar. Intenta de nuevo.';
+        status.style.color = 'red';
+      }
+      console.error('Error:', error);
+    });
+  });
 }
-window.submitLead = submitLead;
 
 // Contadores de KPIs desde Google Sheets (versión ajustada)
 (function() {
