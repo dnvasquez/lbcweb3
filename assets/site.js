@@ -64,45 +64,54 @@ function submitLead(form, statusId = 'leadStatus') {
 }
 window.submitLead = submitLead;
 
-// Contadores de KPIs
+// Contadores de KPIs desde Google Sheets (versión ajustada)
 (function() {
   const kpiSection = document.getElementById('kpis');
   if (!kpiSection) return;
-  const els = kpiSection.querySelectorAll('[data-count]');
-  if (!els.length) return;
-  const dur = 900;
-  function animate(el) {
-    const target = parseInt(el.getAttribute('data-count'), 10) || 0;
-    const t0 = performance.now();
-    (function tick(now) {
-      const p = Math.min(1, (now - t0) / dur);
-      el.textContent = Math.floor(0 + (target - 0) * (0.5 - Math.cos(Math.PI * p) / 2));
-      if (p < 1) requestAnimationFrame(tick);
-    })(t0);
-  }
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting && !e.target.dataset.done) {
-        e.target.dataset.done = 1;
-        animate(e.target);
-      }
-    });
-  }, { threshold: 0.4 });
-  els.forEach(el => io.observe(el));
-})();
 
-// Control del Header en Scroll
-(function() {
-  const nav = document.querySelector('header.nav');
-  if (!nav) return;
-  const handleScroll = () => {
-    if (window.scrollY > 50) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
-    }
-  };
-  window.addEventListener('scroll', handleScroll, { passive: true });
+  // URL del archivo CSV de tu pestaña "KPIS"
+  const sheetURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR-biUPUV4w-Ran2m80Wm5gw-d-IfxzvKdbq-D--OE5-8qVp4QY5C_gbcgAz5hk7yAfOKdBnpXVoNmY/pub?gid=1006059514&single=true&output=csv';
+
+  fetch(sheetURL)
+    .then(response => response.text())
+    .then(csvText => {
+      const rows = csvText.split('\n');
+      // ¡CAMBIO! Apuntamos a la fila 1000 (índice 999)
+      const kpiValues = rows[999].split(',');
+
+      const els = kpiSection.querySelectorAll('[data-kpi]');
+      if (!els.length) return;
+
+      const dur = 900;
+
+      function animate(el, target) {
+        const t0 = performance.now();
+        (function tick(now) {
+          const p = Math.min(1, (now - t0) / dur);
+          el.textContent = Math.floor(0 + (target - 0) * (0.5 - Math.cos(Math.PI * p) / 2));
+          if (p < 1) requestAnimationFrame(tick);
+        })(t0);
+      }
+
+      const io = new new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting && !e.target.dataset.done) {
+            e.target.dataset.done = 1;
+            const kpiIndex = parseInt(e.target.getAttribute('data-kpi'), 10);
+            // ¡CAMBIO! Le sumamos 2 para empezar en la 3ra columna (índice 2)
+            const targetValue = parseInt(kpiValues[kpiIndex + 2], 10);
+            animate(e.target, targetValue);
+          }
+        });
+      }, { threshold: 0.4 });
+
+      els.forEach(el => io.observe(el));
+    })
+    .catch(error => {
+      console.error('Error al cargar los datos de KPIs:', error);
+      const els = kpiSection.querySelectorAll('[data-kpi]');
+      els.forEach(el => el.textContent = '0');
+    });
 })();
 
 /* =========================================================
