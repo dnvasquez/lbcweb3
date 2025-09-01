@@ -721,3 +721,27 @@ img { max-width: 100%; display: block; }
   border-color: var(--brand-teal);
   box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.2);
 }
+
+/* =========================================================
+   ESTILOS MEJORADOS PARA SECCIÓN DE CONTACTO (INTEGRACIÓN PLANA)
+   ========================================================= */
+
+/* Eliminamos el estilo de "caja" del contenedor del formulario */
+#contacto .cta-container {
+  background-color: transparent; /* Quitamos el fondo oscuro */
+  color: var(--ink-light);       /* Hacemos el texto de párrafo oscuro y legible */
+  padding: 2rem 0;               /* Ajustamos el espaciado vertical */
+  border-radius: 0;              /* Eliminamos las esquinas redondeadas */
+}
+
+/* Ajustamos el color del título para que sea visible */
+#contacto .cta-container h2 {
+  color: var(--ink-dark);
+}
+
+/* Damos un ancho máximo al formulario para mantenerlo centrado y ordenado */
+#contacto .contact-form-simple {
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
