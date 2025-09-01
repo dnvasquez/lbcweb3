@@ -647,19 +647,25 @@ img { max-width: 100%; display: block; }
 }
 
 
-/* Estilos para el formulario simple en la Home */
+/* =========================================================
+   ESTILOS PARA UN FORMULARIO DE CONTACTO MÁS COMPACTO
+   ========================================================= */
+
 .contact-form-simple {
   margin-top: 2rem;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  text-align: center; /* Centra el botón y el mensaje de estado */
 }
+
 .contact-form-simple .form-fields {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem; /* Aumenta el espacio antes del botón */
 }
+
 .contact-form-simple input,
 .contact-form-simple textarea {
   width: 100%;
@@ -670,14 +676,25 @@ img { max-width: 100%; display: block; }
   color: var(--ink-dark);
   font-family: var(--font-sans);
   font-size: 1rem;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease; /* Transición suave */
 }
+
+.contact-form-simple input:focus,
+.contact-form-simple textarea:focus {
+  outline: none;
+  border-color: var(--brand-teal);
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.2); /* Sombra de foco para accesibilidad */
+}
+
 .contact-form-simple textarea {
-  min-height: 100px;
+  min-height: 120px;
   resize: vertical;
 }
+
 .contact-form-simple .form-status {
   display: block;
-  margin-top: 0.5rem;
-  color: #FFFFFF;
+  margin-top: 1rem; /* Aumenta el espacio sobre el mensaje de estado */
+  color: var(--ink-dark);
   min-height: 1.2em;
+  font-weight: 500;
 }
