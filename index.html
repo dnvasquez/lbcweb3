@@ -331,7 +331,8 @@
     <h2>Iniciemos tu proyecto</h2>
     <p>Conversemos sobre tus desafíos. Analizaremos tus necesidades para proponerte una solución técnica y económicamente eficiente.</p>
     
-    <form class="contact-form-simple" onsubmit="event.preventDefault(); submitLead(this, 'leadStatusHome');">
+    <form name="contact" class="contact-form-simple" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="contact" />
       <div class="form-fields">
         <input type="email" name="email" placeholder="Tu correo electrónico" required>
         <select name="servicio" required>
