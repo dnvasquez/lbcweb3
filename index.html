@@ -326,18 +326,39 @@
       </div>
     </section>
 
-    <section id="contacto" class="section">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-tag">Contacto</span>
-      <h2>Iniciemos tu proyecto</h2>
-      <p>Conversemos sobre tus desafíos. Analizaremos tus necesidades para proponerte una solución técnica y económicamente eficiente.</p>
-    </div>
+    <section id="contacto" class="section section-offset">
+  <div class="container cta-container">
+    <h2>Iniciemos tu proyecto</h2>
+    <p>Conversemos sobre tus desafíos. Analizaremos tus necesidades para proponerte una solución técnica y económicamente eficiente.</p>
     
     <form class="contact-form-simple" onsubmit="event.preventDefault(); submitLead(this, 'leadStatusHome');">
       <div class="form-fields">
         <input type="email" name="email" placeholder="Tu correo electrónico" required>
-        <textarea name="mensaje" placeholder="Cuéntanos sobre tu proyecto..." required></textarea>
+        <select name="servicio" required>
+          <option value="">Selecciona un servicio de interés...</option>
+          <optgroup label="Evaluación y Diagnóstico Ambiental">
+            <option value="Flora y Vegetación">Flora y Vegetación</option>
+            <option value="Fauna Silvestre">Fauna Silvestre</option>
+            <option value="Análisis de Paisaje y Turismo">Análisis de Paisaje y Turismo</option>
+            <option value="Edafología y Humedales">Edafología y Humedales</option>
+          </optgroup>
+          <optgroup label="Planificación y Diseño Sostenible">
+            <option value="Planes de Manejo y Conservación">Planes de Manejo y Conservación</option>
+            <option value="Diseño de Restauración Ecológica">Diseño de Restauración Ecológica</option>
+            <option value="Diseño de Áreas Verdes y Eco-jardines">Diseño de Áreas Verdes y Eco-jardines</option>
+          </optgroup>
+          <optgroup label="Ejecución y Obras en Terreno">
+            <option value="Rescate y Relocalización de Especies">Rescate y Relocalización de Especies</option>
+            <option value="Obras de Restauración y Reforestación">Obras de Restauración y Reforestación</option>
+            <option value="Perturbaciones Controladas">Perturbaciones Controladas</option>
+          </optgroup>
+          <optgroup label="Asesoría y Cumplimiento Normativo">
+            <option value="Gestión Ambiental y Regulatoria">Gestión Ambiental y Regulatoria</option>
+            <option value="Certificaciones y Auditorías">Certificaciones y Auditorías</option>
+            <option value="Instrumentos de Conservación">Instrumentos de Conservación</option>
+          </optgroup>
+        </select>
+        <textarea name="mensaje" placeholder="Puedes agregar un mensaje adicional aquí (opcional)"></textarea>
       </div>
       <button type="submit" class="btn btn-primary">Solicitar Propuesta</button>
       <small class="form-status" id="leadStatusHome" role="status" aria-live="polite"></small>
