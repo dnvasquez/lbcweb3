@@ -119,6 +119,19 @@ if (netlifyForm) {
       // Apunta a la fila 1000 (índice 999)
       const kpiValues = rows[999].split(',');
 
+      // --- INICIO DE LA MODIFICACIÓN ---
+
+      // 1. Extrae la fecha de la segunda columna (índice 1)
+      const updateDate = kpiValues[1];
+      const dateElement = document.getElementById('kpi-update-date');
+
+      // 2. Inserta el texto con la fecha en el párrafo
+      if (dateElement && updateDate) {
+        dateElement.textContent = `KPI´s actualizados a ${updateDate}`;
+      }
+
+      // --- FIN DE LA MODIFICACIÓN ---
+
       const els = kpiSection.querySelectorAll('[data-kpi]');
       if (!els.length) return;
 
@@ -138,7 +151,6 @@ if (netlifyForm) {
           if (e.isIntersecting && !e.target.dataset.done) {
             e.target.dataset.done = 1;
             const kpiIndex = parseInt(e.target.getAttribute('data-kpi'), 10);
-            // Suma 2 al índice para empezar en la 3ra columna (índice 2)
             const targetValue = parseInt(kpiValues[kpiIndex + 2], 10);
             animate(e.target, targetValue);
           }
