@@ -645,3 +645,39 @@ img { max-width: 100%; display: block; }
         opacity: 0;
     }
 }
+
+
+/* Estilos para el formulario simple en la Home */
+.contact-form-simple {
+  margin-top: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.contact-form-simple .form-fields {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.contact-form-simple input,
+.contact-form-simple textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+  background-color: #FFFFFF;
+  color: var(--ink-dark);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+}
+.contact-form-simple textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+.contact-form-simple .form-status {
+  display: block;
+  margin-top: 0.5rem;
+  color: #FFFFFF;
+  min-height: 1.2em;
+}
