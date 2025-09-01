@@ -89,7 +89,7 @@ window.submitLead = submitLead;
     .then(response => response.text())
     .then(csvText => {
       const rows = csvText.split('\n');
-      // ¡CAMBIO! Apuntamos a la fila 1000 (índice 999)
+      // Apunta a la fila 1000 (índice 999)
       const kpiValues = rows[999].split(',');
 
       const els = kpiSection.querySelectorAll('[data-kpi]');
@@ -106,12 +106,12 @@ window.submitLead = submitLead;
         })(t0);
       }
 
-      const io = new new IntersectionObserver((entries) => {
+      const io = new IntersectionObserver((entries) => {
         entries.forEach(e => {
           if (e.isIntersecting && !e.target.dataset.done) {
             e.target.dataset.done = 1;
             const kpiIndex = parseInt(e.target.getAttribute('data-kpi'), 10);
-            // ¡CAMBIO! Le sumamos 2 para empezar en la 3ra columna (índice 2)
+            // Suma 2 al índice para empezar en la 3ra columna (índice 2)
             const targetValue = parseInt(kpiValues[kpiIndex + 2], 10);
             animate(e.target, targetValue);
           }
@@ -123,7 +123,7 @@ window.submitLead = submitLead;
     .catch(error => {
       console.error('Error al cargar los datos de KPIs:', error);
       const els = kpiSection.querySelectorAll('[data-kpi]');
-      els.forEach(el => el.textContent = '0');
+      els.forEach(el => el.textContent = '0'); // Muestra '0' si hay un error
     });
 })();
 
