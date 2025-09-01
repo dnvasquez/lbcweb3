@@ -9,6 +9,19 @@ if (yearSpan) {
 }
 
 // Toggle menú móvil
+
+// Muestra el fondo de la navegación al hacer scroll
+const nav = $('.nav');
+if (nav) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) { // El fondo aparecerá después de desplazar 50px
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  }, { passive: true });
+}
+
 const btn = $('#menuBtn'),
   menu = $('#menu');
 btn?.addEventListener('click', () => {
