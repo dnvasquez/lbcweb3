@@ -67,18 +67,19 @@ if (location.pathname.endsWith('/') || location.pathname.endsWith('index.html'))
 }
 
 // Envío de formularios con Netlify
-const contactForm = document.querySelector('form[name="contact"]');
+// Handles Netlify form submission via AJAX
+const netlifyForm = document.querySelector('form[data-netlify="true"]');
 
-if (contactForm) {
-  contactForm.addEventListener('submit', function(event) {
-    event.preventDefault(); // Evita que la página se recargue
+if (netlifyForm) {
+  netlifyForm.addEventListener('submit', event => {
+    event.preventDefault(); // Prevents the default form submission
 
-    const status = document.getElementById('leadStatusHome');
-    const formData = new FormData(contactForm);
+    const statusMessage = document.getElementById('leadStatusHome');
+    const formData = new FormData(netlifyForm);
     
-    if (status) {
-      status.textContent = 'Enviando...';
-      status.style.color = 'var(--ink-dark)';
+    if (statusMessage) {
+      statusMessage.textContent = 'Enviando...';
+      statusMessage.style.color = 'var(--ink-dark)';
     }
 
     fetch('/', {
@@ -87,18 +88,18 @@ if (contactForm) {
       body: new URLSearchParams(formData).toString()
     })
     .then(() => {
-      if (status) {
-        status.textContent = '¡Gracias! Te contactaremos muy pronto.';
-        status.style.color = 'var(--brand-teal)';
+      if (statusMessage) {
+        statusMessage.textContent = '¡Gracias! Tu mensaje ha sido enviado.';
+        statusMessage.style.color = 'var(--brand-teal)'; // Success color
       }
-      contactForm.reset();
+      netlifyForm.reset(); // Clears the form fields
     })
-    .catch((error) => {
-      if (status) {
-        status.textContent = 'Hubo un error al enviar. Intenta de nuevo.';
-        status.style.color = 'red';
+    .catch(error => {
+      if (statusMessage) {
+        statusMessage.textContent = 'Error al enviar el formulario.';
+        statusMessage.style.color = 'red'; // Error color
       }
-      console.error('Error:', error);
+      console.error(error);
     });
   });
 }
