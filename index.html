@@ -341,23 +341,24 @@
         <input type="email" name="email" placeholder="Tu correo electrónico" required>
         <select name="servicio" required>
           <option value="">Selecciona un servicio de interés...</option>
-          <optgroup label="Evaluación y Diagnóstico Ambiental">
-            <option value="Flora y Vegetación">Flora y Vegetación</option>
-            <option value="Fauna Silvestre">Fauna Silvestre</option>
+          <optgroup label="Evaluación y Diagnóstico">
+            <option value="Flora y Vegetación">LB Flora y Vegetación</option>
+            <option value="Fauna Silvestre">LB Fauna Silvestre</option>
             <option value="Análisis de Paisaje y Turismo">Análisis de Paisaje y Turismo</option>
             <option value="Edafología y Humedales">Edafología y Humedales</option>
           </optgroup>
-          <optgroup label="Planificación y Diseño Sostenible">
-            <option value="Planes de Manejo y Conservación">Planes de Manejo y Conservación</option>
+          <optgroup label="Planificación y Diseño">
+            <option value="Planes de Manejo y Conservación">Planes de Restauración Ecológica</option>
             <option value="Diseño de Restauración Ecológica">Diseño de Restauración Ecológica</option>
-            <option value="Diseño de Áreas Verdes y Eco-jardines">Diseño de Áreas Verdes y Eco-jardines</option>
+            <option value="Diseño de Áreas Verdes y Eco-jardines">Diseño de Estrategias de Retención Hídrica</option>
           </optgroup>
-          <optgroup label="Ejecución y Obras en Terreno">
+          <optgroup label="Ejecución y Obras">
             <option value="Rescate y Relocalización de Especies">Rescate y Relocalización de Especies</option>
-            <option value="Obras de Restauración y Reforestación">Obras de Restauración y Reforestación</option>
+            <option value="Obras de Restauración y Reforestación">Obras de Plantación y Reforestación</option>
             <option value="Perturbaciones Controladas">Perturbaciones Controladas</option>
+            <option value="Perturbaciones Controladas">Compromisos Ambientales Voluntarios</option>
           </optgroup>
-          <optgroup label="Asesoría y Cumplimiento Normativo">
+          <optgroup label="Asesoría y Cumplimiento">
             <option value="Gestión Ambiental y Regulatoria">Gestión Ambiental y Regulatoria</option>
             <option value="Certificaciones y Auditorías">Certificaciones y Auditorías</option>
             <option value="Instrumentos de Conservación">Instrumentos de Conservación</option>
@@ -404,9 +405,9 @@
           { name:"Víctor Aguilera", role:"Director Ejecutivo", group:"directiva", photo:"assets/team/directiva-2.jpg" },
           { name:"César Figueroa", role:"Director de Proyectos", group:"directiva", photo:"assets/team/directiva-3.jpg" },
           { name:"Álvaro Escobar Jackson", role:"Conservación y Medio Biótico", group:"tecnico", photo:"assets/team/tecnico-1.jpg" },
-          { name:"David Vásquez Stuardo", role:"Ecosistemas Terrestres", group:"tecnico", photo:"assets/team/tecnico-2.jpg" },
+          { name:"David Vásquez Stuardo", role:"Ecosistemas Terrestres y Biodiversidad", group:"tecnico", photo:"assets/team/tecnico-2.jpg" },
           { name:"Sebastián Moller Cepeda", role:"Flora y Vegetación", group:"tecnico", photo:"assets/team/tecnico-3.jpg" },
-          { name:"Nadia Fabres", role:"Asistente en Terreno y Datos", group:"tecnico", photo:"assets/team/tecnico-4.jpg" },
+          { name:"Nadia Fabres", role:"Operaciones y Sistematización", group:"tecnico", photo:"assets/team/tecnico-4.jpg" },
       ];
       const directiva = fullTeam.filter(m => m.group === 'directiva');
       const tecnico = fullTeam.filter(m => m.group === 'tecnico');
@@ -422,11 +423,11 @@
       };
       if(container) {
         container.innerHTML = `
-          <h3 class="team-group-title">Directiva</h3>
+          <h3 class="team-group-title">Equipo Directivo</h3>
           <div class="team-grid">
             ${createTeamGridHTML(directiva)}
           </div>
-          <h3 class="team-group-title">Equipo Técnico</h3>
+          <h3 class="team-group-title">Líderes de Área</h3>
           <div class="team-grid team-grid-technical">
             ${createTeamGridHTML(tecnico)}
           </div>
