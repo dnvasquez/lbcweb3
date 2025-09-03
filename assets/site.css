@@ -238,6 +238,9 @@ img { max-width: 100%; display: block; }
     .split-feature-content-inner { padding: 3rem 1.5rem; }
 }
 
+
+
+
 /* =========================================================
    ESTILOS MEJORADOS PARA SECCIÓN DE PROYECTOS (CON PARALLAX)
    ========================================================= */
@@ -309,7 +312,7 @@ img { max-width: 100%; display: block; }
 
 #proyectos .project-card:hover .card-content {
     opacity: 1;
-    background-color: rgba(66, 3, 23, 0.75);
+    background-color: rgba(66, 3, 23, 0.85);
 }
 
 /* La línea de acento ahora está centrada */
@@ -361,6 +364,12 @@ img { max-width: 100%; display: block; }
 #proyectos-page #project-fauna .card-content::before { background-color: #4CAF50; }
 #proyectos-page #project-zonificacion .card-content::before { background-color: #2196F3; }
 #proyectos-page #project-cumplimiento .card-content::before { background-color: #FF9800; }
+
+
+
+
+
+
 
 /* =========================================================
    ESTILOS MEJORADOS PARA SECCIÓN DE EQUIPO
