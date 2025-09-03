@@ -773,32 +773,70 @@ img { max-width: 100%; display: block; }
   margin-top: 30px; /* Controla la distancia desde los números de arriba */
 }
 
-.footer-bottom {
-    background-color: #ffffff; /* Fondo blanco */
-    padding: 20px 0;
-    border-top: 1px solid #e4e4e4;
+/* Nuevo estilo para la sección de servicios en la página de inicio */
+.service-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 50px;
 }
-.footer-bottom .copyright {
+
+.service-card {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
+    background-color: var(--paper-light);
+    padding: 30px;
+    border-radius: var(--radius);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.footer-bottom .footer-logo {
-    margin: 0;
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
 }
-.footer-bottom-menu-link {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+
+.service-card .card-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
     display: flex;
-    gap: 15px; /* Espaciado entre los enlaces */
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--surface-white);
+    border: 1px solid var(--border-light);
 }
-.footer-bottom-menu-link .navigation-links {
-    text-decoration: none;
+
+.service-card .card-icon img {
+    max-width: 35px;
+    max-height: 35px;
+}
+
+.service-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: var(--ink-dark);
+}
+
+.service-card p {
+    font-size: 0.95rem;
     color: var(--ink-light);
-    font-size: 0.9em;
+    line-height: 1.5;
 }
-.footer-bottom-menu-link .navigation-links:hover {
+
+/* Responsividad para las tarjetas de servicio */
+@media (max-width: 980px) {
+    .service-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .service-cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
     text-decoration: underline;
 }
