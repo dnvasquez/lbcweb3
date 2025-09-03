@@ -333,12 +333,15 @@
   <div class="container cta-container">
     <h2>Tu proyecto ambiental, con claridad</h2>
     <p>Cuéntanos tu necesidad y te contactaremos de manera directa para ofrecerte la asesoría de un especialista en el área.</p>
-    
+
     <form name="contact" class="contact-form-simple" method="POST" data-netlify="true">
       <input type="hidden" name="form-name" value="contact" />
-      
+
       <div class="form-fields">
-        <input type="email" name="email" placeholder="Tu correo electrónico" required>
+        <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <input type="email" name="email" placeholder="Tu correo electrónico" required>
+          <input type="tel" name="telefono" placeholder="+56 9 XXXXXXXX">
+        </div>
         <select name="servicio" required>
           <option value="">Selecciona un servicio de interés...</option>
           <optgroup label="Evaluación y Diagnóstico">
