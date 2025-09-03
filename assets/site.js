@@ -10,14 +10,21 @@ if (yearSpan) {
 
 // Toggle menú móvil
 
-// Muestra el fondo de la navegación al hacer scroll
+// Muestra el fondo de la navegación y cambia el logo al hacer scroll
 const nav = $('.nav');
+const navLogo = $('#nav-logo');
 if (nav) {
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) { // El fondo aparecerá después de desplazar 50px
+    if (window.scrollY > 50) {
       nav.classList.add('scrolled');
+      if (navLogo) {
+        navLogo.src = 'assets/logos/logolbcchoco.png';
+      }
     } else {
       nav.classList.remove('scrolled');
+      if (navLogo) {
+        navLogo.src = 'assets/logos/logolbcblanco.png';
+      }
     }
   }, { passive: true });
 }
