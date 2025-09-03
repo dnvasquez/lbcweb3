@@ -772,3 +772,33 @@ img { max-width: 100%; display: block; }
 #kpi-update-date {
   margin-top: 30px; /* Controla la distancia desde los números de arriba */
 }
+
+.footer-bottom {
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 20px 0;
+    border-top: 1px solid #e4e4e4;
+}
+.footer-bottom .copyright {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-bottom .footer-logo {
+    margin: 0;
+}
+.footer-bottom-menu-link {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px; /* Espaciado entre los enlaces */
+}
+.footer-bottom-menu-link .navigation-links {
+    text-decoration: none;
+    color: var(--ink-light);
+    font-size: 0.9em;
+}
+.footer-bottom-menu-link .navigation-links:hover {
+    text-decoration: underline;
+}
