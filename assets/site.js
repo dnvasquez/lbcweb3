@@ -297,3 +297,17 @@ window.addEventListener('load', function() {
         }, 800); // Espera 0.8s para que el logo se desvanezca
     }, 2000); // Muestra el logo por 2s
 });
+
+
+// Fade-in effect on scroll
+const aosObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('aos-animate');
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('[data-aos]').forEach(element => {
+    aosObserver.observe(element);
+});
