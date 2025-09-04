@@ -1230,8 +1230,3 @@ img { max-width: 100%; display: block; }
         grid-template-columns: 1fr;
     }
 }
-
-/* Nuevo CSS para ocultar la página completa */
-#website-content {
-    display: none;
-}
