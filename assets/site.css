@@ -1230,3 +1230,16 @@ img { max-width: 100%; display: block; }
         grid-template-columns: 1fr;
     }
 }
+/* =========================================================
+   Solución para precarga sin scrollbar
+   ========================================================= */
+
+.preloader-active {
+    overflow: hidden;
+}
+
+.preloader-active #website-content {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
