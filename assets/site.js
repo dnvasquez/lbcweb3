@@ -206,12 +206,12 @@ if (netlifyForm) {
     // Datos de los proyectos
     const projectData = {
         agricultura: {
-  title: 'Plan de Fomento y Conservación de la Biodiversidad',
-  subtitle: 'Auditoría y Planes de Conservación en Predios Agrícolas',
-  image: 'assets/img/proyecto1.jpg',
-  description: 'En el contexto de auditoría de la norma LEAF 16.1, se desarrolló un levantamiento integral de flora, fauna y condición biológica de suelos en cinco predios agrícolas de las regiones Metropolitana y de Coquimbo, con superficies que van desde 80 hasta más de 1.000 hectáreas. El proyecto incluyó la identificación de formaciones vegetacionales, el registro de especies nativas y endémicas, y la evaluación de la calidad del suelo. Con base en esta información se elaboraron planes de mejora y conservación para cada predio, que contemplan capacitación, monitoreo de especies clave y acciones de restauración ecológica. El trabajo constituye un modelo replicable para armonizar la producción agrícola con la conservación del paisaje y la biodiversidad en distintas escalas territoriales.',
-  link: '#'
-},
+            title: 'Plan de Fomento y Conservación de la Biodiversidad',
+            subtitle: 'Auditoría y Planes de Conservación en Predios Agrícolas',
+            image: 'assets/img/proyecto1.jpg',
+            description: 'En el contexto de auditoría de la norma LEAF 16.1, se desarrolló un levantamiento integral de flora, fauna y condición biológica de suelos en cinco predios agrícolas de las regiones Metropolitana y de Coquimbo, con superficies que van desde 80 hasta más de 1.000 hectáreas. El proyecto incluyó la identificación de formaciones vegetacionales, el registro de especies nativas y endémicas, y la evaluación de la calidad del suelo. Con base en esta información se elaboraron planes de mejora y conservación para cada predio, que contemplan capacitación, monitoreo de especies clave y acciones de restauración ecológica. El trabajo constituye un modelo replicable para armonizar la producción agrícola con la conservación del paisaje y la biodiversidad en distintas escalas territoriales.',
+            link: '#'
+        },
         paitur: {
             title: 'Paisaje y Turismo',
             subtitle: 'Determinación del Valor Paisajístico y Turístico',
@@ -254,16 +254,15 @@ if (netlifyForm) {
         $('#modalImage').src = data.image;
         $('#modalDescription').textContent = data.description;
 
-        modal.style.display = 'block';
-        document.body.style.overflow = 'hidden'; // Evita el scroll del fondo
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden';
     }
 
     function closeModal() {
-        modal.style.display = 'none';
-        document.body.style.overflow = ''; // Habilita el scroll del fondo
+        modal.classList.remove('show');
+        document.body.style.overflow = '';
     }
 
-    // Escuchar clics en las fichas de proyectos
     projectCards.forEach(card => {
         card.addEventListener('click', (e) => {
             const projectKey = card.dataset.project;
@@ -273,10 +272,8 @@ if (netlifyForm) {
         });
     });
 
-    // Escuchar clic en el botón de cierre
     closeBtn.addEventListener('click', closeModal);
 
-    // Cerrar si el usuario hace clic fuera del modal
     window.addEventListener('click', (e) => {
         if (e.target === modal) {
             closeModal();
