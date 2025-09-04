@@ -576,7 +576,7 @@ img { max-width: 100%; display: block; }
     align-items: start;
     min-height: 500px;
     height: calc(100vh - 6rem); /* Altura calculada para permitir desplazamiento */
-    overflow-y: none; /* Permite el desplazamiento vertical */
+    overflow-y: auto; /* Permite el desplazamiento vertical */
 }
 
 .modal-image-col {
@@ -679,7 +679,7 @@ img { max-width: 100%; display: block; }
 
 /* Scrollbar estilo iOS */
 .modal-body::-webkit-scrollbar {
-    width: 8px;
+    width: 1px;
 }
 
 .modal-body::-webkit-scrollbar-track {
