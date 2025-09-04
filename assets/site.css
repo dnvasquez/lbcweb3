@@ -489,160 +489,118 @@ img { max-width: 100%; display: block; }
 
 
 /* =========================================================
-   Modal (Pop-up) — estética “glass card” pulida
+   Estilos para el Modal (Pop-up)
    ========================================================= */
-:root{
-  /* Ajusta a tu paleta si quieres */
-  --radius: 18px;
-  --ink-dark: #111827;
-  --ink: #374151;
-  --ink-light: #6B7280;
-  --brand-teal: #0F766E;
-  --surface: #ffffff;
-  --border-soft: rgba(17,24,39,.08);
-}
-
-/* Overlay translúcido con blur */
 .modal {
-  display: none;                 /* mostrar con .is-open */
-  position: fixed; inset: 0;
-  z-index: 1000;
-  padding: clamp(12px, 3vw, 32px);
-  background: rgba(16,18,27,.35);
-  backdrop-filter: blur(10px) saturate(1.05);
-  -webkit-backdrop-filter: blur(10px) saturate(1.05);
-  align-items: center;
-  justify-content: center;
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding: 2rem;
+    align-items: center;
+    justify-content: center;
 }
-.modal.is-open { display: flex; }
 
-/* Card “glass”: gradiente suave, borde fino y sombra amplia */
 .modal-content {
-  position: relative;
-  width: min(100%, 980px);
-  max-height: min(92vh, 1100px);
-  overflow: hidden;
-
-  /* fondo con gradiente sutil + leve transparencia */
-  background:
-    linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,255,255,.98));
-  backdrop-filter: blur(8px) saturate(1.05);
-  -webkit-backdrop-filter: blur(8px) saturate(1.05);
-
-  border: 1px solid var(--border-soft);
-  border-radius: var(--radius);
-
-  /* sombras suaves en dos niveles (look premium) */
-  box-shadow:
-    0 22px 60px rgba(0,0,0,.18),
-    0 4px 14px rgba(0,0,0,.08);
-
-  /* micro-animación de entrada */
-  opacity: 0;
-  transform: translateY(10px) scale(.99);
-  animation: modal-in .26s ease forwards;
+    background-color: var(--surface-white);
+    margin: 0;
+    padding: 0;
+    border-radius: var(--radius);
+    max-width: 1000px;
+    position: relative;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
-/* “brillo” superior muy sutil (como en el ejemplo) */
-.modal-content::before {
-  content: "";
-  position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(255,255,255,.35), transparent 35%);
-  pointer-events: none;
-}
-
-/* Animación (compatible con reduced motion) */
-@keyframes modal-in {
-  from { opacity: 0; transform: translateY(12px) scale(.985); }
-  to   { opacity: 1; transform: translateY(0)    scale(1); }
-}
-@media (prefers-reduced-motion: reduce){
-  .modal-content { animation: none; opacity: 1; transform: none; }
-}
-
-/* Botón cerrar: redondo, claro, con foco visible */
 .close-btn {
-  position: absolute; top: 12px; right: 12px;
-  width: 40px; height: 40px;
-  display: grid; place-items: center;
-  border-radius: 999px;
-  border: 1px solid var(--border-soft);
-  background: rgba(255,255,255,.9);
-  color: var(--ink-light);
-  font-size: 20px; line-height: 1;
-  cursor: pointer;
-  transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
-  z-index: 2;
+    color: var(--ink-light);
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2.2rem;
+    font-weight: 300;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+    line-height: 1;
+    z-index: 10;
 }
-.close-btn:hover { background: #fff; transform: scale(1.05); }
-.close-btn:focus-visible { outline: 2px solid var(--brand-teal); outline-offset: 2px; }
 
-/* Layout interno tipo tarjeta moderna */
+.close-btn:hover,
+.close-btn:focus {
+    color: var(--brand-teal);
+    transform: rotate(90deg);
+}
+
 .modal-body {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr; /* relación similar al ejemplo */
-  gap: clamp(16px, 2.4vw, 24px);
-  padding: clamp(16px, 2.6vw, 28px);
-  align-items: start;
-  overflow: auto;                        /* scroll interno si hace falta */
-  max-height: calc(92vh - clamp(16px, 2.6vw, 28px) - 12px);
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    align-items: start;
 }
 
-/* Imagen con “card” suave */
 .modal-image-col img {
-  width: 100%; display: block;
-  border-radius: calc(var(--radius) - 6px);
-  object-fit: cover;
-  aspect-ratio: 4 / 3;
-  filter: saturate(.98) contrast(1.01);
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--radius);
 }
 
-/* Texto con jerarquía limpia (alineado a la izquierda) */
-.modal-text-col { padding-top: 2px; }
+.modal-text-col {
+    padding-top: 0.5rem;
+}
 
 .modal-text-col h2 {
-  margin: 0 0 .35rem 0;
-  font-family: var(--font-display, system-ui, sans-serif);
-  font-weight: 800;
-  letter-spacing: .2px;
-  text-transform: none;                /* el ejemplo no grita en mayúsculas */
-  font-size: clamp(1.3rem, 2.2vw, 1.7rem);
-  color: var(--ink-dark);
-}
-
-.modal-text-col .modal-subtitle {
-  margin: 0 0 1rem 0;
-  font-family: var(--font-sans, system-ui, sans-serif);
-  font-weight: 600;
-  color: var(--ink);
-  font-size: clamp(.95rem, 1.8vw, 1.05rem);
-  opacity: .85;
+    font-size: 1.8rem;
+    margin-bottom: 0.25rem;
+    font-family: var(--font-display);
+    color: var(--brand-teal);
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1.1;
 }
 
 .modal-text-col p {
-  margin: 0 0 1rem 0;
-  line-height: 1.6;
-  text-align: left;                    /* sin justificado (mejor legibilidad) */
-  font-size: clamp(.96rem, 1.6vw, 1rem);
-  color: var(--ink-light);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    text-align: justify;
+    font-size: 0.95rem;
+    color: var(--ink-light);
 }
-
-/* Separador muy sutil, como en tarjetas de UI */
+.modal-text-col .modal-subtitle {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    color: var(--ink-dark);
+    margin: 0 0 1rem;
+    font-size: 1rem;
+}
 .modal-text-col hr {
   border: 0;
-  border-top: 1px solid var(--border-soft);
-  margin: 1.1rem 0 .9rem;
-  opacity: .7;
+  border-top: 1px solid var(--border-light);
+  margin: 1.5rem 0;
 }
 
-/* Breakpoints */
-@media (max-width: 900px){
-  .modal-body { grid-template-columns: 1fr; }
-  .modal-image-col img { aspect-ratio: 16 / 9; }
-}
-@media (max-width: 768px){
-  .modal { padding: 8px; }
-  .modal-content { border-radius: 14px; }
+@media (max-width: 768px) {
+    .modal-body {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+    .modal-content {
+        margin-top: 2rem;
+    }
+    .modal {
+        padding: 1rem;
+    }
 }
 
 
