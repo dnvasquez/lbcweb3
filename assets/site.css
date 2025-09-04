@@ -505,6 +505,7 @@ img { max-width: 100%; display: block; }
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     padding: 2rem;
+    display: flex; /* Usamos flexbox para centrar */
     align-items: center;
     justify-content: center;
     animation: modalFadeIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -518,7 +519,7 @@ img { max-width: 100%; display: block; }
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(40px) saturate(200%);
     -webkit-backdrop-filter: blur(40px) saturate(200%);
-    margin: 0;
+    margin: auto; /* Centrado automático */
     padding: 0;
     border-radius: 24px;
     width: 85%;
@@ -531,7 +532,7 @@ img { max-width: 100%; display: block; }
         0 16px 32px rgba(0, 0, 0, 0.1),
         inset 0 1px 0 rgba(255, 255, 255, 0.9),
         0 0 0 1px rgba(255, 255, 255, 0.2);
-    overflow: hidden;
+    overflow: hidden; /* Esto es lo que causaba el problema, lo mantenemos por ahora */
     border: 1px solid rgba(255, 255, 255, 0.3);
     animation: modalSlideUp 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -575,7 +576,7 @@ img { max-width: 100%; display: block; }
     padding: 3rem;
     align-items: start;
     min-height: 500px;
-    overflow-y: auto;
+    overflow-y: auto; /* Permite el desplazamiento vertical */
 }
 
 .modal-image-col {
