@@ -8,449 +8,456 @@
   <link rel="stylesheet" href="assets/site.css" />
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.5.1/uicons-regular-rounded/css/uicons-regular-rounded.css'>
   <link rel="icon" href="assets/logos/logolbcnav.png" type="image/png">
+  <style>
+    /* Oculta todo el contenido hasta que el preloader termine */
+    #website-content {
+        display: none;
+    }
+  </style>
 </head>
 <body id="index">
   <div class="preloader">
       <img src="assets/img/preloader.png" alt="Preloader" class="preloader-logo" />
   </div>
-  <header class="nav">
-    <div class="container nav-inner">
-      <a href="#home" class="logo" aria-label="LBC — Home">
-    <img id="nav-logo" src="assets/logos/logolbcblanco.png" alt="Logo LBC" />
-</a>
-      <nav class="menu" id="menu" aria-label="Navegación principal">
-    <a href="#servicios">Servicios</a>
-    <a href="#proyectos">Proyectos</a>
-    <a href="#nosotros">Nosotros</a>
-    <a href="#faq">FAQ</a>
-    <a class="cta" href="#contacto">Contacto</a>
-</nav>
-    </div>
-  </header>
-
-  <main id="content">
-    <section id="hero" class="hero-fullscreen">
-     <video playsinline autoplay muted loop poster="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" id="hero-video">
-        <source src="assets/lbc-video.mp4" type="video/mp4">
-        Tu navegador no soporta videos.
-      </video>
-      <div class="hero-overlay"></div>
-      <div class="container">
-        <div class="hero-content">
-          <h1 class="hero-title">Gestión Ambiental que genera valor</h1>
-          <div class="hero-commitments">
-            <div class="commitment-item">
-              <div class="commitment-icon">
-                <img src="assets/logos/1.png" alt="Ícono de Rigor científico" style="width: 24px; height: 24px;filter: brightness(0) invert(1);">
-              </div>
-              <div class="commitment-text">
-                <h3>Eficiencia</h3>
-                <p>Empleamos la tecnología para ofrecer respuestas rápidas y precisas, convirtiendo los desafíos ambientales en resultados concretos de manera oportuna.</p>
-              </div>
-            </div>
-            
-            <div class="commitment-item">
-              <div class="commitment-icon">
-                <img src="assets/logos/2.png" alt="Ícono de Análisis espacial" style="width: 24px; height: 24px; filter: brightness(0) invert(1);">
-              </div>
-              <div class="commitment-text">
-                <h3>Confianza</h3>
-                <p>Aplicamos metodologías basadas en evidencia, entregando la seguridad necesaria para tomar decisiones estratégicas.</p>
-              </div>
-            </div>
-
-            <div class="commitment-item">
-              <div class="commitment-icon">
-                <img src="assets/logos/3.png" alt="Ícono de Cumplimiento normativo" style="width: 24px; height: 24px;">
-              </div>
-              <div class="commitment-text">
-                <h3>Claridad</h3>
-                <p>Simplificamos el proceso normativo y de gestión, brindando una visión clara desde el diagnóstico hasta la ejecución.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+  
+  <div id="website-content">
+    <header class="nav">
+      <div class="container nav-inner">
+        <a href="#home" class="logo" aria-label="LBC — Home">
+      <img id="nav-logo" src="assets/logos/logolbcblanco.png" alt="Logo LBC" />
+  </a>
+        <nav class="menu" id="menu" aria-label="Navegación principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#faq">FAQ</a>
+      <a class="cta" href="#contacto">Contacto</a>
+  </nav>
       </div>
-    </section>
+    </header>
 
-    
-    <section id="servicios" class="section section-split-feature">
-        <div class="split-feature-image">
-            <img src="assets/img/fondo_servicios2.jpg" alt="Equipo profesional colaborando en un proyecto">
-        </div>
-        <div class="split-feature-content">
-            <div class="split-feature-content-inner">
-                <div class="section-header-left">
-                    <span class="section-tag">Nuestros Servicios</span>
-                    <h2>Soluciones integrales</h2>
-                    <p>Integramos ciencia, tecnología y gestión para transformar desafíos ambientales en oportunidades, entregando la evidencia que necesitas para tomar decisiones estratégicas.</p>
-                </div>
-
-                <div class="accordion-container">
-    <div class="accordion-item">
-        <button class="accordion-header">
-            Evaluación y Diagnóstico
-            <span class="accordion-icon">&rsaquo;</span>
-        </button>
-        <div class="accordion-body">
-            <div class="accordion-body-inner">
-                <ul class="service-points">
-                    <li><i class="fi fi-rr-land-location"></i> Determinación del Área de Influencia (AI)</li>
-                    <li><i class="fi fi-rr-leaf"></i> Líneas Base de Flora y Fauna</li>
-                    <li><i class="fi fi-rr-water"></i> Memorias Agronómicas y Delimitación de Humedales</li>
-                    <li><i class="fi fi-rr-picture"></i> Evaluación de Paisaje y Turismo</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-                  
-    <div class="accordion-item">
-        <button class="accordion-header">
-            Planificación y Diseño
-            <span class="accordion-icon">&rsaquo;</span>
-        </button>
-        <div class="accordion-body">
-             <div class="accordion-body-inner">
-                <ul class="service-points">
-                    <li><i class="fi fi-rr-document"></i> Planes de Restauración Ecológica</li>
-                    <li><i class="fi fi-rr-recycle"></i> Planes de cierre de faena</li>
-                    <li><i class="fi fi-rr-humidity"></i> Éstrategias de Retención Hídrica</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-                  
-    <div class="accordion-item">
-        <button class="accordion-header">
-            Ejecución y Obras
-            <span class="accordion-icon">&rsaquo;</span>
-        </button>
-        <div class="accordion-body">
-            <div class="accordion-body-inner">
-                <ul class="service-points">
-                    <li><i class="fi fi-rr-hand-holding-seeding"></i> Rescate y Relocalización de especies</li>
-                    <li><i class="fi fi-rr-tree"></i> Planes de Reforestación</li>
-                    <li><i class="fi fi-rr-shovel"></i> Obras de Conservación de Suelo y Agua (OCAS)</li>
-                    <li><i class="fi fi-rr-solar-panel-sun"></i> Compromisos Ambientales Voluntarios (CAV)</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-                  
-    <div class="accordion-item">
-        <button class="accordion-header">
-            Asesoría y Cumplimiento
-            <span class="accordion-icon">&rsaquo;</span>
-        </button>
-        <div class="accordion-body">
-             <div class="accordion-body-inner">
-                <ul class="service-points">
-                    <li><i class="fi fi-rr-search-alt"></i> Revisión de informes técnicos</li>
-                    <li><i class="fi fi-rr-scroll-old"></i> Gestión de Permisos Ambientales Sectoriales (PAS)</li>
-                    <li><i class="fi fi-rr-badge-check"></i> Verificación, Auditoría y Certificaciones</li>
-                    <li><i class="fi fi-rr-bookmark"></i> Elaboración Instrumentos de Conservación de Biodiversidad (DRC)</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-                </div>
-        </div>
-    </section>
-
-<section id="kpis" class="section section-kpis">
-    <div class="container">
-        <div class="kpi-grid">
-            <div class="kpi-item"><b data-kpi="0">0</b><span>Años de trayectoria</span></div>
-            <div class="kpi-item"><b data-kpi="1">0</b><span>Regiones</span></div>
-            <div class="kpi-item"><b data-kpi="2">0</b><span>Comunas</span></div>
-            <div class="kpi-item"><b data-kpi="3">0</b><span>Proyectos ejecutados</span></div>
-        </div>
-        <p id="kpi-update-date" style="text-align: center; margin-top: 2rem; opacity: 0.7; font-size: 0.9rem;"></p>
-    </div>
-</section>
-
-    <section id="proyectos" class="section section-full-bg">
-        <div class="grid projects-grid">
-          
-          <article class="project-card" data-project="agricultura">
-            <div class="card-image-wrap">
-              <img alt="Agricultura y Biodiversidad" src="assets/img/proyecto1.jpg" />
-            </div>
-            <div class="card-content">
-              <h4 class="card-title">Plan de Fomento y Conservación de la Biodiversidad</h4>
-              <p class="card-subtitle">Agricultura</p>
-            </div>
-            </article>
-          
-          <article class="project-card" data-project="paitur">
-            <div class="card-image-wrap">
-              <img alt="Pisaje y Turismo" src="assets/img/proyecto2.jpg" />
-            </div>
-            <div class="card-content">
-              <h4 class="card-title">Valor Paisajístico y Turístico</h4>
-              <p class="card-subtitle">Inmobiliario</p>
-            </div>  
-          </article>
-          
-          <article class="project-card" data-project="delhum">
-            <div class="card-image-wrap">
-              <img alt="Humedales" src="assets/img/proyecto3.jpg" />
-            </div>
-            <div class="card-content">
-              <h4 class="card-title">Delimitación de Humedales Urbanos</h4>
-              <p class="card-subtitle">Inmobiliario</p>
-            </div>
-          </article>
-          
-          <article class="project-card" data-project="municipalidad">
-            <div class="card-image-wrap">
-              <img alt="Monitoreo Hídrico" src="assets/img/proyecto4.jpg" />
-            </div>
-            <div class="card-content">
-              <h4 class="card-title">Estrategia de Retención Hídrica</h4>
-              <p class="card-subtitle">Municipalidades</p>
-            </div>
-          </article>
-          
-          <article class="project-card" data-project="saneamientoambiental">
-            <div class="card-image-wrap">
-              <img alt="Paisaje Urbano" src="assets/img/proyecto5.jpg" />
-            </div>
-            <div class="card-content">
-              <h4 class="card-title">Plan de Restauración ecológica</h4>
-              <p class="card-subtitle">Relleno Sanitario</p>
-            </div>
-          </article>
-          
-        </div>
-      </div>
-    </section>
-    
-
-    <section id="nosotros" class="section section-offset">
-      <div class="container">
-        <div class="section-header">
-            <span class="section-tag">Nuestro Equipo</span>
-            <h2>Liderazgo y experiencia a tu servicio</h2>
-            <p>Conoce a los profesionales que lideran nuestra visión y ejecutan nuestros proyectos con excelencia.</p>
-        </div>
-        <div id="team-container"></div>
-      </div>
-    </section>
-
-
-<section id="faq" class="section section-split-feature">
-    <div class="split-feature-content">
-        <div class="split-feature-content-inner">
-            <div class="section-header-left">
-                <span class="section-tag">Resolviendo Dudas</span>
-                <h2>Preguntas Frecuentes</h2>
-                <p>Respuestas a las consultas más comunes sobre nuestro método de trabajo, alcance y colaboración.</p>
-            </div>
-
-            <div class="accordion-container">
-                <div class="accordion-item">
-                    <button class="accordion-header">
-                        ¿En cuánto tiempo pueden entregar una propuesta?
-                        <span class="accordion-icon">&rsaquo;</span>
-                    </button>
-                    <div class="accordion-body">
-                        <div class="accordion-body-inner">
-                            Generalmente dentro de 48–72 horas, según complejidad y antecedentes disponibles.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <button class="accordion-header">
-                        ¿Trabajan en todo Chile?
-                        <span class="accordion-icon">&rsaquo;</span>
-                    </button>
-                    <div class="accordion-body">
-                         <div class="accordion-body-inner">
-                            Sí. Coordinamos logística de terreno y adaptamos protocolos a cada zona.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <button class="accordion-header">
-                        ¿Pueden integrarse a auditorías de certificación?
-                        <span class="accordion-icon">&rsaquo;</span>
-                    </button>
-                    <div class="accordion-body">
-                        <div class="accordion-body-inner">
-                            Apoyamos desde el diagnóstico de brechas hasta el acompañamiento en auditorías.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="split-feature-image">
-        <video playsinline autoplay muted loop style="width:100%; height:100%; object-fit: cover; transform: scale(1);">
-            <source src="assets/videos/faq_video.mp4" type="video/mp4">
+    <main id="content">
+      <section id="hero" class="hero-fullscreen">
+      <video playsinline autoplay muted loop poster="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" id="hero-video">
+          <source src="assets/lbc-video.mp4" type="video/mp4">
+          Tu navegador no soporta videos.
         </video>
-    </div>
-</section>
-    
-    <section id="clientes" class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Han confiado en nosotros</span>
-          <h3>Nuestros Clientes</h3>
-        </div>
-        <div class="logo-scroller">
-          <div class="logo-track">
-            <img src="assets/clientes/1.png" alt="Logo Cliente Altas Cumbres" />
-            <img src="assets/clientes/2.png" alt="Logo Cliente oEnergy" />
-            <img src="assets/clientes/3.png" alt="Logo Cliente Renova" />
-            <img src="assets/clientes/4.png" alt="Logo Cliente Tottus" />
-            <img src="assets/clientes/5.png" alt="Logo Cliente Urbano Proyectos" />
-            <img src="assets/clientes/6.png" alt="Logo Cliente Universidad San Sebastián" />
-            <img src="assets/clientes/7.png" alt="Logo Cliente Verdeplantas" />
-            <img src="assets/clientes/8.png" alt="Logo Cliente Constructora Los Romeros" />
-            <img src="assets/clientes/9.png" alt="Logo Cliente Orionpower" />
-            <img src="assets/clientes/10.png" alt="Logo Cliente Westfalia Fruit" />
-            <img src="assets/clientes/11.png" alt="Logo Cliente PUC" />
-            <img src="assets/clientes/1.png" alt="Logo Cliente Altas Cumbres" />
-            <img src="assets/clientes/2.png" alt="Logo Cliente oEnergy" />
-            <img src="assets/clientes/3.png" alt="Logo Cliente Renova" />
-            <img src="assets/clientes/4.png" alt="Logo Cliente Tottus" />
-            <img src="assets/clientes/5.png" alt="Logo Cliente Urbano Proyectos" />
-            <img src="assets/clientes/6.png" alt="Logo Cliente Universidad San Sebastián" />
-            <img src="assets/clientes/7.png" alt="Logo Cliente Verdeplantas" />
-            <img src="assets/clientes/8.png" alt="Logo Cliente Constructora Los Romeros" />
-            <img src="assets/clientes/9.png" alt="Logo Cliente Orionpower" />
-            <img src="assets/clientes/10.png" alt="Logo Cliente Westfalia Fruit" />
-            <img src="assets/clientes/11.png" alt="Logo Cliente PUC" />
+        <div class="hero-overlay"></div>
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="hero-title">Gestión Ambiental que genera valor</h1>
+            <div class="hero-commitments">
+              <div class="commitment-item">
+                <div class="commitment-icon">
+                  <img src="assets/logos/1.png" alt="Ícono de Rigor científico" style="width: 24px; height: 24px;filter: brightness(0) invert(1);">
+                </div>
+                <div class="commitment-text">
+                  <h3>Eficiencia</h3>
+                  <p>Empleamos la tecnología para ofrecer respuestas rápidas y precisas, convirtiendo los desafíos ambientales en resultados concretos de manera oportuna.</p>
+                </div>
+              </div>
+              
+              <div class="commitment-item">
+                <div class="commitment-icon">
+                  <img src="assets/logos/2.png" alt="Ícono de Análisis espacial" style="width: 24px; height: 24px; filter: brightness(0) invert(1);">
+                </div>
+                <div class="commitment-text">
+                  <h3>Confianza</h3>
+                  <p>Aplicamos metodologías basadas en evidencia, entregando la seguridad necesaria para tomar decisiones estratégicas.</p>
+                </div>
+              </div>
+
+              <div class="commitment-item">
+                <div class="commitment-icon">
+                  <img src="assets/logos/3.png" alt="Ícono de Cumplimiento normativo" style="width: 24px; height: 24px;">
+                </div>
+                <div class="commitment-text">
+                  <h3>Claridad</h3>
+                  <p>Simplificamos el proceso normativo y de gestión, brindando una visión clara desde el diagnóstico hasta la ejecución.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+      </section>
+
+      
+      <section id="servicios" class="section section-split-feature">
+          <div class="split-feature-image">
+              <img src="assets/img/fondo_servicios2.jpg" alt="Equipo profesional colaborando en un proyecto">
+          </div>
+          <div class="split-feature-content">
+              <div class="split-feature-content-inner">
+                  <div class="section-header-left">
+                      <span class="section-tag">Nuestros Servicios</span>
+                      <h2>Soluciones integrales</h2>
+                      <p>Integramos ciencia, tecnología y gestión para transformar desafíos ambientales en oportunidades, entregando la evidencia que necesitas para tomar decisiones estratégicas.</p>
+                  </div>
+
+                  <div class="accordion-container">
+      <div class="accordion-item">
+          <button class="accordion-header">
+              Evaluación y Diagnóstico
+              <span class="accordion-icon">&rsaquo;</span>
+          </button>
+          <div class="accordion-body">
+              <div class="accordion-body-inner">
+                  <ul class="service-points">
+                      <li><i class="fi fi-rr-land-location"></i> Determinación del Área de Influencia (AI)</li>
+                      <li><i class="fi fi-rr-leaf"></i> Líneas Base de Flora y Fauna</li>
+                      <li><i class="fi fi-rr-water"></i> Memorias Agronómicas y Delimitación de Humedales</li>
+                      <li><i class="fi fi-rr-picture"></i> Evaluación de Paisaje y Turismo</li>
+                  </ul>
+              </div>
+          </div>
       </div>
-    </section>
-
-    <section id="contacto" class="section section-offset">
-  <div class="container cta-container">
-    <h2>Tu proyecto ambiental, con claridad</h2>
-    <p>Cuéntanos tu necesidad y te contactaremos de manera directa para ofrecerte la asesoría de un especialista en el área.</p>
-
-    <form name="contact" class="contact-form-simple" method="POST" data-netlify="true">
-      <input type="hidden" name="form-name" value="contact" />
-
-      <div class="form-fields">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-          <input type="name" name="Nombre" placeholder="Nombre y Apellido" required>
-          <input type="organization" name="Organización" placeholder="Organización">
-          <input type="email" name="email" placeholder="Tu correo electrónico" required>
-          <input type="tel" name="telefono" placeholder="+56 9 XXXXXXXX">
-        </div>
-        <select name="servicio" required>
-          <option value="">Selecciona un servicio de interés...</option>
-          <optgroup label="Evaluación y Diagnóstico">
-            <option value="Flora y Vegetación">LB Flora y Vegetación</option>
-            <option value="Fauna Silvestre">LB Fauna Silvestre</option>
-            <option value="Análisis de Paisaje y Turismo">Análisis de Paisaje y Turismo</option>
-            <option value="Edafología y Humedales">Edafología y Humedales</option>
-          </optgroup>
-          <optgroup label="Planificación y Diseño">
-            <option value="Planes de Manejo y Conservación">Planes de Restauración Ecológica</option>
-            <option value="Diseño de Restauración Ecológica">Diseño de Restauración Ecológica</option>
-            <option value="Diseño de Áreas Verdes y Eco-jardines">Diseño de Estrategias de Retención Hídrica</option>
-          </optgroup>
-          <optgroup label="Ejecución y Obras">
-            <option value="Rescate y Relocalización de Especies">Rescate y Relocalización de Especies</option>
-            <option value="Obras de Restauración y Reforestación">Obras de Plantación y Reforestación</option>
-            <option value="Perturbaciones Controladas">Perturbaciones Controladas</option>
-            <option value="Perturbaciones Controladas">Compromisos Ambientales Voluntarios</option>
-          </optgroup>
-          <optgroup label="Asesoría y Cumplimiento">
-            <option value="Gestión Ambiental y Regulatoria">Gestión Ambiental y Regulatoria</option>
-            <option value="Certificaciones y Auditorías">Certificaciones y Auditorías</option>
-            <option value="Instrumentos de Conservación">Instrumentos de Conservación</option>
-          </optgroup>
-        </select>
+                    
+      <div class="accordion-item">
+          <button class="accordion-header">
+              Planificación y Diseño
+              <span class="accordion-icon">&rsaquo;</span>
+          </button>
+          <div class="accordion-body">
+              <div class="accordion-body-inner">
+                  <ul class="service-points">
+                      <li><i class="fi fi-rr-document"></i> Planes de Restauración Ecológica</li>
+                      <li><i class="fi fi-rr-recycle"></i> Planes de cierre de faena</li>
+                      <li><i class="fi fi-rr-humidity"></i> Éstrategias de Retención Hídrica</li>
+                  </ul>
+              </div>
+          </div>
       </div>
-      <button type="submit" class="btn btn-primary">Contactar</button>
-      <small class="form-status" id="leadStatusHome" role="status" aria-live="polite"></small>
-    </form>
+                    
+      <div class="accordion-item">
+          <button class="accordion-header">
+              Ejecución y Obras
+              <span class="accordion-icon">&rsaquo;</span>
+          </button>
+          <div class="accordion-body">
+              <div class="accordion-body-inner">
+                  <ul class="service-points">
+                      <li><i class="fi fi-rr-hand-holding-seeding"></i> Rescate y Relocalización de especies</li>
+                      <li><i class="fi fi-rr-tree"></i> Planes de Reforestación</li>
+                      <li><i class="fi fi-rr-shovel"></i> Obras de Conservación de Suelo y Agua (OCAS)</li>
+                      <li><i class="fi fi-rr-solar-panel-sun"></i> Compromisos Ambientales Voluntarios (CAV)</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+                    
+      <div class="accordion-item">
+          <button class="accordion-header">
+              Asesoría y Cumplimiento
+              <span class="accordion-icon">&rsaquo;</span>
+          </button>
+          <div class="accordion-body">
+              <div class="accordion-body-inner">
+                  <ul class="service-points">
+                      <li><i class="fi fi-rr-search-alt"></i> Revisión de informes técnicos</li>
+                      <li><i class="fi fi-rr-scroll-old"></i> Gestión de Permisos Ambientales Sectoriales (PAS)</li>
+                      <li><i class="fi fi-rr-badge-check"></i> Verificación, Auditoría y Certificaciones</li>
+                      <li><i class="fi fi-rr-bookmark"></i> Elaboración Instrumentos de Conservación de Biodiversidad (DRC)</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
   </div>
-</section>
-  </main>
+                  </div>
+          </div>
+      </section>
 
-  <footer class="footer">
-    <div class="container">
-      <img src="assets/logos/iconolbc.png" alt="Logo LBC" class="footer-logo"/>
-      <p>LBC Consultores Ambientales © <span id="y"></span></p>
-      <p class="footer-contact"><a href="mailto:proyectos@lbconservation.org">proyectos@lbconservation.org</a></p>
-    </div>
-  </footer>
+  <section id="kpis" class="section section-kpis">
+      <div class="container">
+          <div class="kpi-grid">
+              <div class="kpi-item"><b data-kpi="0">0</b><span>Años de trayectoria</span></div>
+              <div class="kpi-item"><b data-kpi="1">0</b><span>Regiones</span></div>
+              <div class="kpi-item"><b data-kpi="2">0</b><span>Comunas</span></div>
+              <div class="kpi-item"><b data-kpi="3">0</b><span>Proyectos ejecutados</span></div>
+          </div>
+          <p id="kpi-update-date" style="text-align: center; margin-top: 2rem; opacity: 0.7; font-size: 0.9rem;"></p>
+      </div>
+  </section>
 
-  <div id="projectModal" class="modal">
-    <div class="modal-content">
-        <span class="close-btn" aria-label="Cerrar">&times;</span>
-        
-        <div class="modal-body">
-            <div class="modal-image-col">
-                <img id="modalImage" src="" alt="Imagen del proyecto" />
-            </div>
+      <section id="proyectos" class="section section-full-bg">
+          <div class="grid projects-grid">
             
-            <div class="modal-text-col">
-                <h2 id="modalTitle"></h2>
-                <p class="modal-subtitle" id="modalSubtitle"></p>
-                <hr/>
-                <p id="modalDescription"></p>
-            </div>
+            <article class="project-card" data-project="agricultura">
+              <div class="card-image-wrap">
+                <img alt="Agricultura y Biodiversidad" src="assets/img/proyecto1.jpg" />
+              </div>
+              <div class="card-content">
+                <h4 class="card-title">Plan de Fomento y Conservación de la Biodiversidad</h4>
+                <p class="card-subtitle">Agricultura</p>
+              </div>
+              </article>
+            
+            <article class="project-card" data-project="paitur">
+              <div class="card-image-wrap">
+                <img alt="Pisaje y Turismo" src="assets/img/proyecto2.jpg" />
+              </div>
+              <div class="card-content">
+                <h4 class="card-title">Valor Paisajístico y Turístico</h4>
+                <p class="card-subtitle">Inmobiliario</p>
+              </div>  
+            </article>
+            
+            <article class="project-card" data-project="delhum">
+              <div class="card-image-wrap">
+                <img alt="Humedales" src="assets/img/proyecto3.jpg" />
+              </div>
+              <div class="card-content">
+                <h4 class="card-title">Delimitación de Humedales Urbanos</h4>
+                <p class="card-subtitle">Inmobiliario</p>
+              </div>
+            </article>
+            
+            <article class="project-card" data-project="municipalidad">
+              <div class="card-image-wrap">
+                <img alt="Monitoreo Hídrico" src="assets/img/proyecto4.jpg" />
+              </div>
+              <div class="card-content">
+                <h4 class="card-title">Estrategia de Retención Hídrica</h4>
+                <p class="card-subtitle">Municipalidades</p>
+              </div>
+            </article>
+            
+            <article class="project-card" data-project="saneamientoambiental">
+              <div class="card-image-wrap">
+                <img alt="Paisaje Urbano" src="assets/img/proyecto5.jpg" />
+              </div>
+              <div class="card-content">
+                <h4 class="card-title">Plan de Restauración ecológica</h4>
+                <p class="card-subtitle">Relleno Sanitario</p>
+              </div>
+            </article>
+            
+          </div>
         </div>
-    </div>
-</div>
+      </section>
+      
+
+      <section id="nosotros" class="section section-offset">
+        <div class="container">
+          <div class="section-header">
+              <span class="section-tag">Nuestro Equipo</span>
+              <h2>Liderazgo y experiencia a tu servicio</h2>
+              <p>Conoce a los profesionales que lideran nuestra visión y ejecutan nuestros proyectos con excelencia.</p>
+          </div>
+          <div id="team-container"></div>
+        </div>
+      </section>
 
 
-  
+  <section id="faq" class="section section-split-feature">
+      <div class="split-feature-content">
+          <div class="split-feature-content-inner">
+              <div class="section-header-left">
+                  <span class="section-tag">Resolviendo Dudas</span>
+                  <h2>Preguntas Frecuentes</h2>
+                  <p>Respuestas a las consultas más comunes sobre nuestro método de trabajo, alcance y colaboración.</p>
+              </div>
 
-  <script src="assets/site.js"></script>
-  <script>
-    (function(){
-      const fullTeam = [
-          { name:"Camilo López", role:"Director Operativo", group:"directiva", photo:"assets/team/directiva-1.jpg" },
-          { name:"Víctor Aguilera", role:"Director Ejecutivo", group:"directiva", photo:"assets/team/directiva-2.jpg" },
-          { name:"César Figueroa", role:"Director de Proyectos", group:"directiva", photo:"assets/team/directiva-3.jpg" },
-          { name:"Álvaro Escobar Jackson", role:"Conservación y Medio Biótico", group:"tecnico", photo:"assets/team/tecnico-1.jpg" },
-          { name:"David Vásquez Stuardo", role:"Ecosistemas Terrestres y Biodiversidad", group:"tecnico", photo:"assets/team/tecnico-2.jpg" },
-          { name:"Sebastián Moller Cepeda", role:"Flora y Vegetación", group:"tecnico", photo:"assets/team/tecnico-3.jpg" },
-          { name:"Nadia Fabres", role:"Operaciones y Sistematización", group:"tecnico", photo:"assets/team/tecnico-4.jpg" },
-      ];
-      const directiva = fullTeam.filter(m => m.group === 'directiva');
-      const tecnico = fullTeam.filter(m => m.group === 'tecnico');
-      const container = document.getElementById('team-container');
-      const createTeamGridHTML = (members) => {
-          return members.map(member => `
-            <div class="team-member">
-              <img src="${member.photo}" alt="Foto de ${member.name}" />
-              <h3>${member.name}</h3>
-              <p>${member.role}</p>
+              <div class="accordion-container">
+                  <div class="accordion-item">
+                      <button class="accordion-header">
+                          ¿En cuánto tiempo pueden entregar una propuesta?
+                          <span class="accordion-icon">&rsaquo;</span>
+                      </button>
+                      <div class="accordion-body">
+                          <div class="accordion-body-inner">
+                              Generalmente dentro de 48–72 horas, según complejidad y antecedentes disponibles.
+                          </div>
+                      </div>
+                  </div>
+                  <div class="accordion-item">
+                      <button class="accordion-header">
+                          ¿Trabajan en todo Chile?
+                          <span class="accordion-icon">&rsaquo;</span>
+                      </button>
+                      <div class="accordion-body">
+                          <div class="accordion-body-inner">
+                              Sí. Coordinamos logística de terreno y adaptamos protocolos a cada zona.
+                          </div>
+                      </div>
+                  </div>
+                  <div class="accordion-item">
+                      <button class="accordion-header">
+                          ¿Pueden integrarse a auditorías de certificación?
+                          <span class="accordion-icon">&rsaquo;</span>
+                      </button>
+                      <div class="accordion-body">
+                          <div class="accordion-body-inner">
+                              Apoyamos desde el diagnóstico de brechas hasta el acompañamiento en auditorías.
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      <div class="split-feature-image">
+          <video playsinline autoplay muted loop style="width:100%; height:100%; object-fit: cover; transform: scale(1);">
+              <source src="assets/videos/faq_video.mp4" type="video/mp4">
+          </video>
+      </div>
+  </section>
+      
+      <section id="clientes" class="section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Han confiado en nosotros</span>
+            <h3>Nuestros Clientes</h3>
+          </div>
+          <div class="logo-scroller">
+            <div class="logo-track">
+              <img src="assets/clientes/1.png" alt="Logo Cliente Altas Cumbres" />
+              <img src="assets/clientes/2.png" alt="Logo Cliente oEnergy" />
+              <img src="assets/clientes/3.png" alt="Logo Cliente Renova" />
+              <img src="assets/clientes/4.png" alt="Logo Cliente Tottus" />
+              <img src="assets/clientes/5.png" alt="Logo Cliente Urbano Proyectos" />
+              <img src="assets/clientes/6.png" alt="Logo Cliente Universidad San Sebastián" />
+              <img src="assets/clientes/7.png" alt="Logo Cliente Verdeplantas" />
+              <img src="assets/clientes/8.png" alt="Logo Cliente Constructora Los Romeros" />
+              <img src="assets/clientes/9.png" alt="Logo Cliente Orionpower" />
+              <img src="assets/clientes/10.png" alt="Logo Cliente Westfalia Fruit" />
+              <img src="assets/clientes/11.png" alt="Logo Cliente PUC" />
+              <img src="assets/clientes/1.png" alt="Logo Cliente Altas Cumbres" />
+              <img src="assets/clientes/2.png" alt="Logo Cliente oEnergy" />
+              <img src="assets/clientes/3.png" alt="Logo Cliente Renova" />
+              <img src="assets/clientes/4.png" alt="Logo Cliente Tottus" />
+              <img src="assets/clientes/5.png" alt="Logo Cliente Urbano Proyectos" />
+              <img src="assets/clientes/6.png" alt="Logo Cliente Universidad San Sebastián" />
+              <img src="assets/clientes/7.png" alt="Logo Cliente Verdeplantas" />
+              <img src="assets/clientes/8.png" alt="Logo Cliente Constructora Los Romeros" />
+              <img src="assets/clientes/9.png" alt="Logo Cliente Orionpower" />
+              <img src="assets/clientes/10.png" alt="Logo Cliente Westfalia Fruit" />
+              <img src="assets/clientes/11.png" alt="Logo Cliente PUC" />
             </div>
-          `).join('');
-      };
-      if(container) {
-        container.innerHTML = `
-          <h3 class="team-group-title">Equipo Directivo</h3>
-          <div class="team-grid">
-            ${createTeamGridHTML(directiva)}
           </div>
-          <h3 class="team-group-title">Líderes de Área</h3>
-          <div class="team-grid team-grid-technical">
-            ${createTeamGridHTML(tecnico)}
-          </div>
-        `;
-      }
-    })();
-  </script>
+        </div>
+      </section>
 
-<script>
-    document.addEventListener('contextmenu', function(e) {
-        e.preventDefault();
-    });
-</script>
-  
-</body>
+      <section id="contacto" class="section section-offset">
+    <div class="container cta-container">
+      <h2>Tu proyecto ambiental, con claridad</h2>
+      <p>Cuéntanos tu necesidad y te contactaremos de manera directa para ofrecerte la asesoría de un especialista en el área.</p>
+
+      <form name="contact" class="contact-form-simple" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact" />
+
+        <div class="form-fields">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <input type="name" name="Nombre" placeholder="Nombre y Apellido" required>
+            <input type="organization" name="Organización" placeholder="Organización">
+            <input type="email" name="email" placeholder="Tu correo electrónico" required>
+            <input type="tel" name="telefono" placeholder="+56 9 XXXXXXXX">
+          </div>
+          <select name="servicio" required>
+            <option value="">Selecciona un servicio de interés...</option>
+            <optgroup label="Evaluación y Diagnóstico">
+              <option value="Flora y Vegetación">LB Flora y Vegetación</option>
+              <option value="Fauna Silvestre">LB Fauna Silvestre</option>
+              <option value="Análisis de Paisaje y Turismo">Análisis de Paisaje y Turismo</option>
+              <option value="Edafología y Humedales">Edafología y Humedales</option>
+            </optgroup>
+            <optgroup label="Planificación y Diseño">
+              <option value="Planes de Manejo y Conservación">Planes de Restauración Ecológica</option>
+              <option value="Diseño de Restauración Ecológica">Diseño de Restauración Ecológica</option>
+              <option value="Diseño de Áreas Verdes y Eco-jardines">Diseño de Estrategias de Retención Hídrica</option>
+            </optgroup>
+            <optgroup label="Ejecución y Obras">
+              <option value="Rescate y Relocalización de Especies">Rescate y Relocalización de Especies</option>
+              <option value="Obras de Restauración y Reforestación">Obras de Plantación y Reforestación</option>
+              <option value="Perturbaciones Controladas">Perturbaciones Controladas</option>
+              <option value="Perturbaciones Controladas">Compromisos Ambientales Voluntarios</option>
+            </optgroup>
+            <optgroup label="Asesoría y Cumplimiento">
+              <option value="Gestión Ambiental y Regulatoria">Gestión Ambiental y Regulatoria</option>
+              <option value="Certificaciones y Auditorías">Certificaciones y Auditorías</option>
+              <option value="Instrumentos de Conservación">Instrumentos de Conservación</option>
+            </optgroup>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Contactar</button>
+        <small class="form-status" id="leadStatusHome" role="status" aria-live="polite"></small>
+      </form>
+    </div>
+  </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <img src="assets/logos/iconolbc.png" alt="Logo LBC" class="footer-logo"/>
+        <p>LBC Consultores Ambientales © <span id="y"></span></p>
+        <p class="footer-contact"><a href="mailto:proyectos@lbconservation.org">proyectos@lbconservation.org</a></p>
+      </div>
+    </footer>
+
+    <div id="projectModal" class="modal">
+      <div class="modal-content">
+          <span class="close-btn" aria-label="Cerrar">&times;</span>
+          
+          <div class="modal-body">
+              <div class="modal-image-col">
+                  <img id="modalImage" src="" alt="Imagen del proyecto" />
+              </div>
+              
+              <div class="modal-text-col">
+                  <h2 id="modalTitle"></h2>
+                  <p class="modal-subtitle" id="modalSubtitle"></p>
+                  <hr/>
+                  <p id="modalDescription"></p>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
+    
+
+    <script src="assets/site.js"></script>
+    <script>
+      (function(){
+        const fullTeam = [
+            { name:"Camilo López", role:"Director Operativo", group:"directiva", photo:"assets/team/directiva-1.jpg" },
+            { name:"Víctor Aguilera", role:"Director Ejecutivo", group:"directiva", photo:"assets/team/directiva-2.jpg" },
+            { name:"César Figueroa", role:"Director de Proyectos", group:"directiva", photo:"assets/team/directiva-3.jpg" },
+            { name:"Álvaro Escobar Jackson", role:"Conservación y Medio Biótico", group:"tecnico", photo:"assets/team/tecnico-1.jpg" },
+            { name:"David Vásquez Stuardo", role:"Ecosistemas Terrestres y Biodiversidad", group:"tecnico", photo:"assets/team/tecnico-2.jpg" },
+            { name:"Sebastián Moller Cepeda", role:"Flora y Vegetación", group:"tecnico", photo:"assets/team/tecnico-3.jpg" },
+            { name:"Nadia Fabres", role:"Operaciones y Sistematización", group:"tecnico", photo:"assets/team/tecnico-4.jpg" },
+        ];
+        const directiva = fullTeam.filter(m => m.group === 'directiva');
+        const tecnico = fullTeam.filter(m => m.group === 'tecnico');
+        const container = document.getElementById('team-container');
+        const createTeamGridHTML = (members) => {
+            return members.map(member => `
+              <div class="team-member">
+                <img src="${member.photo}" alt="Foto de ${member.name}" />
+                <h3>${member.name}</h3>
+                <p>${member.role}</p>
+              </div>
+            `).join('');
+        };
+        if(container) {
+          container.innerHTML = `
+            <h3 class="team-group-title">Equipo Directivo</h3>
+            <div class="team-grid">
+              ${createTeamGridHTML(directiva)}
+            </div>
+            <h3 class="team-group-title">Líderes de Área</h3>
+            <div class="team-grid team-grid-technical">
+              ${createTeamGridHTML(tecnico)}
+            </div>
+          `;
+        }
+      })();
+    </script>
+
+  <script>
+      document.addEventListener('contextmenu', function(e) {
+          e.preventDefault();
+      });
+  </script>
+    
+  </body>
 </html>
