@@ -292,6 +292,7 @@ window.addEventListener('load', function() {
                 preloader.style.display = 'none';
                 if (content) {
                     content.style.display = 'block'; // Muestra el contenido principal
+                                      window.scrollTo(0, 0);
                 }
             }, { once: true });
         }, 800); // Espera 0.8s para que el logo se desvanezca
