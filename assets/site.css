@@ -311,7 +311,7 @@ img { max-width: 100%; display: block; }
 }
 
 #proyectos .project-card:hover .card-content {
-    opacity: 1;
+    opacity: 0.8;
     background-color: rgba(66, 3, 23, 0.70);
 }
 
