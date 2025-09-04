@@ -524,7 +524,7 @@ img { max-width: 100%; display: block; }
     width: 85%;
     max-width: 1400px;
     min-width: 900px;
-    max-height: 80vh;
+    max-height: 100vh;
     position: relative;
     box-shadow: 
         0 32px 64px rgba(0, 0, 0, 0.2),
