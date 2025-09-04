@@ -1231,6 +1231,7 @@ img { max-width: 100%; display: block; }
     }
 }
 
-#content {
+/* Nuevo CSS para ocultar la página completa */
+#website-content {
     display: none;
 }
