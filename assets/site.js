@@ -274,7 +274,7 @@ if (netlifyForm) {
    ========================================================= */
 const preloader = document.querySelector('.preloader');
 const logo = document.querySelector('.preloader-logo');
-const content = document.getElementById('content'); // Asumiendo que el contenido principal está en un elemento con ID 'content'
+const content = document.getElementById('website-content');
 
 window.addEventListener('load', function() {
     // 1. Animación de Entrada del logo
