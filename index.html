@@ -388,24 +388,23 @@
     </footer>
 
     <div id="projectModal" class="modal">
-      <div class="modal-content">
-          <span class="close-btn" aria-label="Cerrar">&times;</span>
-          
-          <div class="modal-body">
-              <div class="modal-image-col">
-                  <img id="modalImage" src="" alt="Imagen del proyecto" />
-              </div>
-              
-              <div class="modal-text-col">
-                  <h2 id="modalTitle"></h2>
-                  <p class="modal-subtitle" id="modalSubtitle"></p>
-                  <hr/>
-                  <p id="modalDescription"></p>
-              </div>
-          </div>
-      </div>
-  </div>
-  </div>
+    <div class="modal-content">
+        <span class="close-btn" aria-label="Cerrar">&times;</span>
+        
+        <div class="modal-body">
+            <div class="modal-image-col">
+                <img id="modalImage" src="" alt="Imagen del proyecto" />
+            </div>
+            
+            <div class="modal-text-col">
+                <h2 id="modalTitle"></h2>
+                <p class="modal-subtitle" id="modalSubtitle"></p>
+                <hr/>
+                <p id="modalDescription"></p>
+            </div>
+        </div>
+    </div>
+</div>
     
 
     <script src="assets/site.js"></script>
@@ -445,6 +444,76 @@
           `;
         }
       })();
+
+       (function() {
+        const modal = document.getElementById('projectModal');
+        const closeBtn = $('.close-btn');
+        const projectCards = $$('.project-card');
+
+        // Datos de los proyectos
+        const projectData = {
+            agricultura: {
+                title: 'Plan de Fomento y Conservación de la Biodiversidad',
+                subtitle: 'Auditoría y Planes de Conservación en Predios Agrícolas',
+                image: 'assets/img/proyecto1.jpg',
+                description: 'En el contexto de auditoría de la norma LEAF 16.1, se desarrolló un levantamiento integral de flora, fauna y condición biológica de suelos en cinco predios agrícolas de las regiones Metropolitana y de Coquimbo, con superficies que van desde 80 hasta más de 1.000 hectáreas. El proyecto incluyó la identificación de formaciones vegetacionales, el registro de especies nativas y endémicas, y la evaluación de la calidad del suelo. Con base en esta información se elaboraron planes de mejora y conservación para cada predio, que contemplan capacitación, monitoreo de especies clave y acciones de restauración ecológica. El trabajo constituye un modelo replicable para armonizar la producción agrícola con la conservación del paisaje y la biodiversidad en distintas escalas territoriales.',
+                link: '#'
+            },
+            paitur: {
+                title: 'Valor Paisajístico y Turístico',
+                subtitle: 'Determinación del Valor Paisajístico y Turístico en Proyectos Inmobiliarios',
+                image: 'assets/img/proyecto2.jpg',
+                description: 'Desarrollamos una metodología que integra análisis SIG y evaluación de percepción para determinar el valor escénico de un predio inmobiliario en Pucón. El estudio permitió identificar las zonas con mayor potencial paisajístico para el desarrollo de proyectos turísticos sostenibles, resguardando las áreas de alto valor natural y minimizando el impacto visual en el entorno. Este enfoque ayudó al cliente a tomar decisiones estratégicas de planificación que optimizan la rentabilidad del proyecto mientras se conserva la belleza natural del lugar.',
+                link: '#'
+            },
+            delhum: {
+                title: 'Delimitación de Humedales Urbanos',
+                subtitle: 'Cumplimiento de la Ley N°21.202',
+                image: 'assets/img/proyecto3.jpg',
+                description: 'En el marco de la Ley N°21.202 de Delimitación de Humedales Urbanos, desarrollamos un estudio especializado de delimitación y caracterización de humedales urbanos en un área de 1,5 hectáreas ubicada en la comuna de Valdivia, Región de Los Ríos. El proyecto aplicó la metodología establecida por el Reglamento de la Ley N° 21.202 y la Guía de Delimitación y Caracterización de Humedales Urbanos de Chile, evaluando tres criterios técnicos fundamentales: presencia de vegetación hidrófila, suelos hídricos y régimen hidrológico de saturación. A través de 17 calicatas de suelo, 10 parcelas de muestreo florístico y 17 puntos de evaluación hidrológica, se identificaron 31 especies vegetales (29% nativas), 8 especies hidrófilas y 4 unidades vegetacionales diferenciadas. El estudio determinó que 0,85 hectáreas del área cumplen con los criterios de humedal urbano, estableciendo una delimitación técnica precisa mediante superposición cartográfica aditiva de los tres criterios evaluados. El trabajo constituye un modelo metodológico riguroso para la identificación y protección de humedales urbanos en contextos periurbanos del sur de Chile.',
+                link: '#'
+            }
+        };
+
+        function openModal(projectKey) {
+            const data = projectData[projectKey];
+            if (!data) return;
+
+            $('#modalTitle').textContent = data.title;
+            $('#modalSubtitle').textContent = data.subtitle;
+            $('#modalImage').src = data.image;
+            $('#modalDescription').textContent = data.description;
+
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Evita el scroll del fondo
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+            document.body.style.overflow = ''; // Habilita el scroll del fondo
+        }
+
+        // Escuchar clics en las fichas de proyectos
+        projectCards.forEach(card => {
+            card.addEventListener('click', (e) => {
+                const projectKey = card.dataset.project;
+                if (projectKey) {
+                    openModal(projectKey);
+                }
+            });
+        });
+
+        // Escuchar clic en el botón de cierre
+        closeBtn.addEventListener('click', closeModal);
+
+        // Cerrar si el usuario hace clic fuera del modal
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+    })();
     </script>
 
   <script>
