@@ -1243,3 +1243,21 @@ img { max-width: 100%; display: block; }
     opacity: 0;
     transition: opacity 0.5s ease;
 }
+
+
+#website-content {
+  /* Asegura que la web no sea visible al inicio. */
+  opacity: 0;
+  /* Define la duración de la transición de entrada. */
+  transition: opacity 1s ease-in-out; 
+}
+
+body.preloader-active #website-content {
+  /* Permite el cross-fade al ir de 0 a 1 */
+  opacity: 0; 
+}
+
+body:not(.preloader-active) #website-content {
+  /* Una vez que la clase se remueve, la opacidad se vuelve 1. */
+  opacity: 1;
+}
