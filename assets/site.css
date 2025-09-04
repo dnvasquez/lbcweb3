@@ -504,7 +504,6 @@ img { max-width: 100%; display: block; }
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     padding: 2rem;
-    display: flex; /* Nuevo: usar flexbox para centrar */
     align-items: center;
     justify-content: center;
 }
