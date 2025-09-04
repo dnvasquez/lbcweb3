@@ -311,7 +311,7 @@ img { max-width: 100%; display: block; }
 }
 
 #proyectos .project-card:hover .card-content {
-    opacity: 0.8;
+    opacity: 1;
     background-color: rgba(66, 3, 23, 0.70);
 }
 
@@ -500,7 +500,7 @@ img { max-width: 100%; display: block; }
 }
 
 .modal-content {
-    background-color: var(--surface-white);
+    background-color: rgba(255, 255, 255, 0.8);
     margin: 5% auto;
     padding: 0;
     border-radius: 0; /* Eliminado el borde redondeado */
