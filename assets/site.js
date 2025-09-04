@@ -213,13 +213,12 @@ if (netlifyForm) {
             link: '#'
         },
         paitur: {
-            title: 'Paisaje y Turismo',
-            subtitle: 'Determinación del Valor Paisajístico y Turístico',
+            title: 'Valor Paisajístico y Turístico',
+            subtitle: 'Determinación del Valor Paisajístico y Turístico en Proyectos Inmobiliarios',
             image: 'assets/img/proyecto2.jpg',
-            description: 'Creación de modelos espaciales multicriterio para identificar las zonas óptimas para proyectos de restauración. Se integraron variables como la calidad del suelo, la cobertura vegetal, la distancia a fuentes de agua y la conectividad del paisaje para generar mapas estratégicos que maximizan el retorno de la inversión en conservación.',
+            description: 'Desarrollamos una metodología que integra análisis SIG y evaluación de percepción para determinar el valor escénico de un predio inmobiliario en Pucón. El estudio permitió identificar las zonas con mayor potencial paisajístico para el desarrollo de proyectos turísticos sostenibles, resguardando las áreas de alto valor natural y minimizando el impacto visual en el entorno. Este enfoque ayudó al cliente a tomar decisiones estratégicas de planificación que optimizan la rentabilidad del proyecto mientras se conserva la belleza natural del lugar.',
             link: '#'
         },
-      
         delhum: {
             title: 'Delimitación de Humedales Urbanos',
             subtitle: 'Cumplimiento de la Ley N°21.202',
@@ -227,7 +226,6 @@ if (netlifyForm) {
             description: 'En el marco de la Ley N°21.202 de Delimitación de Humedales Urbanos, desarrollamos un estudio especializado de delimitación y caracterización de humedales urbanos en un área de 1,5 hectáreas ubicada en la comuna de Valdivia, Región de Los Ríos. El proyecto aplicó la metodología establecida por el Reglamento de la Ley N° 21.202 y la Guía de Delimitación y Caracterización de Humedales Urbanos de Chile, evaluando tres criterios técnicos fundamentales: presencia de vegetación hidrófila, suelos hídricos y régimen hidrológico de saturación. A través de 17 calicatas de suelo, 10 parcelas de muestreo florístico y 17 puntos de evaluación hidrológica, se identificaron 31 especies vegetales (29% nativas), 8 especies hidrófilas y 4 unidades vegetacionales diferenciadas. El estudio determinó que 0,85 hectáreas del área cumplen con los criterios de humedal urbano, estableciendo una delimitación técnica precisa mediante superposición cartográfica aditiva de los tres criterios evaluados. El trabajo constituye un modelo metodológico riguroso para la identificación y protección de humedales urbanos en contextos periurbanos del sur de Chile.',
             link: '#'
         },
-      
         municipalidad: {
             title: 'Estrategia de retención hídrica',
             subtitle: 'SbN para la gestión hídrica',
@@ -235,7 +233,6 @@ if (netlifyForm) {
             description: 'En el marco de la crisis hídrica que enfrenta la Región Metropolitana, como equipo consultor desarrollamos una propuesta integral de diseño de estrategia de retención hídrica en las 5.400 hectáreas administradas por la Asociación Parque Cordillera en la precordillera de la Región Metropolitana de Chile. Estructuramos el proyecto como un estudio multidisciplinario que combinó análisis técnico-científico con validación social participativa, aplicando metodologías de revisión bibliográfica de experiencias nacionales e internacionales, análisis multicriterio para zonificación territorial, y entrevistas semi-estructuradas a expertos en restauración ecológica, hidrología y planificación territorial. Integramos especialistas en soluciones basadas en la naturaleza, geomática y sistemas de información geográfica, componente social y gobernanza territorial, arquitectura paisajística y coordinación general de proyectos ambientales. Nuestro objetivo fue posicionar a la precordillera de Santiago como un espacio resiliente frente al cambio climático, donde las Soluciones basadas en la Naturaleza permitan restaurar y conservar la funcionalidad hídrica del ecosistema, estableciendo a APC como referente en gestión hídrica y educación ambiental a escala metropolitana. Diseñamos el proyecto incluyendo cinco ejes estratégicos complementarios que abarcan desde investigación aplicada hasta articulación de actores territoriales.',
             link: '#'
         },
-      
         saneamientoambiental: {
             title: 'Plan de restauración ecológica',
             subtitle: 'Evaluación, diseño y ejecución',
@@ -279,7 +276,6 @@ if (netlifyForm) {
             closeModal();
         }
     });
-
 })();
 
 /* =========================================================
@@ -287,22 +283,27 @@ if (netlifyForm) {
    ========================================================= */
 const preloader = document.querySelector('.preloader');
 const logo = document.querySelector('.preloader-logo');
+const content = document.getElementById('website-content');
 const body = document.body;
 
 window.addEventListener('load', function() {
     // 1. Animación de Entrada del logo
     logo.style.animation = 'logoFadeIn 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards';
 
-    // 2. Espera 2 segundos y luego inicia la transición de salida del logo y el preloader.
+    // 2. Espera 2 segundos y luego inicia la animación de salida del logo y el preloader
     setTimeout(function() {
-        // Activa la transición de desvanecimiento del preloader.
-        preloader.classList.add('hidden');
+        // Animación de Salida del logo
+        logo.style.animation = 'logoPureFadeOut 0.8s ease-out forwards';
 
-        // Permite que la web sea visible después de un breve retraso.
+        // Oculta el preloader completo después de un breve retraso
         setTimeout(function() {
-            body.classList.remove('preloader-active'); // Elimina la clase de precarga
-            window.scrollTo(0, 0); // Vuelve a llevar la página al inicio
-            history.replaceState(null, '', ' '); // Elimina el ancla de la URL
-        }, 800); // El retardo debe ser menor o igual a la duración de la transición CSS.
+            preloader.style.opacity = '0';
+            preloader.addEventListener('transitionend', function() {
+                preloader.style.display = 'none';
+                body.classList.remove('preloader-active'); // Elimina la clase de precarga
+                window.scrollTo(0, 0); // Vuelve a llevar la página al inicio
+                history.replaceState(null, '', ' '); // Elimina el ancla de la URL
+            }, { once: true });
+        }, 800); // Espera 0.8s para que el logo se desvanezca
     }, 2000); // Muestra el logo por 2s
 });
