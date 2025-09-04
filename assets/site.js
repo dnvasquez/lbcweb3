@@ -195,107 +195,77 @@ if (netlifyForm) {
   });
 })();
 
-// =========================================================
-// JavaScript para el Modal de Proyectos
-// =========================================================
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Elementos del modal
+/* =========================================================
+   FUNCIONALIDAD PARA MODAL DE PROYECTOS
+   ========================================================= */
+(function() {
     const modal = document.getElementById('projectModal');
-    const closeBtn = modal.querySelector('.close-btn');
-    const modalImage = document.getElementById('modalImage');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalSubtitle = document.getElementById('modalSubtitle');
-    const modalDescription = document.getElementById('modalDescription');
+    const closeBtn = $('.close-btn');
+    const projectCards = $$('.project-card');
 
-    // Función para abrir el modal
-    function openModal(projectData) {
-        // Llenar el contenido del modal
-        modalImage.src = projectData.image || '';
-        modalImage.alt = projectData.title || 'Imagen del proyecto';
-        modalTitle.textContent = projectData.title || '';
-        modalSubtitle.textContent = projectData.subtitle || '';
-        modalDescription.innerHTML = projectData.description || '';
+    // Datos de los proyectos
+    const projectData = {
+        agricultura: {
+  title: 'Plan de Fomento y Conservación de la Biodiversidad',
+  subtitle: 'Auditoría y Planes de Conservación en Predios Agrícolas',
+  image: 'assets/img/proyecto1.jpg',
+  description: 'En el contexto de auditoría de la norma LEAF 16.1, se desarrolló un levantamiento integral de flora, fauna y condición biológica de suelos en cinco predios agrícolas de las regiones Metropolitana y de Coquimbo, con superficies que van desde 80 hasta más de 1.000 hectáreas. El proyecto incluyó la identificación de formaciones vegetacionales, el registro de especies nativas y endémicas, y la evaluación de la calidad del suelo. Con base en esta información se elaboraron planes de mejora y conservación para cada predio, que contemplan capacitación, monitoreo de especies clave y acciones de restauración ecológica. El trabajo constituye un modelo replicable para armonizar la producción agrícola con la conservación del paisaje y la biodiversidad en distintas escalas territoriales.',
+  link: '#'
+},
+        paitur: {
+            title: 'Paisaje y Turismo',
+            subtitle: 'Determinación del Valor Paisajístico y Turístico',
+            image: 'assets/img/proyecto2.jpg',
+            description: 'Creación de modelos espaciales multicriterio para identificar las zonas óptimas para proyectos de restauración. Se integraron variables como la calidad del suelo, la cobertura vegetal, la distancia a fuentes de agua y la conectividad del paisaje para generar mapas estratégicos que maximizan el retorno de la inversión en conservación.',
+            link: '#'
+        },
+      
+        delhum: {
+            title: 'Delimitación de Humedales Urbanos',
+            subtitle: 'Cumplimiento de la Ley N°21.202',
+            image: 'assets/img/proyecto3.jpg',
+            description: 'En el marco de la Ley N°21.202 de Delimitación de Humedales Urbanos, desarrollamos un estudio especializado de delimitación y caracterización de humedales urbanos en un área de 1,5 hectáreas ubicada en la comuna de Valdivia, Región de Los Ríos. El proyecto aplicó la metodología establecida por el Reglamento de la Ley N° 21.202 y la Guía de Delimitación y Caracterización de Humedales Urbanos de Chile, evaluando tres criterios técnicos fundamentales: presencia de vegetación hidrófila, suelos hídricos y régimen hidrológico de saturación. A través de 17 calicatas de suelo, 10 parcelas de muestreo florístico y 17 puntos de evaluación hidrológica, se identificaron 31 especies vegetales (29% nativas), 8 especies hidrófilas y 4 unidades vegetacionales diferenciadas. El estudio determinó que 0,85 hectáreas del área cumplen con los criterios de humedal urbano, estableciendo una delimitación técnica precisa mediante superposición cartográfica aditiva de los tres criterios evaluados. El trabajo constituye un modelo metodológico riguroso para la identificación y protección de humedales urbanos en contextos periurbanos del sur de Chile.',
+            link: '#'
+        }
+    };
 
-        // Mostrar el modal
-        modal.classList.add('show');
-        document.body.style.overflow = 'hidden'; // Prevenir scroll del body
-        
-        // Focus en el modal para accesibilidad
-        modal.focus();
+    function openModal(projectKey) {
+        const data = projectData[projectKey];
+        if (!data) return;
+
+        $('#modalTitle').textContent = data.title;
+        $('#modalSubtitle').textContent = data.subtitle;
+        $('#modalImage').src = data.image;
+        $('#modalDescription').textContent = data.description;
+
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Evita el scroll del fondo
     }
 
-    // Función para cerrar el modal
     function closeModal() {
-        modal.classList.remove('show');
-        document.body.style.overflow = 'auto'; // Restaurar scroll del body
-        
-        // Limpiar contenido después de la animación
-        setTimeout(() => {
-            modalImage.src = '';
-            modalTitle.textContent = '';
-            modalSubtitle.textContent = '';
-            modalDescription.innerHTML = '';
-        }, 300);
+        modal.style.display = 'none';
+        document.body.style.overflow = ''; // Habilita el scroll del fondo
     }
 
-    // Event listeners para cerrar el modal
+    // Escuchar clics en las fichas de proyectos
+    projectCards.forEach(card => {
+        card.addEventListener('click', (e) => {
+            const projectKey = card.dataset.project;
+            if (projectKey) {
+                openModal(projectKey);
+            }
+        });
+    });
+
+    // Escuchar clic en el botón de cierre
     closeBtn.addEventListener('click', closeModal);
 
-    // Cerrar al hacer click fuera del modal
-    modal.addEventListener('click', function(e) {
+    // Cerrar si el usuario hace clic fuera del modal
+    window.addEventListener('click', (e) => {
         if (e.target === modal) {
             closeModal();
         }
     });
-
-    // Cerrar con la tecla Escape
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modal.classList.contains('show')) {
-            closeModal();
-        }
-    });
-
-    // Función para configurar los triggers de los proyectos
-    function setupProjectTriggers() {
-        // Ejemplo de cómo conectar con tus elementos de proyecto
-        // Reemplaza '.project-item' con la clase real de tus elementos
-        const projectItems = document.querySelectorAll('.project-item, .proyecto, [data-project]');
-        
-        projectItems.forEach(item => {
-            item.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // Obtener datos del proyecto desde atributos data- o contenido del elemento
-                const projectData = {
-                    title: this.dataset.title || this.querySelector('h3, .title')?.textContent || '',
-                    subtitle: this.dataset.subtitle || this.querySelector('.subtitle')?.textContent || '',
-                    description: this.dataset.description || this.querySelector('.description')?.innerHTML || '',
-                    image: this.dataset.image || this.querySelector('img')?.src || ''
-                };
-                
-                openModal(projectData);
-            });
-        });
-    }
-
-    // Inicializar los triggers cuando el DOM esté listo
-    setupProjectTriggers();
-
-    // Función global para abrir modal (puedes usarla desde HTML con onclick)
-    window.openProjectModal = function(title, subtitle, description, image) {
-        const projectData = {
-            title: title,
-            subtitle: subtitle,
-            description: description,
-            image: image
-        };
-        openModal(projectData);
-    };
-
-    // Función global para cerrar modal
-    window.closeProjectModal = closeModal;
-});
 
 })();
 
@@ -326,22 +296,4 @@ window.addEventListener('load', function() {
             }, { once: true });
         }, 800); // Espera 0.8s para que el logo se desvanezca
     }, 2000); // Muestra el logo por 2s
-});
-} else if (content) {
-    // Si no hay preloader, asegura que el contenido principal esté visible
-    content.style.display = 'block';
-}
-
-
-// Fade-in effect on scroll
-const aosObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('aos-animate');
-        }
-    });
-}, { threshold: 0.1 });
-
-document.querySelectorAll('[data-aos]').forEach(element => {
-    aosObserver.observe(element);
 });
