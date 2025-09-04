@@ -505,10 +505,13 @@ img { max-width: 100%; display: block; }
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     padding: 2rem;
-    display: flex;
     align-items: center;
     justify-content: center;
     animation: modalFadeIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.modal.show {
+    display: flex;
 }
 
 .modal-content {
@@ -1226,4 +1229,8 @@ img { max-width: 100%; display: block; }
     .service-cards-grid {
         grid-template-columns: 1fr;
     }
+}
+
+#content {
+    display: none;
 }
