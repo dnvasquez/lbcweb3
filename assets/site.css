@@ -484,7 +484,13 @@ img { max-width: 100%; display: block; }
     color: rgba(255,255,255,0.8);
 }
 
-/* Estilos para el Modal (Pop-up) */
+
+
+
+
+/* =========================================================
+   Estilos para el Modal (Pop-up)
+   ========================================================= */
 .modal {
     display: none; /* Oculto por defecto */
     position: fixed;
@@ -497,75 +503,108 @@ img { max-width: 100%; display: block; }
     background-color: rgba(0,0,0,0.7);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
+    padding: 2rem;
+    align-items: center;
+    justify-content: center;
 }
 
 .modal-content {
-    background-color: rgba(255, 255, 255, 1);
-    margin: 5% auto;
+    background-color: var(--surface-white);
+    margin: 0;
     padding: 0;
-    border-radius: 0; /* Eliminado el borde redondeado */
-    max-width: 1000px; /* Ampliado el tamaño máximo */
+    border-radius: var(--radius);
+    max-width: 1000px;
     position: relative;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .close-btn {
-    color: #aaa;
+    color: var(--ink-light);
     position: absolute;
-    top: 10px;
-    right: 25px;
-    font-size: 28px;
-    font-weight: bold;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2.2rem;
+    font-weight: 300;
     cursor: pointer;
-    transition: color 0.2s;
+    transition: color 0.2s ease, transform 0.2s ease;
+    line-height: 1;
+    z-index: 10;
 }
 
 .close-btn:hover,
 .close-btn:focus {
-    color: var(--ink-dark);
-    text-decoration: none;
-    cursor: pointer;
+    color: var(--brand-teal);
+    transform: rotate(90deg);
 }
 
 .modal-body {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
-    gap: 1.5rem;
-    padding: 1.5rem;
-    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    align-items: start;
 }
 
 .modal-image-col img {
-    border-radius: 0; /* Eliminado el borde redondeado */
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--radius);
+}
+
+.modal-text-col {
+    padding-top: 0.5rem;
 }
 
 .modal-text-col h2 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    font-family: var(--font-sans); /* Cambiado a fuente sans-serif */
+    font-size: 1.8rem;
+    margin-bottom: 0.25rem;
+    font-family: var(--font-display);
     color: var(--brand-teal);
     text-transform: uppercase;
-    font-weight: 700; /* Peso de fuente en negrita */
+    font-weight: 700;
     line-height: 1.1;
 }
 
-/* Ajustes para el texto de la descripción */
 .modal-text-col p {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     line-height: 1.6;
     text-align: justify;
+    font-size: 0.95rem;
+    color: var(--ink-light);
+}
+.modal-text-col .modal-subtitle {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    color: var(--ink-dark);
+    margin: 0 0 1rem;
+    font-size: 1rem;
 }
 .modal-text-col hr {
   border: 0;
   border-top: 1px solid var(--border-light);
-  margin: 1rem 0;
+  margin: 1.5rem 0;
 }
+
 @media (max-width: 768px) {
     .modal-body {
         grid-template-columns: 1fr;
-        gap: 1rem;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+    .modal-content {
+        margin-top: 2rem;
+    }
+    .modal {
+        padding: 1rem;
     }
 }
+
+
+
 """
 )
 /* Estilos para el Preloader */
