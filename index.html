@@ -387,20 +387,29 @@
 
   <div id="projectModal" class="modal">
     <div class="modal-content">
-      <span class="close-btn" aria-label="Cerrar">&times;</span>
-      <div class="modal-body">
-        <div class="modal-image-col">
-          <img id="modalImage" src="" alt="Imagen del proyecto" />
+        <!-- Header con fondo degradado -->
+        <div class="modal-header">
+            <span class="close-btn" aria-label="Cerrar">&times;</span>
         </div>
-        <div class="modal-text-col">
-          <h2 id="modalTitle"></h2>
-          <p id="modalSubtitle"></p>
-          <hr/>
-          <p id="modalDescription"></p>
+        
+        <!-- Cuerpo del modal -->
+        <div class="modal-body">
+            <div class="modal-image-col">
+                <img id="modalImage" src="" alt="Imagen del proyecto" />
+            </div>
+            
+            <div class="modal-text-col">
+                <h2 id="modalTitle"></h2>
+                <p class="modal-subtitle" id="modalSubtitle"></p>
+                <hr/>
+                <p id="modalDescription"></p>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+</div>
+
+
+  
 
   <script src="assets/site.js"></script>
   <script>
