@@ -489,119 +489,150 @@ img { max-width: 100%; display: block; }
 
 
 /* =========================================================
-   Estilos para el Modal (Pop-up)
+   Modal (Pop-up) — versión profesional
    ========================================================= */
+:root{
+  /* Asegúrate de tener estos tokens ya definidos en tu CSS global */
+  /* --brand-teal, --ink-dark, --ink-light, --surface-white, --border-light, --radius */
+}
+
+/* Overlay */
 .modal {
-    display: none; /* Oculto por defecto */
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.7);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    padding: 2rem;
-    align-items: center;
-    justify-content: center;
+  display: none;                 /* Se muestra con .is-open */
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  padding: clamp(12px, 3vw, 32px);
+  background: rgba(0,0,0,.42);   /* Menos denso que 0.7, se ve más premium */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  align-items: center;
+  justify-content: center;
 }
+.modal.is-open { display: flex; }
 
+/* Contenedor del diálogo */
 .modal-content {
-    background-color: var(--surface-white);
-    margin: 0;
-    padding: 0;
-    border-radius: var(--radius);
-    max-width: 1000px;
-    position: relative;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+  background: rgba(255,255,255,.96);  /* “vidrio suave” para elevar la interfaz */
+  border: 1px solid rgba(17,24,39,.06); /* sutilísimo borde (usa tus tokens si prefieres) */
+  border-radius: var(--radius);
+  width: min(100%, 1000px);
+  max-height: min(90vh, 1000px);  /* Evita que el modal crezca más que la pantalla */
+  margin: 0;
+  padding: 0;
+  position: relative;
+  box-shadow:
+    0 18px 50px rgba(0,0,0,.18),
+    0 3px 12px rgba(0,0,0,.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(8px) scale(.99);
+  animation: modal-in .26s ease both;
 }
 
+/* Animación de entrada (respetando reduced-motion) */
+@keyframes modal-in {
+  from { opacity: 0; transform: translateY(12px) scale(.985); }
+  to   { opacity: 1; transform: translateY(0)    scale(1); }
+}
+@media (prefers-reduced-motion: reduce){
+  .modal-content { animation: none; opacity: 1; transform: none; }
+}
+
+/* Botón cerrar: hit-area grande + foco accesible */
 .close-btn {
-    color: var(--ink-light);
-    position: absolute;
-    top: 1rem;
-    right: 1.5rem;
-    font-size: 2.2rem;
-    font-weight: 300;
-    cursor: pointer;
-    transition: color 0.2s ease, transform 0.2s ease;
-    line-height: 1;
-    z-index: 10;
+  color: var(--ink-light);
+  position: absolute;
+  top: 12px; right: 12px;
+  width: 40px; height: 40px;
+  display: grid; place-items: center;
+  border-radius: 999px;
+  border: 1px solid rgba(17,24,39,.06);
+  background: rgba(255,255,255,.9);
+  font-size: 20px; line-height: 1;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+  z-index: 10;
 }
+.close-btn:hover { transform: scale(1.05); background: #fff; }
+.close-btn:focus-visible { outline: 2px solid var(--brand-teal); outline-offset: 2px; }
 
-.close-btn:hover,
-.close-btn:focus {
-    color: var(--brand-teal);
-    transform: rotate(90deg);
-}
-
+/* Cuerpo en grid con scroll interno si hace falta */
 .modal-body {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 2rem;
-    padding: 2rem;
-    align-items: start;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr; /* relación más equilibrada */
+  gap: clamp(16px, 2.4vw, 24px);
+  padding: clamp(16px, 2.6vw, 28px);
+  align-items: start;
+
+  /* Hace scroll dentro del contenido si el viewport es bajo */
+  overflow: auto;
+  /* Reservamos padding superior/inferior siempre visible */
+  max-height: calc(90vh - clamp(16px, 2.6vw, 28px) - 8px);
 }
 
+/* Columna de imagen: recorte limpio y aspecto consistente */
 .modal-image-col img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: var(--radius);
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: calc(var(--radius) - 4px);
+  object-fit: cover;
+  aspect-ratio: 4 / 3; /* Evita “saltos” al cargar imágenes de proporciones distintas */
+  filter: saturate(.95) contrast(1.02); /* toque sutil “editorial” */
 }
 
-.modal-text-col {
-    padding-top: 0.5rem;
-}
+/* Columna de texto */
+.modal-text-col { padding-top: 2px; }
 
 .modal-text-col h2 {
-    font-size: 1.8rem;
-    margin-bottom: 0.25rem;
-    font-family: var(--font-display);
-    color: var(--brand-teal);
-    text-transform: uppercase;
-    font-weight: 700;
-    line-height: 1.1;
+  font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+  margin: 0 0 .25rem 0;
+  font-family: var(--font-display, system-ui, sans-serif);
+  color: var(--brand-teal);
+  text-transform: uppercase;
+  font-weight: 800;              /* Un poco más de presencia */
+  line-height: 1.15;
+  letter-spacing: .2px;
 }
 
-.modal-text-col p {
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
-    text-align: justify;
-    font-size: 0.95rem;
-    color: var(--ink-light);
-}
+/* Subtítulo */
 .modal-text-col .modal-subtitle {
-    font-family: var(--font-sans);
-    font-weight: 600;
-    color: var(--ink-dark);
-    margin: 0 0 1rem;
-    font-size: 1rem;
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-weight: 600;
+  color: var(--ink-dark);
+  margin: 0 0 1rem;
+  font-size: clamp(1rem, 1.8vw, 1.05rem);
 }
+
+/* Párrafos: mejor legibilidad en pantalla (sin justificado) */
+.modal-text-col p {
+  margin: 0 0 1rem 0;
+  line-height: 1.6;
+  text-align: left;              /* Evita ríos del justificado */
+  font-size: clamp(.95rem, 1.6vw, 1rem);
+  color: var(--ink-light);
+}
+
+/* Divisor */
 .modal-text-col hr {
   border: 0;
   border-top: 1px solid var(--border-light);
-  margin: 1.5rem 0;
+  margin: 1.25rem 0 1rem 0;
 }
 
-@media (max-width: 768px) {
-    .modal-body {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding: 1.5rem;
-    }
-    .modal-content {
-        margin-top: 2rem;
-    }
-    .modal {
-        padding: 1rem;
-    }
+/* Responsivo */
+@media (max-width: 900px){
+  .modal-body { grid-template-columns: 1fr; }
+  .modal-image-col img { aspect-ratio: 16 / 9; }
 }
+@media (max-width: 768px){
+  .modal { padding: 8px; }
+  .modal-content { border-radius: 12px; }
+}
+
 
 
 
