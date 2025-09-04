@@ -274,27 +274,22 @@ if (netlifyForm) {
    ========================================================= */
 const preloader = document.querySelector('.preloader');
 const logo = document.querySelector('.preloader-logo');
-const content = document.getElementById('website-content');
 const body = document.body;
 
 window.addEventListener('load', function() {
     // 1. Animación de Entrada del logo
     logo.style.animation = 'logoFadeIn 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards';
 
-    // 2. Espera 2 segundos y luego inicia la animación de salida del logo y el preloader
+    // 2. Espera 2 segundos y luego inicia la transición de salida del logo y el preloader.
     setTimeout(function() {
-        // Animación de Salida del logo
-        logo.style.animation = 'logoPureFadeOut 0.8s ease-out forwards';
+        // Activa la transición de desvanecimiento del preloader.
+        preloader.classList.add('hidden');
 
-        // Oculta el preloader completo después de un breve retraso
+        // Permite que la web sea visible después de un breve retraso.
         setTimeout(function() {
-            preloader.style.opacity = '0';
-            preloader.addEventListener('transitionend', function() {
-                preloader.style.display = 'none';
-                body.classList.remove('preloader-active'); // Elimina la clase de precarga
-                window.scrollTo(0, 0); // Vuelve a llevar la página al inicio
-                history.replaceState(null, '', ' '); // Elimina el ancla de la URL
-            }, { once: true });
-        }, 800); // Espera 0.8s para que el logo se desvanezca
+            body.classList.remove('preloader-active'); // Elimina la clase de precarga
+            window.scrollTo(0, 0); // Vuelve a llevar la página al inicio
+            history.replaceState(null, '', ' '); // Elimina el ancla de la URL
+        }, 800); // El retardo debe ser menor o igual a la duración de la transición CSS.
     }, 2000); // Muestra el logo por 2s
 });
