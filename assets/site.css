@@ -379,7 +379,7 @@ img { max-width: 100%; display: block; }
     color: var(--ink-light); font-family: var(--font-display); text-transform: uppercase; letter-spacing: 1px;
 }
 .team-group-title:first-child { margin-top: 0; }
-.team-grid-technical { grid-template-columns: repeat(4, 1fr); }
+.team-grid-technical { grid-template-columns: repeat(5, 1fr); }
 .team-member img {
     width: 180px; height: 180px; border-radius: 50%; object-fit: cover;
     margin: 0 auto 1.5rem; box-shadow: 0 10px 25px rgba(0,0,0,0.1);
