@@ -275,6 +275,7 @@ if (netlifyForm) {
 const preloader = document.querySelector('.preloader');
 const logo = document.querySelector('.preloader-logo');
 const content = document.getElementById('website-content');
+const body = document.body;
 
 window.addEventListener('load', function() {
     // 1. Animación de Entrada del logo
@@ -290,11 +291,9 @@ window.addEventListener('load', function() {
             preloader.style.opacity = '0';
             preloader.addEventListener('transitionend', function() {
                 preloader.style.display = 'none';
-                if (content) {
-                    content.style.display = 'block'; // Muestra el contenido principal
-                    history.replaceState(null, '', ' '); // NUEVA LÍNEA: Elimina el ancla de la URL
-                    window.scrollTo(0, 0);
-                }
+                body.classList.remove('preloader-active'); // Elimina la clase de precarga
+                window.scrollTo(0, 0); // Vuelve a llevar la página al inicio
+                history.replaceState(null, '', ' '); // Elimina el ancla de la URL
             }, { once: true });
         }, 800); // Espera 0.8s para que el logo se desvanezca
     }, 2000); // Muestra el logo por 2s
