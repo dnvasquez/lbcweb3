@@ -575,7 +575,7 @@ img { max-width: 100%; display: block; }
     padding: 3rem;
     align-items: start;
     min-height: 500px;
-    height: calc(80vh - 6rem); /* Altura calculada para permitir desplazamiento */
+    height: calc(100vh - 6rem); /* Altura calculada para permitir desplazamiento */
     overflow-y: auto; /* Permite el desplazamiento vertical */
 }
 
