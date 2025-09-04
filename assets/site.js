@@ -304,29 +304,39 @@ document.addEventListener('DOMContentLoaded', function() {
    ========================================================= */
 const preloader = document.querySelector('.preloader');
 const logo = document.querySelector('.preloader-logo');
-const content = document.getElementById('content'); // Asumiendo que el contenido principal está en un elemento con ID 'content'
+const content = document.getElementById('content');
 
-window.addEventListener('load', function() {
-    // 1. Animación de Entrada del logo
-    logo.style.animation = 'logoFadeIn 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards';
+// Solo ejecuta la lógica del preloader si el elemento existe en el DOM
+if (preloader) {
+    window.addEventListener('load', function() {
+        // Animación de Entrada del logo
+        if (logo) {
+            logo.style.animation = 'logoFadeIn 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards';
+        }
 
-    // 2. Espera 2 segundos y luego inicia la animación de salida del logo y el preloader
-    setTimeout(function() {
-        // Animación de Salida del logo
-        logo.style.animation = 'logoPureFadeOut 0.8s ease-out forwards';
-
-        // Oculta el preloader completo después de un breve retraso
+        // Espera 2 segundos y luego inicia la animación de salida
         setTimeout(function() {
-            preloader.style.opacity = '0';
-            preloader.addEventListener('transitionend', function() {
-                preloader.style.display = 'none';
-                if (content) {
-                    content.style.display = 'block'; // Muestra el contenido principal
-                }
-            }, { once: true });
-        }, 800); // Espera 0.8s para que el logo se desvanezca
-    }, 2000); // Muestra el logo por 2s
-});
+            // Animación de Salida del logo
+            if (logo) {
+                logo.style.animation = 'logoPureFadeOut 0.8s ease-out forwards';
+            }
+
+            // Oculta el preloader completo después de un breve retraso
+            setTimeout(function() {
+                preloader.style.opacity = '0';
+                preloader.addEventListener('transitionend', function() {
+                    preloader.style.display = 'none';
+                    if (content) {
+                        content.style.display = 'block'; // Muestra el contenido principal
+                    }
+                }, { once: true });
+            }, 800);
+        }, 2000);
+    });
+} else if (content) {
+    // Si no hay preloader, asegura que el contenido principal esté visible
+    content.style.display = 'block';
+}
 
 
 // Fade-in effect on scroll
