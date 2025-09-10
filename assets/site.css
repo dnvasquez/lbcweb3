@@ -580,17 +580,21 @@ img { max-width: 100%; display: block; }
     gap: 0;
     padding: 3rem;
     align-items: start;
+    min-height: 500px;
+    max-height: calc(100vh - 6rem);
     overflow-y: auto; /* Permite el desplazamiento vertical */
 }
 
 .modal-image-col {
     position: relative;
     padding-right: 2rem;
+    height: 100%;
 }
 
 .modal-image-col img {
     width: 100%;
     height: auto;
+    min-height: 400px;
     object-fit: cover;
     display: block;
     border-radius: 18px;
@@ -614,6 +618,7 @@ img { max-width: 100%; display: block; }
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    height: 100%;
 }
 
 .modal-text-col h2 {
