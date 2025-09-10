@@ -172,8 +172,8 @@ img { max-width: 100%; display: block; }
 .footer-logo { height: 90px; margin: 0 auto 1rem; }
 .footer p { margin: 0; font-size: 0.9rem; }
 .footer-contact { margin-top: 0.5rem; }
-.btn { display: inline-block; padding: .9rem 2rem; border-radius: 999px; font-weight: 700; transition: transform 0.2s ease; }
-.btn:hover { transform: translateY(-3px); }
+.btn { display: inline-block; padding: .9rem 2rem; border-radius: 999px; font-weight: 700; transition: transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);}
+.btn:hover { transform: translateY(-3px); box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);}
 .btn-primary { background-color: var(--brand-teal); color: var(--surface-white); }
 
 /* --- RESPONSIVE GENERAL --- */
