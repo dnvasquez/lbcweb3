@@ -37,7 +37,11 @@ body {
   background-color: var(--surface-white);
   color: var(--ink-light);
   line-height: 1.6;
-  font-weight: normal; 
+  font-weight: 400;
+}
+p {
+  /* ...otros estilos de párrafo... */
+  font-weight: 400; /* Añade esta línea para asegurar que los párrafos no estén en negrita */
 }
 h1, h2, h3 {
   margin: 0 0 0.5rem 0;
