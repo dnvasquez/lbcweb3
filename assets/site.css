@@ -580,21 +580,17 @@ img { max-width: 100%; display: block; }
     gap: 0;
     padding: 3rem;
     align-items: start;
-    min-height: 500px;
-    height: calc(100vh - 6rem); /* Altura calculada para permitir desplazamiento */
     overflow-y: auto; /* Permite el desplazamiento vertical */
 }
 
 .modal-image-col {
     position: relative;
     padding-right: 2rem;
-    height: 100%; /* Asegura que la columna de la imagen tenga la misma altura que la de texto */
 }
 
 .modal-image-col img {
     width: 100%;
     height: auto;
-    min-height: 400px;
     object-fit: cover;
     display: block;
     border-radius: 18px;
@@ -618,7 +614,6 @@ img { max-width: 100%; display: block; }
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    height: 100%;
 }
 
 .modal-text-col h2 {
