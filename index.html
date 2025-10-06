@@ -7,7 +7,21 @@
   <meta name="description" content="Consultora ambiental chilena. Trabajamos de forma eficiente, entregando confianza y claridad en el desarrollo de tu proyecto." />
   <link rel="stylesheet" href="assets/site.css" />
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.5.1/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.5.1/uicons-brands/css/uicons-brands.css'>
   <link rel="icon" href="assets/logos/logolbcnav.png" type="image/png">
+<style>
+    /* Estilos específicos para los enlaces de LinkedIn en la sección de equipo de index.html */
+    .team-member .social-link {
+        display: block; /* Para que el ícono aparezca en su propia línea */
+        margin-top: 0.5rem;
+        color: var(--ink-dark);
+        font-size: 1.2rem;
+        transition: color 0.2s;
+    }
+    .team-member .social-link:hover {
+        color: #0077B5; /* Color corporativo de LinkedIn para hover */
+    }
+</style>
 </head>
 <body id="index" class="preloader-active">
   <div class="preloader">
@@ -431,26 +445,35 @@
     <script>
       (function(){
         const fullTeam = [
-            { name:"Camilo López Toledo", role:"Director Operativo", group:"directiva", photo:"assets/team/directiva-1.jpg" },
-            { name:"Víctor Aguilera Escalona", role:"Director Ejecutivo", group:"directiva", photo:"assets/team/directiva-2.jpg" },
-            { name:"César Figueroa Calderón", role:"Director de Proyectos", group:"directiva", photo:"assets/team/directiva-3.jpg" },
-            { name:"Álvaro Escobar Jackson", role:"Conservación y Medio Biótico", group:"tecnico", photo:"assets/team/tecnico-1.jpg" },
-            { name:"David Vásquez Stuardo", role:"Ecosistemas Terrestres y Biodiversidad", group:"tecnico", photo:"assets/team/tecnico-2.jpg" },
-            { name:"Sebastián Moller Cepeda", role:"Flora y Vegetación", group:"tecnico", photo:"assets/team/tecnico-3.jpg" },
-            { name:"Nadia Fabres Toledo", role:"Operaciones y Sistematización", group:"tecnico", photo:"assets/team/tecnico-4.jpg" },
-            { name:"Paula Becerra Barros", role:"Diseño de Obras y Montaje", group:"tecnico", photo:"assets/team/tecnico-5.jpg" },
-        ];
+            { name:"Camilo López Toledo", role:"Director Operativo", group:"directiva", photo:"assets/team/directiva-1.jpg", linkedin: "https://www.linkedin.com/in/camilo-l%C3%B3pez-121191348/"},
+            { name:"Víctor Aguilera Escalona", role:"Director Ejecutivo", group:"directiva", photo:"assets/team/directiva-2.jpg", linkedin: "https://www.linkedin.com/in/v%C3%ADctor-aguilera-escalona-063b2228b/" },
+            { name:"César Figueroa Calderón", role:"Director de Proyectos", group:"directiva", photo:"assets/team/directiva-3.jpg", linkedin: "https://www.linkedin.com/in/c%C3%A9sar-figueroa-c-bb1236245/" },
+            { name:"Álvaro Escobar Jackson", role:"Conservación y Medio Biótico", group:"tecnico", photo:"assets/team/tecnico-1.jpg", linkedin: "https://www.linkedin.com/in/alvaroescobarjackson/" },
+            { name:"David Vásquez Stuardo", role:"Ecosistemas Terrestres y Biodiversidad", group:"tecnico", photo:"assets/team/tecnico-2.jpg", linkedin: "https://www.linkedin.com/in/davidvasquezstuardo/" },
+            { name:"Sebastián Moller Cepeda", role:"Flora y Vegetación", group:"tecnico", photo:"assets/team/tecnico-3.jpg", linkedin: "https://www.linkedin.com/company/lbc-consultores-ambientales" },
+            { name:"Nadia Fabres Toledo", role:"Operaciones y Sistematización", group:"tecnico", photo:"assets/team/tecnico-4.jpg", linkedin: "https://www.linkedin.com/company/lbc-consultores-ambientales" },
+            { name:"Paula Becerra Barros", role:"Diseño de Obras y Montaje", group:"tecnico", photo:"assets/team/tecnico-5.jpg", linkedin: "https://www.linkedin.com/company/lbc-consultores-ambientales" },
+                ];
         const directiva = fullTeam.filter(m => m.group === 'directiva');
         const tecnico = fullTeam.filter(m => m.group === 'tecnico');
         const container = document.getElementById('team-container');
+        
         const createTeamGridHTML = (members) => {
-            return members.map(member => `
-              <div class="team-member">
-                <img src="${member.photo}" alt="Foto de ${member.name}" />
-                <h3>${member.name}</h3>
-                <p>${member.role}</p>
-              </div>
-            `).join('');
+            return members.map(member => {
+                const linkedinLink = member.linkedin ? 
+                    `<a href="${member.linkedin}" target="_blank" class="social-link" aria-label="Perfil de LinkedIn de ${member.name}">
+                        <i class="fi fi-brands-linkedin"></i>
+                    </a>` : '';
+
+                return `
+                    <div class="team-member">
+                        <img src="${member.photo}" alt="Foto de ${member.name}" />
+                        <h3>${member.name}</h3>
+                        <p>${member.role}</p>
+                        ${linkedinLink}
+                    </div>
+                `;
+            }).join('');
         };
         if(container) {
           container.innerHTML = `
