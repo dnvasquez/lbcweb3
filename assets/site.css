@@ -161,6 +161,24 @@ img { max-width: 100%; display: block; }
 .kpi-grid { grid-template-columns: repeat(4, 1fr); text-align: center; }
 .kpi-item b { display: block; font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 500; line-height: 1.1; font-family: var(--font-display); }
 .kpi-item span { font-size: 1rem; opacity: 0.8; text-transform: uppercase; letter-spacing: 1px; font-family: var(--font-sans); }
+
+/* AJUSTES PARA LA SEGUNDA FILA DE KPIS (3 ELEMENTOS) */
+.kpi-grid-row-2 {
+    display: flex;
+    justify-content: center; /* Centra el grupo de 3 elementos */
+    gap: 30px; /* Mantiene el espacio entre elementos */
+    margin-top: 30px; /* Espacio entre la primera y segunda fila */
+}
+
+/* Aplicar estilos visuales a los nuevos items */
+.kpi-grid-row-2 .kpi-item {
+    text-align: center; /* FIX: Asegura que el contenido (número y texto) esté centrado dentro del item. */
+    /* Ajusta el ancho para que la separación entre los 3 sea similar a los 4 de arriba */
+    flex-basis: 250px; 
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
 .projects-grid { grid-template-columns: repeat(3, 1fr); }
 .team-grid { grid-template-columns: repeat(3, 1fr); text-align: center; }
 .team-member img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; object-position: top; margin: 0 auto 1rem; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
@@ -180,10 +198,36 @@ img { max-width: 100%; display: block; }
 @media (max-width: 980px) {
   .hero-commitments { grid-template-columns: 1fr; gap: 2rem; }
   .projects-grid, .team-grid, .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  
+  /* NUEVO: Ajuste responsive para la fila de 3 elementos */
+  .kpi-grid-row-2 {
+      display: grid; 
+      grid-template-columns: repeat(2, 1fr); /* Mostrar 2 elementos por fila */
+      gap: 30px;
+      margin: 30px auto 0; /* Centra el contenedor y añade margen superior */
+      max-width: 500px; 
+  }
+  /* Forzar el tercer elemento a ocupar toda la fila y centrarse */
+  .kpi-grid-row-2 .kpi-item:last-child {
+      grid-column: 1 / -1; 
+  }
 }
 @media (max-width: 768px) {
   .menu { display: none; }
   .projects-grid, .team-grid { grid-template-columns: 1fr; }
+
+  /* NUEVO: Ajuste para que la segunda fila se muestre en 1 columna en móviles más pequeños */
+  .kpi-grid-row-2 {
+      display: grid;
+      grid-template-columns: 1fr; 
+      gap: 20px;
+      max-width: 300px; /* Asegura que el contenedor no se extienda demasiado */
+      margin: 30px auto 0; /* Asegura el centrado */
+  }
+  /* Anular la regla de centrado para el último elemento cuando se usa 1 columna */
+  .kpi-grid-row-2 .kpi-item:last-child {
+      grid-column: auto;
+  }
 }
 
 /* =========================================================
@@ -884,8 +928,6 @@ img { max-width: 100%; display: block; }
 
 
 
-"""
-)
 /* Estilos para el Preloader */
 .preloader {
     position: fixed;
