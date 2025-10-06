@@ -116,6 +116,12 @@ if (netlifyForm) {
   const kpiSection = document.getElementById('kpis');
   if (!kpiSection) return;
 
+  const dateElement = document.getElementById('kpi-update-date');
+  // Mostrar un mensaje de carga o por defecto inmediatamente
+  if (dateElement) {
+    dateElement.textContent = 'Cargando datos...';
+  }
+
   // URL del archivo CSV de tu pestaña "KPIS"
   const sheetURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR-biUPUV4w-Ran2m80Wm5gw-d-IfxzvKdbq-D--OE5-8qVp4QY5C_gbcgAz5hk7yAfOKdBnpXVoNmY/pub?gid=1006059514&single=true&output=csv';
 
@@ -126,18 +132,19 @@ if (netlifyForm) {
       // Apunta a la fila 1000 (índice 999)
       const kpiValues = rows[999].split(',');
 
-      // --- INICIO DE LA MODIFICACIÓN ---
-
       // 1. Extrae la fecha de la segunda columna (índice 1)
       const updateDate = kpiValues[1];
-      const dateElement = document.getElementById('kpi-update-date');
 
       // 2. Inserta el texto con la fecha en el párrafo
       if (dateElement && updateDate) {
-        dateElement.textContent = `KPI´s actualizados a ${updateDate}`;
+        // Usa una comprobación simple para asegurar que la fecha no está vacía
+        if (updateDate.trim() !== '') {
+            dateElement.textContent = `KPI´s actualizados a ${updateDate}`;
+        } else {
+            // Si la columna de fecha está vacía, muestra un mensaje estándar
+            dateElement.textContent = 'KPI´s actualizados recientemente.';
+        }
       }
-
-      // --- FIN DE LA MODIFICACIÓN ---
 
       const els = kpiSection.querySelectorAll('[data-kpi]');
       if (!els.length) return;
@@ -168,10 +175,16 @@ if (netlifyForm) {
     })
     .catch(error => {
       console.error('Error al cargar los datos de KPIs:', error);
+      // Muestra un mensaje de error si la carga falla
+      if (dateElement) {
+        dateElement.textContent = 'Error al cargar datos de actualización.';
+        dateElement.style.color = 'red'; 
+      }
       const els = kpiSection.querySelectorAll('[data-kpi]');
       els.forEach(el => el.textContent = '0'); // Muestra '0' si hay un error
     });
 })();
+
 
 /* =========================================================
    FUNCIONALIDAD PARA MÚLTIPLES ACORDEONES
