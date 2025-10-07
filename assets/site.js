@@ -178,6 +178,11 @@ if (netlifyForm) {
               prefix = '>';
               suffix = 'K';
             }
+
+          // MODIFICACIÓN: Añade prefijo para el KPI de Años (index 0)
+            if (kpiIndex === 0) {
+              prefix = '>';
+            }
             
             // MODIFICACIÓN: Pasa los nuevos argumentos a animate
             animate(e.target, targetValue, prefix, suffix);
