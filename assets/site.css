@@ -713,6 +713,7 @@ img { max-width: 100%; display: block; }
     hyphens: auto;
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
+   white-space: pre-wrap;
 }
 
 .modal-text-col p:last-child {
