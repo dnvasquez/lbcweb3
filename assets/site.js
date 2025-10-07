@@ -156,6 +156,13 @@ if (netlifyForm) {
         (function tick(now) {
           const p = Math.min(1, (now - t0) / dur);
           el.textContent = Math.floor(0 + (target - 0) * (0.5 - Math.cos(Math.PI * p) / 2));
+                    if (kpiIndex === 4) {
+             el.textContent = `>${currentValue}K`;
+          } else {
+             // Formato por defecto para otros KPIs
+             el.textContent = currentValue;
+          }
+
           if (p < 1) requestAnimationFrame(tick);
         })(t0);
       }
