@@ -153,27 +153,12 @@ if (netlifyForm) {
 
       function animate(el, target) {
         const t0 = performance.now();
-        // Se obtiene el índice del KPI fuera del bucle 'tick'
-        const kpiIndex = parseInt(el.getAttribute('data-kpi'), 10); 
-        
         (function tick(now) {
           const p = Math.min(1, (now - t0) / dur);
-          // Se calcula el valor actual de la animación y se guarda en una variable
-          const currentValue = Math.floor(0 + (target - 0) * (0.5 - Math.cos(Math.PI * p) / 2));
-          
-          // Se aplica el formato ">[VALOR]K" solo para el KPI 4
-          if (kpiIndex === 4) {
-             el.textContent = `>${currentValue}K`;
-          } else {
-             // Formato por defecto para otros KPIs
-             el.textContent = currentValue;
-          }
-
+          el.textContent = Math.floor(0 + (target - 0) * (0.5 - Math.cos(Math.PI * p) / 2));
           if (p < 1) requestAnimationFrame(tick);
         })(t0);
       }
-
-      const io = new IntersectionObserver((entries) => {
 
       const io = new IntersectionObserver((entries) => {
         entries.forEach(e => {
