@@ -716,6 +716,11 @@ img { max-width: 100%; display: block; }
    white-space: pre-wrap;
 }
 
+.modal-text-col p strong {
+    font-weight: 700 !important; /* Asegura que la negrita sea visible */
+    color: var(--ink-dark); /* Opcional: para que las negritas destaquen más */
+}
+
 .modal-text-col p:last-child {
     margin-bottom: 0;
 }
