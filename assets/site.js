@@ -275,17 +275,21 @@ if (netlifyForm) {
     };
 
     function openModal(projectKey) {
-        const data = projectData[projectKey];
-        if (!data) return;
+    const data = projectData[projectKey];
+    if (!data) return;
 
-        $('#modalTitle').textContent = data.title;
-        $('#modalSubtitle').textContent = data.subtitle;
-        $('#modalImage').src = data.image;
-        $('#modalDescription').innerHTML = data.description;
+    // 1. Convertir asteriscos a etiquetas <strong>
+    let formattedDescription = data.description.replace(/\*(.*?)\*/g, '<strong>$1</strong>');
 
-        modal.classList.add('show');
-        document.body.style.overflow = 'hidden';
-    }
+    $('#modalTitle').textContent = data.title;
+    $('#modalSubtitle').textContent = data.subtitle;
+    $('#modalImage').src = data.image;
+    // 2. Usar .innerHTML (o dejarlo como estaba si ya lo habías cambiado)
+    $('#modalDescription').innerHTML = formattedDescription; // ¡Usar innerHTML para interpretar <strong>!
+
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+}
 
     function closeModal() {
         modal.classList.remove('show');
