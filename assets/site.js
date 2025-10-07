@@ -176,7 +176,7 @@ if (netlifyForm) {
             // MODIFICACIÓN: Añade prefijo y sufijo para el KPI de Árboles plantados (index 4)
             if (kpiIndex === 4) {
               prefix = '>';
-              suffix = 'K';
+              suffix = 'k';
             }
 
           // MODIFICACIÓN: Añade prefijo para el KPI de Años (index 0)
