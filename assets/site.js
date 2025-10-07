@@ -281,7 +281,7 @@ if (netlifyForm) {
         $('#modalTitle').textContent = data.title;
         $('#modalSubtitle').textContent = data.subtitle;
         $('#modalImage').src = data.image;
-        $('#modalDescription').textContent = data.description;
+        $('#modalDescription').innerHTML = data.description;
 
         modal.classList.add('show');
         document.body.style.overflow = 'hidden';
