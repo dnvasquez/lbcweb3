@@ -151,11 +151,14 @@ if (netlifyForm) {
 
       const dur = 900;
 
-      function animate(el, target) {
+      // MODIFICACIÓN: La función animate ahora acepta prefijo y sufijo
+      function animate(el, target, prefix = '', suffix = '') {
         const t0 = performance.now();
         (function tick(now) {
           const p = Math.min(1, (now - t0) / dur);
-          el.textContent = Math.floor(0 + (target - 0) * (0.5 - Math.cos(Math.PI * p) / 2));
+          const currentValue = Math.floor(0 + (target - 0) * (0.5 - Math.cos(Math.PI * p) / 2));
+          // MODIFICACIÓN: Aplica prefijo y sufijo al contenido del elemento
+          el.textContent = prefix + currentValue + suffix;
           if (p < 1) requestAnimationFrame(tick);
         })(t0);
       }
@@ -166,7 +169,18 @@ if (netlifyForm) {
             e.target.dataset.done = 1;
             const kpiIndex = parseInt(e.target.getAttribute('data-kpi'), 10);
             const targetValue = parseInt(kpiValues[kpiIndex + 2], 10);
-            animate(e.target, targetValue);
+            
+            let prefix = '';
+            let suffix = '';
+            
+            // MODIFICACIÓN: Añade prefijo y sufijo para el KPI de Árboles plantados (index 4)
+            if (kpiIndex === 4) {
+              prefix = '>';
+              suffix = 'K';
+            }
+            
+            // MODIFICACIÓN: Pasa los nuevos argumentos a animate
+            animate(e.target, targetValue, prefix, suffix);
           }
         });
       }, { threshold: 0.4 });
