@@ -274,18 +274,26 @@ if (netlifyForm) {
         }
     };
 
-    function openModal(projectKey) {
+function openModal(projectKey) {
     const data = projectData[projectKey];
     if (!data) return;
 
-    // 1. Convertir asteriscos a etiquetas <strong>
-    let formattedDescription = data.description.replace(/\*(.*?)\*/g, '<strong>$1</strong>');
+    // 1. Reemplazar asteriscos por <b>
+    let formattedDescription = data.description.replace(/\*(.*?)\*/g, '<b>$1</b>');
+
+    // 2. Reemplazar saltos de línea \n\n por <br><br> para crear separación de párrafos
+    formattedDescription = formattedDescription.replace(/\n\n/g, '<br><br>');
+    
+    // 3. Reemplazar saltos de línea simples \n por <br> (para el caso de que haya una línea simple)
+    formattedDescription = formattedDescription.replace(/\n/g, '<br>');
+
 
     $('#modalTitle').textContent = data.title;
     $('#modalSubtitle').textContent = data.subtitle;
     $('#modalImage').src = data.image;
-    // 2. Usar .innerHTML (o dejarlo como estaba si ya lo habías cambiado)
-    $('#modalDescription').innerHTML = formattedDescription; // ¡Usar innerHTML para interpretar <strong>!
+    
+    // 4. Usar .innerHTML para que las etiquetas <br> y <b> se interpreten
+    $('#modalDescription').innerHTML = formattedDescription; 
 
     modal.classList.add('show');
     document.body.style.overflow = 'hidden';
