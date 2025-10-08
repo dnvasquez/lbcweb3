@@ -459,36 +459,30 @@
     <div class="modal-content promo-modal-content">
                 
         <div class="promo-body">
-            <!-- Columna Izquierda: Imagen con título superpuesto -->
             <div class="promo-image-col">
                 <img id="promoImage" src="assets/img/ERH.jpg" alt="Estrategia de Retención Hídrica" />
                 
                 <h2 id="promoTitle-image">ESTRATEGIA DE RETENCIÓN HÍDRICA</h2>
             </div>
             
-            <!-- Columna Derecha: Contenido -->
             <div class="promo-text-col">
                 <div class="promo-text-inner">
-                    <!-- 1. Título principal -->
                     <p class="promo-subheading">¡NO TE LA PIERDAS! NUESTRA ÚLTIMA PUBLICACIÓN</p>
                     
-                    <!-- 2. Logo -->
                     <div class="promo-logo-row">
                         <img src="assets/img/preloader.png" alt="Logo LBC" class="promo-small-image" />
-                        <!-- 3. Texto "Editores" debajo del logo -->
                         <div class="promo-logo-text">
                             <span class="logo-role">Le invitamos a revisar el informe completo, que desarrollamos en colaboración con la Asociación Parque Cordillera. La estrategia busca abordar el desbalance hídrico de la Región Metropolitana desde la gestión territorial, la educación ambiental y la articulación de actores.</span>
                         </div>
                     </div>
                 </div>
                 
-                <!-- 4. Botón de descarga y 5. Enlace de descarte -->
                 <div class="promo-buttons-group">
-                    <a href="assets/publicaciones/ERH.pdf" download class="btn btn-primary promo-btn">
+                    <a href="assets/ERH.pdf" download class="btn btn-primary promo-btn" onclick="closePromoModal();">
                         Descargar
                     </a>
                     
-                    <a href="#" class="promo-skip-btn" onclick="document.getElementById('promoModal').style.display='none'; return false;">
+                    <a href="#" class="promo-skip-btn" onclick="closePromoModal(); return false;">
                         No gracias, no estoy interesado
                     </a>
                 </div>
