@@ -347,7 +347,47 @@ window.addEventListener('load', function() {
                 body.classList.remove('preloader-active'); // Elimina la clase de precarga
                 window.scrollTo(0, 0); // Vuelve a llevar la página al inicio
                 history.replaceState(null, '', ' '); // Elimina el ancla de la URL
+                showPromoModal(); 
             }, { once: true });
         }, 800); // Espera 0.8s para que el logo se desvanezca
     }, 2000); // Muestra el logo por 2s
 });
+
+/* =========================================================
+   FUNCIONALIDAD PARA MODAL PROMOCIONAL (POP-UP)
+   ========================================================= */
+
+// Usa las funciones de apertura/cierre para mantener la consistencia
+function showPromoModal() {
+    const promoModal = document.getElementById('promoModal');
+    if (promoModal) {
+        promoModal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closePromoModal() {
+    const promoModal = document.getElementById('promoModal');
+    if (promoModal) {
+        promoModal.classList.remove('show');
+        document.body.style.overflow = '';
+    }
+}
+
+(function() {
+    const promoModal = document.getElementById('promoModal');
+    // Usamos el helper $() del inicio del archivo
+    const closeBtn = $('.promo-close-btn');
+
+    if (promoModal) {
+        // Escuchar clic en el botón de cierre
+        closeBtn?.addEventListener('click', closePromoModal);
+
+        // Cerrar si el usuario hace clic fuera del modal
+        window.addEventListener('click', (e) => {
+            if (e.target === promoModal) {
+                closePromoModal();
+            }
+        });
+    }
+})();
