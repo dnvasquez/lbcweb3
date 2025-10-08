@@ -1317,3 +1317,257 @@ body:not(.preloader-active) #website-content {
   /* Una vez que la clase se remueve, la opacidad se vuelve 1. */
   opacity: 1;
 }
+
+
+/* =========================================================
+   ESTILOS PARA MODAL PROMOCIONAL: DISEÑO FINAL LBC - VERSIÓN 2
+   Relación de aspecto: 15 (alto) : 31 (ancho)
+   ========================================================= */
+
+/* 1. Contenedor Principal */
+.promo-modal-content {
+    width: 90%;
+    max-width: 1100px; 
+    min-width: 700px;
+    
+    /* Relación de aspecto 15:31 */
+    aspect-ratio: 16 / 9;
+    
+    background: var(--surface-white); 
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    border: none;
+    
+    padding: 0;
+    overflow: hidden; 
+    border-radius: var(--radius); 
+    
+    display: flex;
+}
+
+/* 2. Cuerpo del Modal: Rejilla de dos columnas (70/30 split) */
+.promo-body {
+    display: grid;
+    grid-template-columns: 7fr 3fr; 
+    gap: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; 
+}
+
+/* 3. Columna de la Imagen (Izquierda) */
+.promo-image-col {
+    position: relative;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; 
+    background-color: rgba(0, 0, 0, 0.3);
+    background-blend-mode: multiply;
+}
+
+.promo-image-col img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: none;
+    mix-blend-mode: normal;
+    opacity: 0.85;
+}
+
+/* ESTILO DEL TÍTULO DENTRO DE LA IMAGEN */
+.promo-image-col h2 {
+    position: absolute;
+    bottom: 3rem;
+    left: 2.5rem;
+    right: 2.5rem;
+    margin: 0;
+    
+    font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+    color: var(--surface-white);
+    font-weight: 800;
+    line-height: 1.05;
+    text-transform: uppercase;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+    z-index: 2;
+    letter-spacing: -0.02em;
+}
+
+/* 4. Columna del Contenido (Derecha) */
+.promo-text-col {
+    background-color: #F5F1E8; /* Color beige/crema claro */
+    padding: 1rem 1.8rem 2rem 1.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    
+    text-align: center; 
+    color: var(--ink-light); 
+}
+
+/* 5. Contenedor de Texto Interno */
+.promo-text-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    flex: 1;
+    justify-content: flex-start;
+    gap: 2rem;
+    padding-top: 1rem;
+}
+
+.promo-subheading {
+    font-family: var(--font-sans);
+    font-weight: 900;
+    color: #1A7B7F; 
+    margin: 0; 
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+}
+
+.promo-text-inner #promoTitle {
+    display: none; /* Ocultamos este título ya que no se usa en el diseño 2 */
+}
+
+/* Fila del Logo - Ajuste para disposición vertical */
+.promo-logo-row {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    gap: 0.1rem;
+    margin: 0;
+    width: 100%;
+}
+
+.promo-logo-row .promo-small-image {
+    width: 270px;
+    height: 90px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.promo-logo-row .promo-logo-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+}
+
+.promo-logo-row .logo-name {
+    display: none; /* Ocultamos el nombre ya que está en el logo */
+}
+
+.promo-logo-row .logo-role {
+    font-family: var(--font-sans);
+    font-weight: 300;
+    font-size: 0.9rem;
+    color: #2B2B2B;
+    margin: 1;
+}
+
+/* 6. Botones (Agrupados y Centrados) */
+.promo-buttons-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+    margin-top: auto;
+    padding-bottom: 1.5rem;
+}
+
+.promo-btn {
+    padding: 1rem 2rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 50px;
+    background-color: #1A7B7F; /* Color teal/verde azulado */
+    color: white;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(26, 123, 127, 0.2);
+}
+
+.promo-btn:hover {
+    background-color: #156366;
+}
+
+/* 7. Enlace de Descarte */
+.promo-skip-btn {
+    background: none;
+    border: none;
+    color: #1A7B7F;
+    text-decoration: underline;
+    padding: 0.3rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-family: var(--font-sans);
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.promo-skip-btn:hover {
+    opacity: 0.7;
+}
+
+
+/* 9. Responsive Design */
+@media (max-width: 900px) {
+    .promo-modal-content {
+        min-width: auto;
+        max-width: 95%;
+        width: 95%;
+        aspect-ratio: auto;
+        max-height: 90vh;
+    }
+    
+    .promo-body {
+        grid-template-columns: 1fr; 
+        overflow-y: auto;
+    }
+    
+    .promo-image-col {
+        display: none; 
+    }
+    
+    .promo-text-col {
+        padding: 3rem 2rem;
+        min-height: 500px;
+        justify-content: center;
+    }
+    
+    .promo-text-inner {
+        max-width: 100%;
+        margin-bottom: 2rem;
+    }
+    
+    .promo-subheading {
+        font-size: 1rem;
+    }
+    
+    .promo-logo-row {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .promo-logo-row .promo-logo-text {
+        align-items: center;
+        text-align: center;
+    }
+    
+    .promo-btn {
+        max-width: 100%;
+        font-size: 1rem;
+    }
+}
