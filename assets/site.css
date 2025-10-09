@@ -455,7 +455,7 @@ img { max-width: 100%; display: block; }
 }
 .logo-scroller::before { left: 0; background: linear-gradient(to right, var(--surface-white), transparent); }
 .logo-scroller::after { right: 0; background: linear-gradient(to left, var(--surface-white), transparent); }
-.logo-track { display: flex; align-items: center; gap: 80px; width: max-content; animation: scroll 65s linear infinite; }
+.logo-track { display: flex; align-items: center; gap: 80px; width: max-content; animation: scroll 80s linear infinite; }
 .logo-track:hover { animation-play-state: paused; }
 @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 .logo-track img {
