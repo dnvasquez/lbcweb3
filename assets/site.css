@@ -1572,3 +1572,8 @@ body:not(.preloader-active) #website-content {
         font-size: 1rem;
     }
 }
+
+/*Aplica scroll-margin-top a la sección de destino.*/
+section[id] {
+    scroll-margin-top: 100px; /* Un valor general para todos los enlaces internos que apuntan a IDs */
+}
