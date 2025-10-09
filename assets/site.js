@@ -183,6 +183,11 @@ if (netlifyForm) {
             if (kpiIndex === 0) {
               prefix = '>';
             }
+
+         // MODIFICACIÓN: Añade prefijo para el KPI de proyectos (index 3)
+            if (kpiIndex === 3) {
+              prefix = '>';
+            }
             
             // MODIFICACIÓN: Pasa los nuevos argumentos a animate
             animate(e.target, targetValue, prefix, suffix);
