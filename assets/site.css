@@ -146,6 +146,10 @@ img { max-width: 100%; display: block; }
 
 /* --- OTRAS SECCIONES --- */
 .section { padding: 80px 0; }
+/* NUEVO: Ajuste de altura para la franja de contacto */
+#contacto {
+    padding: 50px 0; /* Ajustado de 80px a 50px para reducir la altura */
+}
 .section-offset { background-color: #F8F8F8; }
 .section-header { text-align: center; max-width: 700px; margin: 0 auto 50px; }
 /* --- REGLA PARA CAMBIAR EL COLOR DEL TÍTULO DE SECCIÓN --- */
@@ -162,21 +166,20 @@ img { max-width: 100%; display: block; }
 .kpi-item b { display: block; font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 500; line-height: 1.1; font-family: var(--font-display); }
 .kpi-item span { font-size: 1rem; opacity: 0.8; text-transform: uppercase; letter-spacing: 1px; font-family: var(--font-sans); }
 
-/* AJUSTES PARA LA SEGUNDA FILA DE KPIS (3 ELEMENTOS) */
+/* AJUSTES PARA LA SEGUNDA FILA DE KPIS (2 ELEMENTOS) */
 .kpi-grid-row-2 {
-    display: flex;
-    justify-content: center; /* Centra el grupo de 3 elementos */
-    gap: 30px; /* Mantiene el espacio entre elementos */
-    margin-top: 30px; /* Espacio entre la primera y segunda fila */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas para desktop */
+    gap: 30px; 
+    margin-top: 30px; 
+    max-width: 500px; /* Limita el ancho para que se sienta centrado bajo la fila de 4 */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Aplicar estilos visuales a los nuevos items */
 .kpi-grid-row-2 .kpi-item {
-    text-align: center; /* FIX: Asegura que el contenido (número y texto) esté centrado dentro del item. */
-    /* Ajusta el ancho para que la separación entre los 3 sea similar a los 4 de arriba */
-    flex-basis: 250px; 
-    flex-grow: 0;
-    flex-shrink: 0;
+    text-align: center; 
 }
 
 .projects-grid { grid-template-columns: repeat(3, 1fr); }
@@ -199,26 +202,21 @@ img { max-width: 100%; display: block; }
   .hero-commitments { grid-template-columns: 1fr; gap: 2rem; }
   .projects-grid, .team-grid, .kpi-grid { grid-template-columns: repeat(2, 1fr); }
   
-  /* NUEVO: Ajuste responsive para la fila de 3 elementos */
+  /* NUEVO: Ajuste responsive para la fila de 2 elementos (mantiene 2 columnas hasta 768px) */
   .kpi-grid-row-2 {
       display: grid; 
-      grid-template-columns: repeat(2, 1fr); /* Mostrar 2 elementos por fila */
+      grid-template-columns: repeat(2, 1fr); 
       gap: 30px;
-      margin: 30px auto 0; /* Centra el contenedor y añade margen superior */
+      margin: 30px auto 0;
       max-width: 500px; 
   }
-  /* Forzar el tercer elemento a ocupar toda la fila y centrarse */
-  .kpi-grid-row-2 .kpi-item:last-child {
-      grid-column: 1 / -1; 
-  }
-
+  
   /* NUEVO: AJUSTE RESPONSIVE LOGO Y NAV */
-  /* Se reduce el tamaño del logo y el padding de la navegación para más espacio en móvil. */
   .nav {
     padding: 0.5rem 0;
   }
   .logo img {
-    height: 65px; /* Reducción a un tamaño más compacto */
+    height: 65px; 
   }
 }
 @media (max-width: 768px) {
@@ -227,8 +225,8 @@ img { max-width: 100%; display: block; }
 
   /* INICIO DE AJUSTE PARA AUMENTAR SEPARACIÓN DEL H1 CON EL LOGO */
   .hero-fullscreen {
-      align-items: flex-start; /* Permite que el padding-top funcione correctamente */
-      padding-top: 120px; /* Empuja el contenido debajo de la nav y añade separación */
+      align-items: flex-start;
+      padding-top: 120px;
   }
   /* FIN DE AJUSTE PARA AUMENTAR SEPARACIÓN DEL H1 CON EL LOGO */
 
@@ -237,8 +235,8 @@ img { max-width: 100%; display: block; }
       display: grid;
       grid-template-columns: 1fr; 
       gap: 20px;
-      max-width: 300px; /* Asegura que el contenedor no se extienda demasiado */
-      margin: 30px auto 0; /* Asegura el centrado */
+      max-width: 300px; 
+      margin: 30px auto 0; 
   }
   /* Anular la regla de centrado para el último elemento cuando se usa 1 columna */
   .kpi-grid-row-2 .kpi-item:last-child {
