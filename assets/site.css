@@ -211,10 +211,26 @@ img { max-width: 100%; display: block; }
   .kpi-grid-row-2 .kpi-item:last-child {
       grid-column: 1 / -1; 
   }
+
+  /* NUEVO: AJUSTE RESPONSIVE LOGO Y NAV */
+  /* Se reduce el tamaño del logo y el padding de la navegación para más espacio en móvil. */
+  .nav {
+    padding: 0.5rem 0;
+  }
+  .logo img {
+    height: 65px; /* Reducción a un tamaño más compacto */
+  }
 }
 @media (max-width: 768px) {
   .menu { display: none; }
   .projects-grid, .team-grid { grid-template-columns: 1fr; }
+
+  /* INICIO DE AJUSTE PARA AUMENTAR SEPARACIÓN DEL H1 CON EL LOGO */
+  .hero-fullscreen {
+      align-items: flex-start; /* Permite que el padding-top funcione correctamente */
+      padding-top: 120px; /* Empuja el contenido debajo de la nav y añade separación */
+  }
+  /* FIN DE AJUSTE PARA AUMENTAR SEPARACIÓN DEL H1 CON EL LOGO */
 
   /* NUEVO: Ajuste para que la segunda fila se muestre en 1 columna en móviles más pequeños */
   .kpi-grid-row-2 {
@@ -227,6 +243,11 @@ img { max-width: 100%; display: block; }
   /* Anular la regla de centrado para el último elemento cuando se usa 1 columna */
   .kpi-grid-row-2 .kpi-item:last-child {
       grid-column: auto;
+  }
+  
+  /* NUEVO: Ajuste adicional del logo para móviles más pequeños */
+  .logo img {
+    height: 50px;
   }
 }
 
@@ -878,7 +899,7 @@ img { max-width: 100%; display: block; }
     }
     
     .modal-text-col p {
-        font-size: 1rem;
+        font-size: 1.0rem;
         text-align: left;
     }
     
