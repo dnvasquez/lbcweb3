@@ -454,7 +454,7 @@ img { max-width: 100%; display: block; }
 }
 .logo-scroller::before { left: 0; background: linear-gradient(to right, var(--surface-white), transparent); }
 .logo-scroller::after { right: 0; background: linear-gradient(to left, var(--surface-white), transparent); }
-.logo-track { display: flex; align-items: center; gap: 80px; width: max-content; animation: scroll 40s linear infinite; }
+.logo-track { display: flex; align-items: center; gap: 80px; width: max-content; animation: scroll 120s linear infinite; }
 .logo-track:hover { animation-play-state: paused; }
 @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 .logo-track img {
@@ -1570,4 +1570,8 @@ body:not(.preloader-active) #website-content {
         max-width: 100%;
         font-size: 1rem;
     }
+}
+
+section[id] {
+    scroll-margin-top: 100px; /* Un valor general para todos los enlaces internos que apuntan a IDs */
 }
