@@ -107,7 +107,7 @@ img { max-width: 100%; display: block; }
 
 /* --- HERO CON COMPROMISOS INTEGRADOS --- */
 .hero-fullscreen {
-  position: relative; height: 100vh; min-height: 600px;
+  position: relative; height: 100vh; min-height: 750px;
   display: flex; align-items: center;
   overflow: hidden; background-color: var(--ink-dark);
 }
@@ -120,13 +120,12 @@ img { max-width: 100%; display: block; }
   background-color: rgba(14, 35, 31, 0.65); z-index: 2;
 }
 .hero-fullscreen .container { position: relative; z-index: 3; }
-.hero-content { text-align: left; max-width: 850px; padding-top: 100px;}
+.hero-content { text-align: left; max-width: 850px; }
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-size: clamp(3rem, 7vw, 5.5rem);
   color: var(--surface-white);
   line-height: 1.1;
-  margin-top: 0; 
 }
 .hero-commitments {
   margin-top: 3rem;
@@ -164,137 +163,71 @@ img { max-width: 100%; display: block; }
 .kpi-item span { font-size: 1rem; opacity: 0.8; text-transform: uppercase; letter-spacing: 1px; font-family: var(--font-sans); }
 
 /* AJUSTES PARA LA SEGUNDA FILA DE KPIS (3 ELEMENTOS) */
-
 .kpi-grid-row-2 {
-
-    display: flex;
-
-    justify-content: center; /* Centra el grupo de 3 elementos */
-
-    gap: 30px; /* Mantiene el espacio entre elementos */
-
-    margin-top: 30px; /* Espacio entre la primera y segunda fila */
-
+    display: flex;
+    justify-content: center; /* Centra el grupo de 3 elementos */
+    gap: 30px; /* Mantiene el espacio entre elementos */
+    margin-top: 30px; /* Espacio entre la primera y segunda fila */
 }
-
-
 
 /* Aplicar estilos visuales a los nuevos items */
-
 .kpi-grid-row-2 .kpi-item {
-
-    text-align: center; /* FIX: Asegura que el contenido (número y texto) esté centrado dentro del item. */
-
-    /* Ajusta el ancho para que la separación entre los 3 sea similar a los 4 de arriba */
-
-    flex-basis: 250px; 
-
-    flex-grow: 0;
-
-    flex-shrink: 0;
-
+    text-align: center; /* FIX: Asegura que el contenido (número y texto) esté centrado dentro del item. */
+    /* Ajusta el ancho para que la separación entre los 3 sea similar a los 4 de arriba */
+    flex-basis: 250px; 
+    flex-grow: 0;
+    flex-shrink: 0;
 }
 
-
-
-.projects-grid { grid-template-columns: repeat(2, 1fr); }
-
+.projects-grid { grid-template-columns: repeat(3, 1fr); }
 .team-grid { grid-template-columns: repeat(3, 1fr); text-align: center; }
-
 .team-member img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; object-position: top; margin: 0 auto 1rem; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
-
 .team-member p { margin: 0; color: var(--ink-light); text-transform: none; font-family: var(--font-sans);}
-
 .cta-container { background-color: var(--ink-dark); color: var(--surface-white); text-align: center; padding: 50px; border-radius: var(--radius); }
-
 .cta-container h2 { font-size: 2rem; color: white; }
-
 .cta-container p { max-width: 500px; margin: 1rem auto 2rem; }
-
 .footer { padding: 40px 0; text-align: center; background-color: var(--paper-light); }
-
 .footer-logo { height: 90px; margin: 0 auto 1rem; }
-
 .footer p { margin: 0; font-size: 0.9rem; }
-
 .footer-contact { margin-top: 0.5rem; }
-
 .btn { display: inline-block; padding: .9rem 2rem; border-radius: 999px; font-weight: 700; transition: transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);}
-
 .btn:hover { transform: translateY(-3px); box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);}
-
 .btn-primary { background-color: var(--brand-teal); color: var(--surface-white); }
 
-
-
 /* --- RESPONSIVE GENERAL --- */
-
 @media (max-width: 980px) {
-
-  .hero-commitments { grid-template-columns: 1fr; gap: 2rem; }
-
-  .projects-grid, .team-grid, .kpi-grid { grid-template-columns: repeat(2, 1fr); }
-
-  
-
-  /* NUEVO: Ajuste responsive para la fila de 3 elementos */
-
-  .kpi-grid-row-2 {
-
-      display: grid; 
-
-      grid-template-columns: repeat(2, 1fr); /* Mostrar 2 elementos por fila */
-
-      gap: 30px;
-
-      margin: 30px auto 0; /* Centra el contenedor y añade margen superior */
-
-      max-width: 500px; 
-
-  }
-
-  /* Forzar el tercer elemento a ocupar toda la fila y centrarse */
-
-  .kpi-grid-row-2 .kpi-item:last-child {
-
-      grid-column: 1 / -1; 
-
-  }
-
+  .hero-commitments { grid-template-columns: 1fr; gap: 2rem; }
+  .projects-grid, .team-grid, .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  
+  /* NUEVO: Ajuste responsive para la fila de 3 elementos */
+  .kpi-grid-row-2 {
+      display: grid; 
+      grid-template-columns: repeat(2, 1fr); /* Mostrar 2 elementos por fila */
+      gap: 30px;
+      margin: 30px auto 0; /* Centra el contenedor y añade margen superior */
+      max-width: 500px; 
+  }
+  /* Forzar el tercer elemento a ocupar toda la fila y centrarse */
+  .kpi-grid-row-2 .kpi-item:last-child {
+      grid-column: 1 / -1; 
+  }
 }
-
 @media (max-width: 768px) {
+  .menu { display: none; }
+  .projects-grid, .team-grid { grid-template-columns: 1fr; }
 
-  .menu { display: none; }
-
-  .projects-grid, .team-grid { grid-template-columns: 1fr; }
-
-
-
-  /* NUEVO: Ajuste para que la segunda fila se muestre en 1 columna en móviles más pequeños */
-
-  .kpi-grid-row-2 {
-
-      display: grid;
-
-      grid-template-columns: 1fr; 
-
-      gap: 20px;
-
-      max-width: 300px; /* Asegura que el contenedor no se extienda demasiado */
-
-      margin: 30px auto 0; /* Asegura el centrado */
-
-  }
-
-  /* Anular la regla de centrado para el último elemento cuando se usa 1 columna */
-
-  .kpi-grid-row-2 .kpi-item:last-child {
-
-      grid-column: auto;
-
-  }
-
+  /* NUEVO: Ajuste para que la segunda fila se muestre en 1 columna en móviles más pequeños */
+  .kpi-grid-row-2 {
+      display: grid;
+      grid-template-columns: 1fr; 
+      gap: 20px;
+      max-width: 300px; /* Asegura que el contenedor no se extienda demasiado */
+      margin: 30px auto 0; /* Asegura el centrado */
+  }
+  /* Anular la regla de centrado para el último elemento cuando se usa 1 columna */
+  .kpi-grid-row-2 .kpi-item:last-child {
+      grid-column: auto;
+  }
 }
 
 /* =========================================================
@@ -347,7 +280,7 @@ img { max-width: 100%; display: block; }
 .accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; }
 .accordion-body-inner { padding: 0 0 1.25rem 0; color: var(--ink-light); line-height: 1.6; } /* <-- Texto interior a oscuro */
 .accordion-item.active .accordion-header { color: var(--brand-teal); } /* Título verde activo se mantiene */
-.accordion-item.active .accordion-body { max-height: 250px; }
+.accordion-item.active .accordion-body { max-height: 150px; }
 .accordion-item.active .accordion-icon { transform: rotate(90deg); }
 @media (max-width: 980px) {
     .split-feature-image, .split-feature-content { width: 100%; }
@@ -521,7 +454,7 @@ img { max-width: 100%; display: block; }
 }
 .logo-scroller::before { left: 0; background: linear-gradient(to right, var(--surface-white), transparent); }
 .logo-scroller::after { right: 0; background: linear-gradient(to left, var(--surface-white), transparent); }
-.logo-track { display: flex; align-items: center; gap: 80px; width: max-content; animation: scroll 80s linear infinite; }
+.logo-track { display: flex; align-items: center; gap: 80px; width: max-content; animation: scroll 40s linear infinite; }
 .logo-track:hover { animation-play-state: paused; }
 @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 .logo-track img {
@@ -618,8 +551,8 @@ img { max-width: 100%; display: block; }
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px) saturate(100%);
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     padding: 2rem;
     align-items: center;
@@ -1637,9 +1570,4 @@ body:not(.preloader-active) #website-content {
         max-width: 100%;
         font-size: 1rem;
     }
-}
-
-/*Aplica scroll-margin-top a la sección de destino.*/
-section[id] {
-    scroll-margin-top: 100px; /* Un valor general para todos los enlaces internos que apuntan a IDs */
 }
