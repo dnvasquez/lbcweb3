@@ -12,18 +12,38 @@ if (yearSpan) {
 
 // Muestra el fondo de la navegación y cambia el logo al hacer scroll
 const nav = $('.nav');
-const navLogo = $('#nav-logo');
+// NOMBRES DE ARCHIVOS
+const LOGO_BLANCO_DESKTOP = 'assets/logos/logolbcblanco.png';
+const LOGO_CHOCO_DESKTOP = 'assets/logos/logolbcchoco.png';
+const LOGO_BLANCO_MOVIL = 'assets/logos/logoblancomovil.png';
+const LOGO_CHOCO_MOVIL = 'assets/logos/logocafemovil.png'; // Usamos el mismo logo choco para ambos
+
+// IDs DE ELEMENTOS
+const navLogoDesktop = $('#nav-logo-desktop');
+const navLogoMobile = $('#nav-logo-mobile');
+
+// Función para determinar el logo a actualizar
+function getActiveLogo() {
+    const isMobile = window.innerWidth <= 768; // Breakpoint de CSS
+    return isMobile ? navLogoMobile : navLogoDesktop;
+}
+
 if (nav) {
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
+    const isScrolled = window.scrollY > 50;
+    const activeLogo = getActiveLogo();
+
+    if (isScrolled) {
       nav.classList.add('scrolled');
-      if (navLogo) {
-        navLogo.src = 'assets/logos/logolbcchoco.png';
+      if (activeLogo) {
+        const logoChocoSrc = activeLogo === navLogoMobile ? LOGO_CHOCO_MOVIL : LOGO_CHOCO_DESKTOP;
+        activeLogo.src = logoChocoSrc;
       }
     } else {
       nav.classList.remove('scrolled');
-      if (navLogo) {
-        navLogo.src = 'assets/logos/logolbcblanco.png';
+      if (activeLogo) {
+        const logoBlancoSrc = activeLogo === navLogoMobile ? LOGO_BLANCO_MOVIL : LOGO_BLANCO_DESKTOP;
+        activeLogo.src = logoBlancoSrc;
       }
     }
   }, { passive: true });
