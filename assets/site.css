@@ -234,6 +234,21 @@ img { max-width: 100%; display: block; }
 @media (max-width: 768px) {
   .menu { display: none; }
 
+/* INICIO DE MODIFICACIÓN: Invertir visibilidad del logo en móvil */
+  .logo-desktop {
+      display: none !important; /* Oculta el logo de escritorio */
+  }
+
+  .logo-mobile {
+      display: block !important; /* Muestra el logo móvil */
+      max-width: 100px; /* Ajusta el ancho según sea necesario para el logo móvil */
+      height: auto;
+ /* Limpiamos estilos de animación/posicionamiento CSS para que JS tome el control */
+      position: static;
+      opacity: 1;
+      transition: none;
+  }
+
   /* INICIO DE MODIFICACIÓN: Mostrar y aplicar estilos de ICONO SIN FONDO en móvil */
   .nav-inner .cta-mobile {
       display: flex; 
@@ -1632,3 +1647,8 @@ body:not(.preloader-active) #website-content {
 section[id] {
     scroll-margin-top: 100px; /* Un valor general para todos los enlaces internos que apuntan a IDs */
 }
+
+/* Ocultar el logo móvil por defecto (desktop) */
+.logo-mobile {
+    display: none;
+    height: 100%; /* Asegura que ambos ocupen el mismo espacio vertical si es necesario */
