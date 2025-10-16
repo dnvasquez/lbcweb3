@@ -105,6 +105,11 @@ img { max-width: 100%; display: block; }
   transition: background-color 0.2s;
 }
 
+/* INICIO DE MODIFICACIÓN: Ocultar el botón de contacto móvil en vista desktop */
+.nav-inner .cta-mobile {
+    display: none; 
+}
+
 /* --- HERO CON COMPROMISOS INTEGRADOS --- */
 .hero-fullscreen {
   position: relative; height: 100vh; min-height: 750px;
@@ -228,14 +233,40 @@ img { max-width: 100%; display: block; }
 }
 @media (max-width: 768px) {
   .menu { display: none; }
-  .projects-grid, .team-grid { grid-template-columns: 1fr; }
 
-  /* INICIO DE AJUSTE PARA AUMENTAR SEPARACIÓN DEL H1 CON EL LOGO */
-  .hero-fullscreen {
-      align-items: flex-start;
-      padding-top: 120px;
+  /* INICIO DE MODIFICACIÓN: Mostrar y aplicar estilos de ICONO SIN FONDO en móvil */
+  .nav-inner .cta-mobile {
+      display: flex; 
+      align-items: center;
+      justify-content: center;
+      
+      /* Se eliminan estilos de fondo, ancho y alto para que sea solo el ícono */
+      padding: 0.5rem; /* Pequeño padding para hacerlo clicable */
+      background-color: transparent;
+      border-radius: 0;
+      
+      /* ESTADO INICIAL (NO SCROLLED / HERO) */
+      font-size: 1.8rem; /* Aumentamos el tamaño para que sea un punto de contacto fácil */
+      color: var(--surface-white); /* Color del trazo: blanco */
+      margin-left: auto; /* Posicionamiento a la derecha */
+      
+      transition: all 0.3s ease; 
+      box-shadow: none;
   }
-  /* FIN DE AJUSTE PARA AUMENTAR SEPARACIÓN DEL H1 CON EL LOGO */
+
+  /* ESTADO SCROLLED: Cambiar color del icono a chocolate (trazos) */
+  .nav.scrolled .cta-mobile {
+      background-color: transparent; 
+      color: var(--ink-dark); /* Color del trazo: café/chocolate */
+      box-shadow: none;
+      border: none;
+  }
+  
+  /* Hover/Active para mejor experiencia */
+  .nav-inner .cta-mobile:active {
+      transform: scale(0.95);
+      opacity: 0.7; /* Ligeramente más transparente al ser presionado */
+  }  /* FIN DE AJUSTE PARA AUMENTAR SEPARACIÓN DEL H1 CON EL LOGO */
 
   /* NUEVO: Ajuste para que la segunda fila se muestre en 1 columna en móviles más pequeños */
   .kpi-grid-row-2 {
@@ -252,7 +283,7 @@ img { max-width: 100%; display: block; }
   
   /* NUEVO: Ajuste adicional del logo para móviles más pequeños */
   .logo img {
-    height: 50px;
+    height: 60px;
   }
 }
 
