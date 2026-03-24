@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Biblioteca — LBC Consultores Ambientales</title>
+  <link rel="stylesheet" href="assets/site.css" />
+  <link rel="icon" href="assets/logos/logolbcnav.png" type="image/png">
+  <style>
+    /* Estilos para Estética Editorial */
+    body { background-color: #f9f7f2; } /* Fondo crema muy suave */
+    
+    .library-section { padding-top: 160px; padding-bottom: 100px; }
+    
+    .pub-list {
+      margin-top: 60px;
+      border-top: 1px solid var(--ink-dark);
+    }
+
+    .pub-row {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      gap: 30px;
+      padding: 40px 0;
+      border-bottom: 1px solid rgba(66, 3, 23, 0.1);
+      transition: background-color 0.3s ease;
+      align-items: center;
+    }
+
+    .pub-row:hover { background-color: rgba(66, 3, 23, 0.02); }
+
+    .pub-meta {
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--brand-teal);
+      font-weight: 600;
+    }
+
+    .pub-info h3 {
+      font-size: 1.4rem;
+      margin: 0 0 10px 0;
+      text-transform: none; /* Estética más moderna */
+      color: var(--ink-dark);
+    }
+
+    .pub-info p {
+      font-size: 1rem;
+      margin: 0;
+      color: var(--ink-light);
+      max-width: 600px;
+    }
+
+    .pub-action { text-align: right; }
+
+    /* Botón de descarga minimalista */
+    .btn-download {
+      display: inline-block;
+      padding: 10px 24px;
+      border: 1px solid var(--ink-dark);
+      color: var(--ink-dark);
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-download:hover {
+      background-color: var(--ink-dark);
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .pub-row { grid-template-columns: 1fr; gap: 15px; text-align: left; }
+      .pub-action { text-align: left; }
+      .pub-meta { order: 1; }
+      .pub-info { order: 2; }
+      .pub-action { order: 3; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="nav scrolled">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">
+        <img src="assets/logos/logolbcchoco.png" alt="Logo LBC" style="height: 90px;" />
+      </a>
+      <nav class="menu">
+        <a class="cta" href="index.html">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="library-section">
+    <div class="container">
+      <div class="section-header-left">
+        <span class="section-tag">Publicaciones Técnicas</span>
+        <h2 style="font-size: 3rem;">Recursos de <br>lectura</h2>
+      </div>
+
+      <div class="pub-list">
+
+ <article class="pub-row">
+  <div class="pub-meta">Marzo, 2026</div>
+  <div class="pub-info">
+    <h3>Biodiversidad y Medio Ambiente en certificaciones agrícolas</h3>
+    <p>Comparación técnica de los requisitos ambientales y de biodiversidad en GlobalG.A.P., LEAF Marque y Rainforest Alliance, elaborada desde la experiencia de campo en predios frutícolas chilenos. Analiza similitudes, diferencias operativas y dificultades reales de implementación, con foco en cómo traducir las exigencias de certificación en gestión ambiental efectiva del sistema productivo.</p>
+  </div>
+  <div class="pub-action">
+    <a href="assets/CTRA.pdf" target="_blank" class="btn-download">LEER DOCUMENTO</a>
+  </div>
+</article>
+
+        <article class="pub-row">
+          <div class="pub-meta">Septiembre, 2025</div>
+          <div class="pub-info">
+            <h3>Estrategia de Retención Hídrica</h3>
+            <p>Diseño de soluciones basadas en la naturaleza para la Asociación Parque Cordillera en la precordillera de Las Condes.</p>
+          </div>
+          <div class="pub-action">
+            <a href="assets/ERH.pdf" target="_blank" class="btn-download">LEER DOCUMENTO</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <img src="assets/logos/iconolbc.png" alt="Logo LBC" class="footer-logo"/>
+      <p>LBC Consultores Ambientales © 2025</p>
+    </div>
+  </footer>
+
+</body>
+</html>
