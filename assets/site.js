@@ -50,10 +50,35 @@ if (nav) {
 }
 
 const btn = $('#menuBtn'),
-  menu = $('#menu');
-btn?.addEventListener('click', () => {
-  menu.classList.toggle('show');
-  btn.setAttribute('aria-expanded', menu.classList.contains('show') ? 'true' : 'false');
+  mobileNav = $('#mobileNav'),
+  mobileMenu = $('#mobileMenu');
+
+btn?.addEventListener('click', (event) => {
+  event.preventDefault();
+  const isOpen = mobileNav.classList.toggle('open');
+  btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+});
+
+mobileMenu?.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileNav?.classList.remove('open');
+    btn?.setAttribute('aria-expanded', 'false');
+  });
+});
+
+window.addEventListener('click', (event) => {
+  if (!mobileNav || !mobileNav.classList.contains('open')) return;
+  if (!mobileNav.contains(event.target)) {
+    mobileNav.classList.remove('open');
+    btn?.setAttribute('aria-expanded', 'false');
+  }
+});
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 768 && mobileNav?.classList.contains('open')) {
+    mobileNav.classList.remove('open');
+    btn?.setAttribute('aria-expanded', 'false');
+  }
 });
 
 // Activa enlace de navegación según la sección visible (para One Page)
