@@ -105,9 +105,18 @@ img { max-width: 100%; display: block; }
   transition: background-color 0.2s;
 }
 
-/* INICIO DE MODIFICACIÓN: Ocultar el botón de contacto móvil en vista desktop */
+/* Contenedor de navegación móvil */
+.mobile-nav {
+  display: none;
+  position: relative;
+}
+
 .nav-inner .cta-mobile {
-    display: none; 
+  display: none;
+}
+
+.mobile-menu {
+  display: none;
 }
 
 /* --- HERO CON COMPROMISOS INTEGRADOS --- */
@@ -249,39 +258,103 @@ img { max-width: 100%; display: block; }
       transition: none;
   }
 
-  /* INICIO DE MODIFICACIÓN: Mostrar y aplicar estilos de ICONO SIN FONDO en móvil */
-  .nav-inner .cta-mobile {
-      display: flex; 
+  .mobile-nav {
+      display: flex;
       align-items: center;
-      justify-content: center;
-      
-      /* Se eliminan estilos de fondo, ancho y alto para que sea solo el ícono */
-      padding: 0.5rem; /* Pequeño padding para hacerlo clicable */
-      background-color: transparent;
-      border-radius: 0;
-      
-      /* ESTADO INICIAL (NO SCROLLED / HERO) */
-      font-size: 1.8rem; /* Aumentamos el tamaño para que sea un punto de contacto fácil */
-      color: var(--surface-white); /* Color del trazo: blanco */
-      margin-left: auto; /* Posicionamiento a la derecha */
-      
-      transition: all 0.3s ease; 
-      box-shadow: none;
+      margin-left: auto;
   }
 
-  /* ESTADO SCROLLED: Cambiar color del icono a chocolate (trazos) */
-  .nav.scrolled .cta-mobile {
-      background-color: transparent; 
-      color: var(--ink-dark); /* Color del trazo: café/chocolate */
-      box-shadow: none;
+  .nav-inner .cta-mobile {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      background: transparent;
       border: none;
+      border-radius: 0;
+      margin-left: auto;
+      cursor: pointer;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+      box-shadow: none;
+      appearance: none;
+      -webkit-appearance: none;
+  }
+
+  .nav-inner .cta-mobile .hamburger-line {
+      display: block;
+      width: 24px;
+      height: 2px;
+      margin: 3px 0;
+      border-radius: 999px;
+      background-color: var(--surface-white);
+      transition: background-color 0.3s ease, transform 0.25s ease, opacity 0.25s ease;
+  }
+
+  .nav.scrolled .cta-mobile .hamburger-line {
+      background-color: var(--ink-dark);
+  }
+
+  .mobile-nav.open .cta-mobile .hamburger-line:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+  }
+
+  .mobile-nav.open .cta-mobile .hamburger-line:nth-child(2) {
+      opacity: 0;
+  }
+
+  .mobile-nav.open .cta-mobile .hamburger-line:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .mobile-menu {
+      position: absolute;
+      top: calc(100% + 0.65rem);
+      right: 0;
+      min-width: 190px;
+      padding: 0.55rem;
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid rgba(66, 3, 23, 0.08);
+      border-radius: 14px;
+      box-shadow: 0 18px 40px rgba(30, 20, 16, 0.18);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-6px);
+      transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
+      z-index: 120;
+      display: block;
+  }
+
+  .mobile-nav.open .mobile-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+  }
+
+  .mobile-menu a {
+      display: block;
+      padding: 0.8rem 0.95rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--ink-light);
+      border-radius: 10px;
+      transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .mobile-menu a:hover,
+  .mobile-menu a:active {
+      background-color: rgba(66, 3, 23, 0.07);
+      color: var(--ink-dark);
   }
   
-  /* Hover/Active para mejor experiencia */
   .nav-inner .cta-mobile:active {
       transform: scale(0.95);
-      opacity: 0.7; /* Ligeramente más transparente al ser presionado */
-  }  /* FIN DE AJUSTE PARA AUMENTAR SEPARACIÓN DEL H1 CON EL LOGO */
+      opacity: 0.8;
+  }
 
   /* NUEVO: Ajuste para que la segunda fila se muestre en 1 columna en móviles más pequeños */
   .kpi-grid-row-2 {
@@ -1652,3 +1725,108 @@ section[id] {
 .logo-mobile {
     display: none;
     height: 100%; /* Asegura que ambos ocupen el mismo espacio vertical si es necesario */
+
+
+
+
+
+/* === Ajuste final icono hamburguesa móvil === */
+@media (max-width: 768px) {
+  .nav-inner .cta-mobile {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+  }
+
+  .nav-inner .cta-mobile .hamburger-line {
+    display: block;
+    width: 24px;
+    height: 2px;
+    margin: 0;
+    border-radius: 999px;
+    background-color: var(--surface-white);
+  }
+
+  .nav.scrolled .cta-mobile .hamburger-line {
+    background-color: var(--ink-dark);
+  }
+
+  .mobile-nav.open .cta-mobile .hamburger-line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .mobile-nav.open .cta-mobile .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-nav.open .cta-mobile .hamburger-line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}
+
+
+
+/* === SVG Hamburger (definitivo) === */
+.menu-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-toggle svg {
+  display: block;
+}
+
+/* color inicial */
+.menu-toggle .line {
+  fill: #ffffff;
+  transition: fill 0.3s ease, transform 0.25s ease, opacity 0.25s ease;
+  transform-origin: center;
+}
+
+/* color al hacer scroll */
+.header.scrolled .menu-toggle .line {
+  fill: #6B1A2B;
+}
+
+/* animación */
+.menu-toggle.active .line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.menu-toggle.active .line:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.active .line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* === Corrección definitiva botón hamburguesa móvil === */
+@media (max-width: 768px) {
+  .nav-inner .cta-mobile {
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 0 !important;
+  }
+
+  .nav-inner .cta-mobile .hamburger-line {
+    width: 24px !important;
+    height: 2px !important;
+    margin: 3px 0 !important;
+  }
+}
