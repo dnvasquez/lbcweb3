@@ -208,6 +208,29 @@ img { max-width: 100%; display: block; }
   color: var(--surface-white);
   line-height: 1.1;
 }
+.hero-lead {
+  max-width: 720px;
+  margin: 1.1rem 0 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  line-height: 1.7;
+}
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+.hero-btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--surface-white);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: none;
+}
+.hero-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
 .hero-commitments {
   margin-top: 3rem;
   padding-top: 2rem;
@@ -287,6 +310,7 @@ img { max-width: 100%; display: block; }
   }
 }
 @media (max-width: 980px) {
+  .hero-actions { flex-wrap: wrap; }
   .hero-commitments { grid-template-columns: 1fr; gap: 2rem; }
   .projects-grid, .team-grid, .kpi-grid { grid-template-columns: repeat(2, 1fr); }
   
@@ -308,6 +332,34 @@ img { max-width: 100%; display: block; }
   }
 }
 @media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.8rem !important;
+    line-height: 1.05;
+  }
+  .hero-fullscreen {
+    min-height: 820px;
+  }
+  .hero-fullscreen .container {
+    padding-top: 0rem;
+  }
+  .hero-content {
+    max-width: 100%;
+  }
+  .hero-lead {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+  .hero-commitments {
+    display: none;
+  }
   .menu { display: none; }
 
 /* INICIO DE MODIFICACIÓN: Invertir visibilidad del logo en móvil */
