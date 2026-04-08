@@ -81,17 +81,38 @@
   </style>
 </head>
 <body>
-
-  <header class="nav scrolled">
-    <div class="container nav-inner">
-      <a href="index.html" class="logo">
-        <img src="assets/logos/logocafemovil.png" alt="Logo LBC" style="height: 60px;" />
-      </a>
-      <nav class="menu">
-        <a class="cta" href="index.html">Home</a>
-      </nav>
-    </div>
-  </header>
+  <div id="website-content">
+    <header class="nav scrolled">
+      <div class="container nav-inner">
+        <a href="index.html" class="logo" aria-label="LBC — Home">
+          <img id="nav-logo-desktop" class="logo-desktop" src="assets/logos/logolbcchoco.png" alt="Logo LBC" />
+          <img id="nav-logo-mobile" class="logo-mobile" src="assets/logos/logocafemovil.png" alt="Logo LBC Móvil" />
+        </a>
+        <nav class="menu" id="menu" aria-label="Navegación principal">
+          <a href="index.html#servicios">Servicios</a>
+          <a href="index.html#proyectos">Proyectos</a>
+          <a href="index.html#nosotros">Nosotros</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="publicaciones.html">Publicaciones</a>
+          <a class="cta" href="index.html#contacto">Contacto</a>
+        </nav>
+        <div class="mobile-nav" id="mobileNav">
+          <button id="menuBtn" class="cta-mobile" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+          <div class="mobile-menu" id="mobileMenu" aria-label="Menú móvil">
+            <a href="index.html#servicios">Servicios</a>
+            <a href="index.html#proyectos">Proyectos</a>
+            <a href="index.html#nosotros">Nosotros</a>
+            <a href="index.html#faq">FAQ</a>
+            <a href="publicaciones.html">Publicaciones</a>
+            <a href="index.html#contacto">Contacto</a>
+          </div>
+        </div>
+      </div>
+    </header>
 
   <main class="library-section">
     <div class="container">
@@ -131,10 +152,12 @@
   <footer class="footer">
     <div class="container">
       <img src="assets/logos/iconolbc.png" alt="Logo LBC" class="footer-logo"/>
-       <p>LBC Consultores Ambientales © 2026</p>
+       <p>LBC Consultores Ambientales © <span id="y"></span></p>
         <p class="footer-contact"><a href="mailto:proyectos@lbconservation.org">proyectos@lbconservation.org</a></p>
     </div>
   </footer>
+  </div>
 
+  <script src="assets/site.js"></script>
 </body>
 </html>

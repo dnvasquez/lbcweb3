@@ -21,6 +21,7 @@ const LOGO_CHOCO_MOVIL = 'assets/logos/logocafemovil.png'; // Usamos el mismo lo
 // IDs DE ELEMENTOS
 const navLogoDesktop = $('#nav-logo-desktop');
 const navLogoMobile = $('#nav-logo-mobile');
+const isHomePage = location.pathname.endsWith('/') || location.pathname.endsWith('index.html');
 
 // Función para determinar el logo a actualizar
 function getActiveLogo() {
@@ -28,7 +29,7 @@ function getActiveLogo() {
     return isMobile ? navLogoMobile : navLogoDesktop;
 }
 
-if (nav) {
+if (nav && isHomePage) {
   window.addEventListener('scroll', () => {
     const isScrolled = window.scrollY > 50;
     const activeLogo = getActiveLogo();
@@ -47,6 +48,10 @@ if (nav) {
       }
     }
   }, { passive: true });
+} else if (nav) {
+  nav.classList.add('scrolled');
+  if (navLogoDesktop) navLogoDesktop.src = LOGO_CHOCO_DESKTOP;
+  if (navLogoMobile) navLogoMobile.src = LOGO_CHOCO_MOVIL;
 }
 
 const btn = $('#menuBtn'),
@@ -103,7 +108,7 @@ function markActiveOnScroll() {
 }
 
 // Llama a la función si estamos en la página principal
-if (location.pathname.endsWith('/') || location.pathname.endsWith('index.html')) {
+if (isHomePage) {
   markActiveOnScroll();
 } else {
   (function markActive() {
