@@ -690,6 +690,7 @@ img { max-width: 100%; display: block; }
 
 
 
+
 /* =========================================================
    ESTILOS MEJORADOS PARA SECCIÓN DE EQUIPO
    ========================================================= */
@@ -1392,6 +1393,63 @@ img { max-width: 100%; display: block; }
   max-width: 650px;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* Pulido institucional del formulario de contacto */
+.contact-form-simple .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.contact-form-simple .field-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.45rem;
+  text-align: left;
+}
+
+.contact-form-simple .field-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(66, 3, 23, 0.72);
+}
+
+.contact-form-simple input,
+.contact-form-simple textarea,
+.contact-form-simple select {
+  padding: 0.95rem 1rem;
+  border-radius: 14px;
+  border: 1px solid rgba(66, 3, 23, 0.1);
+  background-color: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 8px 20px rgba(66, 3, 23, 0.04);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.contact-form-simple input:focus,
+.contact-form-simple textarea:focus,
+.contact-form-simple select:focus {
+  box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.14);
+  background-color: #FFFFFF;
+}
+
+@media (max-width: 768px) {
+  .contact-form-simple .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form-simple .field-label {
+    font-size: 0.78rem;
+  }
+
+  .contact-form-simple input,
+  .contact-form-simple textarea,
+  .contact-form-simple select {
+    font-size: 0.98rem;
+  }
 }
 
 /* =========================================================

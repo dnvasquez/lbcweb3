@@ -424,39 +424,54 @@
         <input type="hidden" name="form-name" value="contact" />
 
         <div class="form-fields">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-            <input type="name" name="Nombre" placeholder="Nombre y Apellido">
-            <input type="organization" name="Organización" placeholder="Organización">
-            <input type="email" name="email" placeholder="Correo electrónico*" required>
-            <input type="tel" name="telefono" placeholder="+56 9 XXXXXXXX">
+          <div class="form-row">
+            <label class="field-group">
+              <span class="field-label">Nombre y apellido</span>
+              <input type="text" name="Nombre" placeholder="Tu nombre completo">
+            </label>
+            <label class="field-group">
+              <span class="field-label">Organización</span>
+              <input type="text" name="Organización" placeholder="Empresa o institución">
+            </label>
+            <label class="field-group">
+              <span class="field-label">Correo electrónico</span>
+              <input type="email" name="email" placeholder="nombre@empresa.cl" required>
+            </label>
+            <label class="field-group">
+              <span class="field-label">Teléfono</span>
+              <input type="tel" name="telefono" placeholder="+56 9 XXXXXXXX">
+            </label>
           </div>
-          <select name="servicio" required>
-            <option value="">Selecciona un servicio de interés...</option>
-            <optgroup label="Evaluación y Diagnóstico">
-              <option value="Estudios de Conectividad de Paisaje">Estudios de Conectividad de Paisaje</option>
-              <option value="Estudios de Paisaje y Turismo">Estudios de Paisaje y Turismo</option>
-              <option value="Líneas Base y Caracterización de Flora y Fauna">Líneas Base y Caracterización de Flora y Fauna</option>
-              <option value="Estudios de Suelo">Estudios de Suelo</option>
-              <option value="Caracterización y Delimitación de Humedales">Caracterización y Delimitación de Humedales</option>
-            </optgroup>
-            <optgroup label="Asesoría y Cumplimiento">
-              <option value="Gestión de Permisos Ambientales Sectoriales (PAS)">Gestión de Permisos Ambientales Sectoriales (PAS)</option>
-              <option value="Análisis de Cargos Sancionatorios y Determinación de Efectos Ambientales">Análisis de Cargos Sancionatorios y Determinación de Efectos Ambientales</option>
-              <option value="Elaboración y seguimiento de Planes de Cumplimiento Ambiental (PdC)">Elaboración y seguimiento de Planes de Cumplimiento Ambiental (PdC)</option>
-              <option value="Auditorías Ambientales para Certificaciones Agrícolas">Auditorías Ambientales para Certificaciones Agrícolas</option>
-              <option value="Tramitación sectorial (CONAF/SAG)">Tramitación sectorial (CONAF/SAG)</option>
-            </optgroup>
-            <optgroup label="Planificación y Diseño">
-              <option value="Planes de Restauración Ecológica">Planes de Restauración Ecológica</option>
-              <option value="Planificación de Áreas de Conservación">Planificación de Áreas de Conservación</option>
-            </optgroup>
-            <optgroup label="Ejecución de Medidas">
-              <option value="Rescate y Relocalización de Especies">Rescate y Relocalización de Especies</option>
-              <option value="Proyectos de Reforestación">Proyectos de Reforestación</option>
-              <option value="OCAS">OCAS</option>
-              <option value="CAV">CAV</option>
-            </optgroup>
-          </select>
+          <label class="field-group">
+            <span class="field-label">Servicio de interés</span>
+            <select name="servicio" required>
+              <option value="">Selecciona un servicio...</option>
+              <optgroup label="Evaluación y Diagnóstico">
+                <option value="Estudios de Conectividad de Paisaje">Estudios de Conectividad de Paisaje</option>
+                <option value="Estudios de Paisaje y Turismo">Estudios de Paisaje y Turismo</option>
+                <option value="Líneas Base y Caracterización de Flora y Fauna">Líneas Base y Caracterización de Flora y Fauna</option>
+                <option value="Estudios de Suelo">Estudios de Suelo</option>
+                <option value="Caracterización y Delimitación de Humedales">Caracterización y Delimitación de Humedales</option>
+              </optgroup>
+              <optgroup label="Asesoría y Cumplimiento">
+                <option value="Gestión de Permisos Ambientales Sectoriales (PAS)">Gestión de Permisos Ambientales Sectoriales (PAS)</option>
+                <option value="Análisis de Cargos Sancionatorios y Determinación de Efectos Ambientales">Análisis de Cargos Sancionatorios y Determinación de Efectos Ambientales</option>
+                <option value="Elaboración y seguimiento de Planes de Cumplimiento Ambiental (PdC)">Elaboración y seguimiento de Planes de Cumplimiento Ambiental (PdC)</option>
+                <option value="Auditorías Ambientales para Certificaciones Agrícolas">Auditorías Ambientales para Certificaciones Agrícolas</option>
+                <option value="Tramitación sectorial (CONAF/SAG)">Tramitación sectorial (CONAF/SAG)</option>
+              </optgroup>
+              <optgroup label="Planificación y Diseño">
+                <option value="Planes de Restauración Ecológica">Planes de Restauración Ecológica</option>
+                <option value="Planificación de Áreas de Conservación">Planificación de Áreas de Conservación</option>
+              </optgroup>
+              <optgroup label="Ejecución de Medidas">
+                <option value="Rescate y Relocalización de Especies">Rescate y Relocalización de Especies</option>
+                <option value="Proyectos de Reforestación">Proyectos de Reforestación</option>
+                <option value="OCAS">OCAS</option>
+                <option value="CAV">CAV</option>
+              </optgroup>
+            </select>
+          </label>
         </div>
         <button type="submit" class="btn btn-primary">Contactar</button>
         <small class="form-status" id="leadStatusHome" role="status" aria-live="polite"></small>
