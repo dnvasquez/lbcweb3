@@ -87,9 +87,17 @@ window.addEventListener('resize', () => {
 });
 
 // Activa enlace de navegación según la sección visible (para One Page)
+function setActiveNavLink(predicate) {
+  ['.menu a', '.mobile-menu a'].forEach(selector => {
+    $$(selector).forEach(a => {
+      a.classList.remove('active');
+      if (predicate(a)) a.classList.add('active');
+    });
+  });
+}
+
 function markActiveOnScroll() {
   const sections = $$('section[id]');
-  const navLinks = $$('.menu a');
   addEventListener('scroll', () => {
     let current = '';
     sections.forEach(section => {
@@ -98,12 +106,7 @@ function markActiveOnScroll() {
         current = section.getAttribute('id');
       }
     });
-    navLinks.forEach(a => {
-      a.classList.remove('active');
-      if (a.getAttribute('href').substring(1) === current) {
-        a.classList.add('active');
-      }
-    });
+    setActiveNavLink(a => a.getAttribute('href')?.substring(1) === current);
   }, { passive: true });
 }
 
@@ -113,12 +116,11 @@ if (isHomePage) {
 } else {
   (function markActive() {
     const path = location.pathname.split('/').pop() || 'index.html';
-    $$('.menu a').forEach(a => {
+    setActiveNavLink(a => {
       const href = a.getAttribute('href');
-      if (!href) return;
+      if (!href) return false;
       const cleanHref = href.includes('#') ? href.split('#')[0] : href;
-      if (cleanHref === '' && path === 'index.html') a.classList.add('active');
-      if (cleanHref === path) a.classList.add('active');
+      return (cleanHref === '' && path === 'index.html') || cleanHref === path;
     });
   })();
 }
