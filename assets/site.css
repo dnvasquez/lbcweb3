@@ -25,6 +25,7 @@
   /* Geometría */
   --radius: 12px;
   --container: 1200px;
+  --nav-offset: 132px;
 }
 
 /* --- RESET Y BASE --- */
@@ -188,9 +189,14 @@ img { max-width: 100%; display: block; }
 
 /* --- HERO CON COMPROMISOS INTEGRADOS --- */
 .hero-fullscreen {
-  position: relative; height: 100vh; min-height: 750px;
-  display: flex; align-items: center;
-  overflow: hidden; background-color: var(--ink-dark);
+  position: relative;
+  min-height: max(750px, 100svh);
+  display: flex;
+  align-items: center;
+  padding-top: calc(var(--nav-offset) + clamp(1.5rem, 3vw, 3rem));
+  padding-bottom: clamp(2.5rem, 5vw, 4rem);
+  overflow: hidden;
+  background-color: var(--ink-dark);
 }
 #hero-video {
   position: absolute; top: 50%; left: 50%; width: auto; height: auto;
@@ -746,6 +752,10 @@ img { max-width: 100%; display: block; }
   }
 }
 @media (max-width: 980px) {
+  :root {
+    --nav-offset: 98px;
+  }
+
   .hero-actions { flex-wrap: wrap; }
   .hero-commitments { grid-template-columns: 1fr; gap: 2rem; }
   .projects-grid, .team-grid, .kpi-grid { grid-template-columns: repeat(2, 1fr); }
@@ -768,6 +778,10 @@ img { max-width: 100%; display: block; }
   }
 }
 @media (max-width: 768px) {
+  :root {
+    --nav-offset: 88px;
+  }
+
   .hero-title {
     font-size: 2.8rem !important;
     line-height: 1.05;
@@ -2478,7 +2492,7 @@ body:not(.preloader-active) #website-content {
 }
 
 section[id] {
-    scroll-margin-top: 100px; /* Un valor general para todos los enlaces internos que apuntan a IDs */
+    scroll-margin-top: calc(var(--nav-offset) + 16px); /* Compensa el header fijo en saltos internos */
 }
 
 /* Ocultar el logo móvil por defecto (desktop) */
