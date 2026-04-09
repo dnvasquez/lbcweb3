@@ -2492,7 +2492,7 @@ body:not(.preloader-active) #website-content {
 }
 
 section[id] {
-    scroll-margin-top: calc(var(--nav-offset) + 16px); /* Compensa el header fijo en saltos internos */
+    scroll-margin-top: var(--nav-offset); /* Respaldo para navegación por hash y accesos directos */
 }
 
 /* Ocultar el logo móvil por defecto (desktop) */

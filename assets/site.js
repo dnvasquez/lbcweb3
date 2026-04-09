@@ -125,6 +125,37 @@ if (isHomePage) {
   })();
 }
 
+// Ajusta el scroll de anclas para compensar con precisión la altura actual del navbar fijo
+if (nav) {
+  $$('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', event => {
+      const href = link.getAttribute('href');
+      if (!href || href === '#') return;
+
+      const target = document.querySelector(href);
+      if (!target) return;
+
+      const scrollTarget = target.id === 'servicios'
+        ? target.querySelector('.split-feature-content-inner') || target
+        : target;
+
+      event.preventDefault();
+
+      const navHeight = nav.getBoundingClientRect().height;
+      const targetTop = scrollTarget.getBoundingClientRect().top + window.scrollY - navHeight;
+
+      window.scrollTo({
+        top: Math.max(0, targetTop),
+        behavior: 'smooth'
+      });
+
+      if (location.hash !== href) {
+        history.replaceState(null, '', href);
+      }
+    });
+  });
+}
+
 // Envío de formularios con Netlify
 // Handles Netlify form submission via AJAX
 const netlifyForm = document.querySelector('form[data-netlify="true"]');
