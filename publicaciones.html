@@ -19,7 +19,7 @@
 
     .pub-row {
       display: grid;
-      grid-template-columns: 1fr 2fr 1fr;
+      grid-template-columns: 140px 2fr 1fr;
       gap: 30px;
       padding: 40px 0;
       border-bottom: 1px solid rgba(66, 3, 23, 0.1);
@@ -31,11 +31,25 @@
 
     .pub-meta {
       font-family: var(--font-sans);
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--brand-teal);
-      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .pub-thumb {
+      width: 100%;
+      max-width: 132px;
+      border-radius: 10px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+      background: rgba(255, 255, 255, 0.75);
+    }
+
+    .pub-thumb img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      border-radius: 10px;
     }
 
     .pub-info h3 {
@@ -74,9 +88,10 @@
     @media (max-width: 768px) {
       .pub-row { grid-template-columns: 1fr; gap: 15px; text-align: left; }
       .pub-action { text-align: left; }
-      .pub-meta { order: 1; }
+      .pub-meta { order: 1; justify-content: flex-start; }
       .pub-info { order: 2; }
       .pub-action { order: 3; }
+      .pub-thumb { max-width: 160px; }
     }
   </style>
 </head>
@@ -123,19 +138,42 @@
 
       <div class="pub-list">
 
- <article class="pub-row">
-  <div class="pub-meta">Marzo, 2026</div>
-  <div class="pub-info">
-    <h3>Biodiversidad y Medio Ambiente en certificaciones agrícolas</h3>
-    <p>Comparación técnica de los requisitos ambientales y de biodiversidad en GlobalG.A.P., LEAF Marque y Rainforest Alliance, elaborada desde la experiencia de campo en predios frutícolas chilenos. Analiza similitudes, diferencias operativas y dificultades reales de implementación, con foco en cómo traducir las exigencias de certificación en gestión ambiental efectiva del sistema productivo.</p>
-  </div>
-  <div class="pub-action">
-    <a href="assets/eBMCA_0326.pdf" target="_blank" class="btn-download">LEER DOCUMENTO</a>
-  </div>
-</article>
+        <article class="pub-row">
+          <div class="pub-meta">
+            <div class="pub-thumb">
+              <img src="assets/img/Publicacion3.png" alt="Miniatura de la publicación Brochure corporativo 2026" />
+            </div>
+          </div>
+          <div class="pub-info">
+            <h3>Brochure corporativo 2026</h3>
+            <p>Brochure corporativo 2026 de LBC Consultores Ambientales sobre soluciones integrales para la gestión de proyectos de inversión.</p>
+          </div>
+          <div class="pub-action">
+            <a href="assets/eBrochure_0426.pdf" target="_blank" class="btn-download">LEER DOCUMENTO</a>
+          </div>
+        </article>
 
         <article class="pub-row">
-          <div class="pub-meta">Septiembre, 2025</div>
+          <div class="pub-meta">
+            <div class="pub-thumb">
+              <img src="assets/img/Publicacion2.png" alt="Miniatura de la publicación de Marzo, 2026" />
+            </div>
+          </div>
+          <div class="pub-info">
+            <h3>Biodiversidad y Medio Ambiente en certificaciones agrícolas</h3>
+            <p>Análisis comparativo de certificaciones agrícolas internacionales y su implementación técnica en la gestión ambiental de predios frutícolas chilenos.</p>
+          </div>
+          <div class="pub-action">
+            <a href="assets/eBMCA_0326.pdf" target="_blank" class="btn-download">LEER DOCUMENTO</a>
+          </div>
+        </article>
+
+        <article class="pub-row">
+          <div class="pub-meta">
+            <div class="pub-thumb">
+              <img src="assets/img/Publicacion1.png" alt="Miniatura de la publicación de Septiembre, 2025" />
+            </div>
+          </div>
           <div class="pub-info">
             <h3>Estrategia de Retención Hídrica</h3>
             <p>Diseño de soluciones basadas en la naturaleza para la Asociación Parque Cordillera en la precordillera de Las Condes.</p>
