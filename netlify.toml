@@ -1,0 +1,34 @@
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "http://lbconservation.org/*"
+  to = "https://lbconservation.org/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.lbconservation.org/*"
+  to = "https://lbconservation.org/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/servicio.html"
+  to = "/construccion.html?tipo=servicio"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/proyecto.html"
+  to = "/construccion.html?tipo=proyecto"
+  status = 302
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"

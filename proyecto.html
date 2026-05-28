@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Proyecto - LBC Consultores Ambientales</title>
+  <meta name="description" content="Detalle de proyecto de LBC Consultores Ambientales." id="project-meta-description" />
+  <link rel="stylesheet" href="assets/site.css" />
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.5.1/uicons-regular-rounded/css/uicons-regular-rounded.css">
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.5.1/uicons-brands/css/uicons-brands.css">
+  <link rel="icon" href="assets/logos/logolbcnav.png" type="image/png">
+  <script>
+    if (!new URLSearchParams(window.location.search).has('preview')) {
+      window.location.replace('construccion.html?tipo=proyecto');
+    }
+  </script>
+</head>
+<body id="project-page" class="service-page project-page service-loading">
+  <div id="website-content">
+    <header class="nav scrolled">
+      <div class="container nav-inner">
+        <a href="index.html" class="logo" aria-label="LBC Home">
+          <img id="nav-logo-desktop" class="logo-desktop" src="assets/logos/logolbcchoco.png" alt="Logo LBC" />
+          <img id="nav-logo-mobile" class="logo-mobile" src="assets/logos/logocafemovil.png" alt="Logo LBC móvil" />
+        </a>
+        <nav class="menu" id="menu" aria-label="Navegación principal">
+          <div class="services-dropdown" data-services-nav data-variant="desktop"></div>
+          <a href="index.html#alianzas">Alianzas</a>
+          <a href="index.html#kpis">Proyectos</a>
+          <a href="index.html#nosotros">Equipo</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="publicaciones.html">Publicaciones</a>
+          <button type="button" class="cta" data-open-contact-modal>Contacto</button>
+        </nav>
+        <div class="mobile-nav" id="mobileNav">
+          <button id="menuBtn" class="cta-mobile" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+          <div class="mobile-menu" id="mobileMenu" aria-label="Menú móvil">
+            <div class="services-dropdown mobile" data-services-nav data-variant="mobile"></div>
+            <a href="index.html#alianzas">Alianzas</a>
+            <a href="index.html#kpis">Proyectos</a>
+            <a href="index.html#nosotros">Equipo</a>
+            <a href="index.html#faq">FAQ</a>
+            <a href="publicaciones.html">Publicaciones</a>
+            <button type="button" class="cta" data-open-contact-modal>Contacto</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main data-project-page>
+      <section class="service-hero project-hero">
+        <div class="service-hero-bg" aria-hidden="true"></div>
+        <div class="container">
+          <a id="project-back-link" href="proyectos.html" class="service-back-link">
+            <span aria-hidden="true">&#8592;</span>
+            Volver a proyectos
+          </a>
+
+          <div class="service-hero-grid">
+            <div>
+              <div class="service-meta-row">
+                <div id="project-tags"></div>
+              </div>
+              <h1 id="project-title">Proyecto</h1>
+              <p class="service-hero-lead" id="project-summary">Detalle técnico del proyecto seleccionado.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container service-detail-stack">
+          <div class="project-description-block">
+            <h2>Descripción del proyecto</h2>
+            <div id="project-description"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section project-partners-section" id="project-partners-section" hidden>
+        <div class="container">
+          <div class="section-header project-partners-header">
+            <h2>Proyecto realizado para</h2>
+          </div>
+          <div class="clients-panel">
+            <div class="client-logo-grid" id="project-partners-grid"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-offset">
+        <div class="container">
+          <div class="service-cta-banner">
+            <div>
+              <strong>¿Necesitas adaptar este proyecto a tu caso?</strong>
+              <p id="project-cta-text">Podemos ajustar el alcance, la profundidad técnica y el formato de trabajo según el contexto y los plazos del proyecto.</p>
+            </div>
+            <a href="index.html#contacto" class="btn btn-primary">Hablemos</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer footer-extended">
+      <div class="container footer-grid">
+        <div class="footer-col footer-contact-col">
+          <h3>Contacto</h3>
+          <ul class="footer-contact-list">
+            <li>
+              <span class="footer-icon"><i class="fi fi-rr-marker"></i></span>
+              <span>Huechuraba, RM, Chile</span>
+            </li>
+            <li>
+              <span class="footer-icon"><i class="fi fi-rr-envelope"></i></span>
+              <a href="mailto:proyectos@lbconservation.org">proyectos@lbconservation.org</a>
+            </li>
+            <li>
+              <span class="footer-icon"><i class="fi fi-brands-whatsapp"></i></span>
+              <span>+56 9 6831 5542<br>+56 9 3235 1644</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Menu</h3>
+          <ul class="footer-links-list">
+            <li><a href="index.html#servicios">Servicios</a></li>
+            <li><a href="proyectos.html">Proyectos</a></li>
+            <li><a href="index.html#nosotros">Nosotros</a></li>
+            <li><a href="publicaciones.html">Publicaciones</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Servicios</h3>
+          <ul class="footer-links-list">
+            <li><a href="index.html#servicios">Soluciones para el Territorio y Biodiversidad</a></li>
+            <li><a href="index.html#servicios">Cumplimiento y Gestión Ambiental</a></li>
+            <li><a href="index.html#servicios">Planificación y Gestión del Territorio</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-brand-col">
+          <div class="footer-social">
+            <h3>Síguenos</h3>
+            <div class="footer-social-links">
+              <a href="https://www.linkedin.com/company/lbc-consultores-ambientales" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fi fi-brands-linkedin"></i></a>
+              <a href="https://www.youtube.com/@EquipoLBC" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fi fi-brands-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p>LBC Consultores Ambientales Ltda. © <span id="y"></span> <span class="footer-separator">|</span> <a href="privacidad.html">Política de privacidad</a></p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/site.js"></script>
+</body>
+</html>
+

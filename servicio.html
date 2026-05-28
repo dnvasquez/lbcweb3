@@ -1,0 +1,253 @@
+﻿<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Servicio | LBC Consultores Ambientales</title>
+  <meta name="description" content="Detalle de servicio de LBC Consultores Ambientales." id="service-meta-description" />
+  <link rel="stylesheet" href="assets/site.css" />
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.5.1/uicons-regular-rounded/css/uicons-regular-rounded.css">
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.5.1/uicons-brands/css/uicons-brands.css">
+  <link rel="icon" href="assets/logos/logolbcnav.png" type="image/png">
+  <script>
+    if (!new URLSearchParams(window.location.search).has('preview')) {
+      window.location.replace('construccion.html?tipo=servicio');
+    }
+  </script>
+</head>
+<body id="service-page" class="service-page service-loading">
+  <div id="website-content">
+    <header class="nav scrolled">
+      <div class="container nav-inner">
+        <a href="index.html" class="logo" aria-label="LBC Home">
+          <img id="nav-logo-desktop" class="logo-desktop" src="assets/logos/logolbcchoco.png" alt="Logo LBC" />
+          <img id="nav-logo-mobile" class="logo-mobile" src="assets/logos/logocafemovil.png" alt="Logo LBC Móvil" />
+        </a>
+        <nav class="menu" id="menu" aria-label="Navegaci&oacute;n principal">
+          <div class="services-dropdown" data-services-nav data-variant="desktop"></div>
+          <a href="index.html#alianzas">Alianzas</a>
+          <a href="index.html#kpis">Proyectos</a>
+          <a href="index.html#nosotros">Equipo</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="publicaciones.html">Publicaciones</a>
+          <button type="button" class="cta" data-open-contact-modal>Contacto</button>
+        </nav>
+        <div class="mobile-nav" id="mobileNav">
+          <button id="menuBtn" class="cta-mobile" type="button" aria-label="Abrir men&uacute;" aria-expanded="false" aria-controls="mobileMenu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+          <div class="mobile-menu" id="mobileMenu" aria-label="Men&uacute; m&oacute;vil">
+            <div class="services-dropdown mobile" data-services-nav data-variant="mobile"></div>
+            <a href="index.html#alianzas">Alianzas</a>
+            <a href="index.html#kpis">Proyectos</a>
+            <a href="index.html#nosotros">Equipo</a>
+            <a href="index.html#faq">FAQ</a>
+            <a href="publicaciones.html">Publicaciones</a>
+            <button type="button" class="cta" data-open-contact-modal>Contacto</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main data-service-page>
+      <section class="service-hero">
+        <div class="service-hero-bg" aria-hidden="true"></div>
+        <div class="container">
+          <a id="service-back-link" href="index.html#servicios" class="service-back-link">
+            <span aria-hidden="true">&larr;</span>
+            Volver a servicios
+          </a>
+
+          <div class="service-hero-grid">
+            <div>
+              <div class="service-meta-row">
+                <div id="service-tags"></div>
+              </div>
+              <h1 id="service-title">Servicio</h1>
+              <p class="service-hero-lead" id="service-summary">Detalle técnico del servicio seleccionado.</p>
+            </div>
+
+            <aside class="service-card-panel">
+              <h2>Qué implica</h2>
+              <p id="service-highlight">Desarrollamos un alcance técnico ajustado al tipo de proyecto, al territorio y al nivel de exigencia regulatoria.</p>
+              <p style="margin-bottom: 0;">
+                <button type="button" class="btn btn-primary" data-open-contact-modal>Solicitar asesoría</button>
+              </p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container service-detail-stack">
+          <article class="service-card-panel service-description-panel">
+            <h2>Descripción</h2>
+            <div id="service-description"></div>
+          </article>
+
+          <div class="service-detail-grid">
+            <article class="service-card-panel">
+              <h2>Metodologías</h2>
+              <ul id="service-methodologies"></ul>
+            </article>
+
+            <article class="service-card-panel">
+              <h2>Entregables</h2>
+              <ul id="service-deliverables"></ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-offset">
+        <div class="container">
+          <div class="service-cta-banner">
+            <div>
+              <strong>¿Necesitas adaptar este servicio a tu proyecto</strong>
+              <p id="service-cta-text">Podemos ajustar el alcance, la profundidad técnica y el formato de entrega según el estado del expediente y los plazos del proyecto.</p>
+            </div>
+            <button type="button" class="btn btn-primary" data-open-contact-modal>Hablemos</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+            <footer class="footer footer-extended">
+      <div class="container footer-grid">
+        <div class="footer-col footer-contact-col">
+          <h3>Contacto</h3>
+          <ul class="footer-contact-list">
+            <li>
+              <span class="footer-icon"><i class="fi fi-rr-marker"></i></span>
+              <span>Huechuraba, RM, Chile</span>
+            </li>
+            <li>
+              <span class="footer-icon"><i class="fi fi-rr-envelope"></i></span>
+              <a href="mailto:proyectos@lbconservation.org">proyectos@lbconservation.org</a>
+            </li>
+            <li>
+              <span class="footer-icon"><i class="fi fi-brands-whatsapp"></i></span>
+              <span>+56 9 6831 5542<br>+56 9 3235 1644</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Menu</h3>
+          <ul class="footer-links-list">
+            <li><a href="index.html#servicios">Servicios</a></li>
+            <li><a href="index.html#proyectos">Proyectos</a></li>
+            <li><a href="index.html#nosotros">Equipo</a></li>
+            <li><a href="publicaciones.html">Publicaciones</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Servicios</h3>
+          <ul class="footer-links-list">
+            <li><a href="index.html#servicios">Soluciones para el Territorio y Biodiversidad</a></li>
+            <li><a href="index.html#servicios">Cumplimiento y Gestión Ambiental</a></li>
+            <li><a href="index.html#servicios">Planificación y Gestión del Territorio</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-brand-col">
+          <div class="footer-social">
+            <h3>Síguenos</h3>
+            <div class="footer-social-links">
+              <a href="https://www.linkedin.com/company/lbc-consultores-ambientales" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fi fi-brands-linkedin"></i></a>
+              <a href="https://www.youtube.com/@EquipoLBC" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fi fi-brands-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p>LBC Consultores Ambientales Ltda. © <span id="y"></span> <span class="footer-separator">|</span> <a href="privacidad.html">Política de privacidad</a></p>
+      </div>
+    </footer>
+
+    <div id="serviceContactModal" class="contact-modal" aria-hidden="true">
+      <div class="contact-modal-backdrop" data-close-contact-modal></div>
+      <div class="contact-modal-content" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
+        <button type="button" class="contact-modal-close" aria-label="Cerrar formulario" data-close-contact-modal>&times;</button>
+        <div class="contact-modal-head">
+          <span class="section-tag">Contacto</span>
+          <h2 id="contactModalTitle">Solicitar asesoría</h2>
+          <p id="contactModalLead">Cuéntanos tu necesidad y te contactaremos de manera directa.</p>
+        </div>
+
+        <form name="service-contact" class="contact-form-simple contact-form-modal" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="service-contact" />
+          <input type="hidden" name="Servicio seleccionado" id="modalServiceContext" value="" />
+          <p class="sr-only">
+            <label>Si eres humano, deja este campo vacío <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+          </p>
+
+          <div class="form-fields">
+            <div class="form-row">
+              <label class="field-group">
+                <span class="field-label">Nombre y apellido</span>
+                <input type="text" name="Nombre" placeholder="Tu nombre completo">
+              </label>
+              <label class="field-group">
+                <span class="field-label">Organización</span>
+                <input type="text" name="Organización" placeholder="Empresa o institución">
+              </label>
+              <label class="field-group">
+                <span class="field-label">Correo electrónico</span>
+                <input type="email" name="email" placeholder="nombre@empresa.cl" required>
+              </label>
+              <label class="field-group">
+                <span class="field-label">Teléfono</span>
+                <input type="tel" name="telefono" placeholder="+56 9 XXXXXXXX">
+              </label>
+            </div>
+            <label class="field-group">
+              <span class="field-label">Servicio de interés</span>
+              <select name="servicio" id="modalServiceSelect" required>
+                <option value="">Selecciona un servicio...</option>
+                <optgroup label="Evaluación y Diagnóstico">
+                  <option value="Estudios de Conectividad de Paisaje">Estudios de Conectividad de Paisaje</option>
+                  <option value="Estudios de Paisaje y Turismo">Estudios de Paisaje y Turismo</option>
+                  <option value="Líneas Base y Caracterización de Flora y Fauna">Líneas Base y Caracterización de Flora y Fauna</option>
+                  <option value="Estudios de Suelo">Estudios de Suelo</option>
+                  <option value="Caracterización y Delimitación de Humedales">Caracterización y Delimitación de Humedales</option>
+                </optgroup>
+                <optgroup label="Asesoría y Cumplimiento">
+                  <option value="Gestión de Permisos Ambientales Sectoriales (PAS)">Gestión de Permisos Ambientales Sectoriales (PAS)</option>
+                  <option value="Análisis de Cargos Sancionatorios y Determinación de Efectos Ambientales">Análisis de Cargos Sancionatorios y Determinación de Efectos Ambientales</option>
+                  <option value="Elaboración y seguimiento de Planes de Cumplimiento Ambiental (PdC)">Elaboración y seguimiento de Planes de Cumplimiento Ambiental (PdC)</option>
+                  <option value="Auditorías Ambientales para Certificaciones Agrícolas">Auditorías Ambientales para Certificaciones Agrícolas</option>
+                  <option value="Tramitación sectorial (CONAF/SAG)">Tramitación sectorial (CONAF/SAG)</option>
+                </optgroup>
+                <optgroup label="Planificación y Diseño">
+                  <option value="Planes de Restauración Ecológica">Planes de Restauración Ecológica</option>
+                  <option value="Planificación de Áreas de Conservación">Planificación de Áreas de Conservación</option>
+                </optgroup>
+                <optgroup label="Ejecución de Medidas">
+                  <option value="Rescate y Relocalización de Especies">Rescate y Relocalización de Especies</option>
+                  <option value="Proyectos de Reforestación">Proyectos de Reforestación</option>
+                  <option value="OCAS">OCAS</option>
+                  <option value="CAV">CAV</option>
+                </optgroup>
+              </select>
+            </label>
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar consulta</button>
+          <small class="form-status" id="leadStatusHome" role="status" aria-live="polite"></small>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/site.js"></script>
+</body>
+</html>
+
+
+
+
+
+
