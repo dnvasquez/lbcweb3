@@ -129,6 +129,40 @@ function setupAllianceCarousel() {
   const panel = alliancesGrid.closest('.clients-panel');
   let carousel = panel ? panel.querySelector('.client-logo-carousel') : null;
 
+  function buildDots(dotCount) {
+    const dots = document.createElement('div');
+    dots.className = 'carousel-pagination';
+    dots.setAttribute('aria-hidden', 'true');
+
+    for (let i = 0; i < dotCount; i += 1) {
+      const dot = document.createElement('span');
+      dot.className = 'carousel-pagination-dot';
+      dots.appendChild(dot);
+    }
+
+    return dots;
+  }
+
+  function syncDots(wrapper, viewport) {
+    const dots = wrapper.querySelector('.carousel-pagination');
+    if (!dots) return;
+
+    const slides = [...wrapper.querySelectorAll('.client-logo-slide, .mobile-card-slide')];
+    if (!slides.length) return;
+
+    const setActive = () => {
+      const slideWidth = viewport.clientWidth || 1;
+      const index = Math.min(slides.length - 1, Math.max(0, Math.round(viewport.scrollLeft / slideWidth)));
+      dots.querySelectorAll('.carousel-pagination-dot').forEach((dot, dotIndex) => {
+        dot.classList.toggle('is-active', dotIndex === index);
+      });
+    };
+
+    setActive();
+    viewport.addEventListener('scroll', setActive, { passive: true });
+    window.addEventListener('resize', setActive);
+  }
+
   function buildCarousel() {
     if (carousel || !panel) return;
 
@@ -154,16 +188,12 @@ function setupAllianceCarousel() {
 
     viewport.appendChild(track);
     wrapper.appendChild(viewport);
-
-    const hint = document.createElement('p');
-    hint.className = 'client-carousel-hint';
-    hint.textContent = '↔';
-    hint.setAttribute('aria-label', 'Desliza para ver más aliados');
-    hint.title = 'Desliza para ver más aliados';
-    wrapper.appendChild(hint);
+    wrapper.appendChild(buildDots(Math.ceil(items.length / 4)));
 
     alliancesGrid.after(wrapper);
     carousel = wrapper;
+
+    syncDots(wrapper, viewport);
   }
 
   function syncAllianceView() {
@@ -299,17 +329,25 @@ function setupMobileCardCarousel({ sourceSelectors, insertAfterSelector, ariaLab
 
   viewport.appendChild(track);
   wrapper.appendChild(viewport);
-
-  if (hintText) {
-    const hint = document.createElement('p');
-    hint.className = 'mobile-card-carousel-hint';
-    hint.textContent = hintText;
-    hint.setAttribute('aria-label', hintText);
-    hint.title = hintText;
-    wrapper.appendChild(hint);
-  }
+  const pagination = document.createElement('div');
+  pagination.className = 'carousel-pagination';
+  pagination.setAttribute('aria-hidden', 'true');
+  items.forEach(() => {
+    const dot = document.createElement('span');
+    dot.className = 'carousel-pagination-dot';
+    pagination.appendChild(dot);
+  });
+  wrapper.appendChild(pagination);
 
   insertAfter.insertAdjacentElement('afterend', wrapper);
+
+  const syncPagination = () => {
+    const slideWidth = viewport.clientWidth || 1;
+    const index = Math.min(items.length - 1, Math.max(0, Math.round(viewport.scrollLeft / slideWidth)));
+    pagination.querySelectorAll('.carousel-pagination-dot').forEach((dot, dotIndex) => {
+      dot.classList.toggle('is-active', dotIndex === index);
+    });
+  };
 
   const syncView = () => {
     const isMobile = mobileQuery.matches;
@@ -328,9 +366,14 @@ function setupMobileCardCarousel({ sourceSelectors, insertAfterSelector, ariaLab
         kpiSection.style.setProperty('background', isMobile ? 'linear-gradient(180deg, #4a061a 0%, #56091d 100%)' : '', 'important');
       }
     }
+    if (isMobile) {
+      syncPagination();
+    }
   };
 
   syncView();
+  viewport.addEventListener('scroll', syncPagination, { passive: true });
+  window.addEventListener('resize', syncPagination);
 
   if (typeof mobileQuery.addEventListener === 'function') {
     mobileQuery.addEventListener('change', syncView);
