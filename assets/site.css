@@ -1877,17 +1877,18 @@ img { max-width: 100%; display: block; }
   box-shadow: none;
 }
 .client-logo-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(112px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 0.6rem;
   align-items: stretch;
   align-content: start;
 }
 .client-logo-item {
+  flex: 0 0 clamp(112px, 7.5vw, 128px);
+  width: clamp(112px, 7.5vw, 128px);
   aspect-ratio: 1 / 1;
   min-height: 0;
-  width: 100%;
   padding: 0.68rem;
   border-radius: 14px;
   border: 1px solid rgba(66, 3, 23, 0.08);
@@ -2150,16 +2151,16 @@ img { max-width: 100%; display: block; }
 }
 
 @media (min-width: 1200px) {
-  .client-logo-grid {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 0.68rem;
+  .client-logo-item {
+    flex-basis: 120px;
+    width: 120px;
   }
 }
 
 @media (min-width: 1600px) {
-  .client-logo-grid {
-    grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));
-    gap: 0.7rem;
+  .client-logo-item {
+    flex-basis: 128px;
+    width: 128px;
   }
 }
 
