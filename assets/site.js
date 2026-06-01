@@ -14,7 +14,7 @@ if (yearSpan) {
 const nav = $('.nav');
 // NOMBRES DE ARCHIVOS
 const LOGO_BLANCO_DESKTOP = 'assets/logos/logolbcblanco.png';
-const LOGO_CHOCO_DESKTOP = 'assets/logos/logolbcchoco.png';
+const LOGO_CHOCO_DESKTOP = 'assets/logos/logolbc.png';
 const LOGO_BLANCO_MOVIL = 'assets/logos/logoblancomovil.png';
 const LOGO_CHOCO_MOVIL = 'assets/logos/logocafemovil.png'; // Usamos el mismo logo choco para ambos
 
