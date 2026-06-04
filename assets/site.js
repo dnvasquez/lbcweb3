@@ -908,68 +908,96 @@ document.querySelectorAll('form[data-netlify="true"]').forEach(form => {
 
   const projectCatalog = {
     agricultura: {
-      title: 'Plan de Fomento y Conservación de la Biodiversidad',
-      summary: 'Levantamiento integral de flora, fauna y suelos para auditorías y planes de mejora ambiental en predios agrícolas.',
-      tags: ['Agricultura', 'Biodiversidad', 'Auditoría ambiental', 'Planes de conservación'],
+      title: 'Auditoría y Plan de Conservación de la Biodiversidad Agrícola',
+      summary: 'Auditoría integral de biodiversidad, hábitats y paisaje orientada a certificaciones agrícolas, resiliencia productiva y gestión adaptativa de ecosistemas intraprediales.',
+      tags: ['Agricultura sostenible', 'LEAF marque', 'Buenas Prácticas Agrícolas', 'Biodiversidad', 'Servicios ecosistémicos'],
       heroImage: 'assets/img/proyecto1.jpg',
-      highlight: 'Desarrollamos un levantamiento integral de biodiversidad y condición edáfica para sustentar decisiones de mejora, conservación y manejo en predios agrícolas.',
+      highlight: 'Desarrollamos auditorías integrales de biodiversidad y planes de conservación intrapredial para fortalecer la resiliencia de agroecosistemas, sustentar certificaciones y potenciar servicios ecosistémicos clave para la producción agrícola.',
       description: [
-        'En el contexto de auditoría de la norma LEAF 16.1, se desarrolló un levantamiento integral de flora, fauna y condición biológica de suelos en cinco predios agrícolas de las regiones Metropolitana y de Coquimbo, con superficies que van desde 80 hasta más de 1.000 hectáreas.',
-        'El proyecto contempló una auditoría sistemática de biodiversidad y conservación del paisaje orientada a caracterizar hábitats naturales y seminaturales, identificar formaciones vegetacionales y evaluar la biodiversidad intrapredial mediante levantamientos de flora, fauna terrestre e insectos benéficos. La metodología integró análisis cartográfico, prospecciones en terreno, transectos de fauna, estaciones de observación y cámaras trampa, junto con la delimitación de usos y coberturas de suelo, permitiendo establecer una línea base ecológica robusta como base para la planificación de acciones de conservación y mejora ambiental en cada predio.',
-        'Con base en esta caracterización, el eje central del proyecto fue el diseño e implementación de un Plan de Mejora y Conservación de la Naturaleza, orientado al fomento activo de la biodiversidad dentro del sistema productivo agrícola. Este plan incorporó objetivos de corto y largo plazo, especies y grupos focales prioritarios, indicadores verificables y mecanismos de seguimiento para institucionalizar la gestión de la biodiversidad a nivel predial. Entre las medidas propuestas destacaron el establecimiento de bandas de flores con especies nativas para favorecer polinizadores e insectos benéficos, la instalación de hábitats para aves insectívoras y lechuzas como controladores biológicos de plagas, programas de protección de fauna nativa y acciones de capacitación para integrar progresivamente la conservación del paisaje y la biodiversidad en la toma de decisiones agrícolas. El enfoque buscó armonizar productividad y funcionalidad ecológica, fortaleciendo servicios ecosistémicos clave y contribuyendo al cumplimiento de los principios de agricultura sostenible promovidos por LEAF.'
+        'El servicio contempla el levantamiento sistemático de hábitats naturales y seminaturales, formaciones vegetacionales, flora vascular, fauna terrestre, insectos benéficos y condición biológica del suelo, integrando análisis cartográfico, fotointerpretación, prospecciones en terreno, transectos de fauna, estaciones de observación, cámaras trampa y evaluación de coberturas y usos del suelo. Este proceso permite construir una línea base ecológica robusta para caracterizar la biodiversidad intrapredial, identificar especies prioritarias, reconocer amenazas y comprender la funcionalidad ecológica del paisaje agrícola.', 
+        'A partir de este diagnóstico, diseñamos Planes de Mejora y Conservación orientados a institucionalizar la gestión de biodiversidad dentro del sistema productivo. Estos planes incorporan objetivos de corto y largo plazo, especies o grupos focales prioritarios, indicadores verificables, protocolos de monitoreo y medidas concretas para fortalecer servicios ecosistémicos estratégicos como polinización, control biológico de plagas, salud del suelo, regulación hídrica y conectividad ecológica. Entre las acciones propuestas destacan bandas florales con especies nativas, restauración de hábitats, refugios para fauna benéfica, manejo de especies invasoras, programas de monitoreo y capacitación técnica del personal predial.', 
+        'El enfoque busca armonizar productividad agrícola y conservación, transformando la biodiversidad desde un requisito de cumplimiento hacia un activo estratégico para la sostenibilidad, resiliencia y desempeño ambiental del predio.'
       ],
       deliverables: [
-        'Levantamiento de formaciones vegetacionales',
-        'Registro de especies nativas y endémicas',
-        'Evaluación de calidad biológica del suelo',
-        'Planes de mejora y conservación por predio',
-        'Lineamientos de capacitación y monitoreo',
-        'Acciones de restauración ecológica'
+        'Auditoría integral de biodiversidad intrapredial',
+        'Caracterización de hábitats y formaciones vegetacionales',
+        'Inventario de flora, fauna e insectos benéficos',
+        'Zonificación de usos, coberturas y áreas prioritarias',
+        'Línea base ecológica y análisis de biodiversidad',
+        'Plan de Mejora y Conservación de la Naturaleza',
+        'Definición de especies y grupos focales prioritarios',
+        'Programa de monitoreo e indicadores verificables',
+        'Medidas de restauración y fortalecimiento ecológico',
+        'Capacitación y lineamientos de gestión predial'
       ],
       methodologies: [
-        'Revisión de antecedentes y auditoría técnica',
-        'Campañas de terreno en predios agrícolas',
-        'Evaluación de flora, fauna y suelos',
-        'Síntesis de hallazgos y recomendaciones de manejo'
+        'Auditoría técnica basada en principios LEAF / IFM',
+        'Análisis cartográfico y fotointerpretación',
+        'Levantamiento de flora y fauna con metodologías robustas y trazables',
+        'Caracterización de insectos benéficos y polinizadores',
+        'Mapeo de hábitats, coberturas y paisaje agrícola',
+        'Diseño de medidas de gestión adaptativa y seguimiento'
       ],
       partners: [
         { src: 'assets/clientes/10.png', alt: 'Westfalia Fruit', url: 'https://westfaliafruit.com/' },
         { src: 'assets/clientes/27.png', alt: 'Agroalto', url: 'https://agroalto.cl/' }
       ],
-      cta: 'Si necesitas evaluar biodiversidad y suelos en un contexto agrícola, podemos ayudar a estructurar el alcance técnico y los pasos siguientes.'
+      cta: '¿Necesitas evaluar biodiversidad, hábitats o condición del suelo en un predio agrícola? Podemos ayudarte a definir el alcance técnico y traducir el diagnóstico en acciones concretas.'
     },
     paitur: {
-      title: 'Medidas de fomento de fauna silvestre',
-      summary: 'Diseño de medidas de enriquecimiento de hábitat para especies silvestres asociadas a proyectos energéticos.',
-      tags: ['Parque fotovoltaico', 'Fauna silvestre', 'Medidas de compensación'],
+      title: 'Planes de Enriquecimiento de Hábitat y Manejo de Fauna Silvestre',
+      summary:
+        'Diseño e implementación de medidas de enriquecimiento de hábitat, perturbación controlada y manejo adaptativo de fauna silvestre en proyectos energéticos e infraestructura.',
+      tags: [
+        'Parques fotovoltaicos',
+        'Fauna silvestre',
+        'Perturbación controlada',
+        'Enriquecimiento de hábitat',
+        'Cumplimiento RCA'
+      ],
       heroImage: 'assets/img/proyecto2.jpg',
-      highlight: 'Diseñamos medidas de enriquecimiento de hábitat para reducir impactos y mejorar las condiciones de refugio y uso de especies silvestres en entornos energéticos.',
+      highlight:
+        'Diseñamos e implementamos medidas de enriquecimiento de hábitat para reducir impactos sobre fauna silvestre, fortalecer hábitats receptores y asegurar medidas técnicamente robustas y verificables en proyectos de infraestructura y energía.',
       description: [
-        'Desarrollamos Planes de Enriquecimiento de Hábitat orientados a fortalecer las condiciones ecológicas de Áreas asociadas a proyectos de infraestructura, energía y desarrollo territorial, mediante el diseño e implementación de medidas específicas para el fomento de fauna silvestre y la recuperación funcional de microhábitats. Estos estudios integran análisis territorial, evaluación de atributos biofísicos del paisaje y criterios ecológicos de selección de sitio, permitiendo identificar sectores con mayor aptitud para la implementación de medidas de conservación y enriquecimiento ecológico.',
-        'El servicio considera el diseño de estrategias de manejo adaptadas a especies o grupos focales, incorporando criterios de disponibilidad de refugio, termorregulación, conectividad ecológica y uso potencial del hábitat, con énfasis en mejorar las condiciones de permanencia de fauna silvestre en entornos intervenidos. Asimismo, contempla la planificación espacial de medidas, especificaciones técnicas para su implementación, verificación en terreno y mecanismos de seguimiento que aseguren trazabilidad y efectividad ecológica.',
-        'Nuestro enfoque busca compatibilizar el desarrollo de proyectos con la conservación de la biodiversidad, promoviendo soluciones basadas en la ecología del paisaje y en evidencia técnica para contribuir tanto al cumplimiento ambiental como al fortalecimiento de la funcionalidad ecosistémica local.'
+        'Desarrollamos Planes de Enriquecimiento de Hábitat y estrategias de manejo de fauna silvestre orientadas a reducir impactos sobre especies de baja movilidad en proyectos energéticos e infraestructura, especialmente en contextos regulatorios asociados a RCA, Programas de Cumplimiento (PdC) y medidas de mitigación ambiental.',
+        'El servicio integra análisis territorial, evaluación de atributos biofísicos del paisaje, caracterización de fauna objetivo, microruteo y criterios ecológicos de selección de sitio para identificar áreas receptoras con condiciones adecuadas de refugio, termorregulación, disponibilidad de microhábitats y conectividad ecológica. Sobre esta base, diseñamos e implementamos medidas específicas de enriquecimiento de hábitat, tales como pircas, refugios artificiales, estructuras de termorregulación y reutilización estratégica de elementos removidos desde áreas de intervención.',
+        'Adicionalmente, desarrollamos planes de perturbación controlada para inducir el desplazamiento progresivo de fauna de baja movilidad previo a la ejecución de obras, minimizando mortalidad y favoreciendo el asentamiento de individuos en hábitats receptores previamente acondicionados. Estas acciones incorporan protocolos de ejecución, verificación en terreno, georreferenciación de medidas, monitoreo posterior y evaluación de efectividad ecológica mediante indicadores verificables.',
+        'Nuestro enfoque busca compatibilizar el desarrollo de proyectos con la conservación de la biodiversidad, asegurando medidas ambientalmente efectivas, operacionalmente aplicables y técnicamente defendibles ante exigencias regulatorias y procesos de fiscalización.'
       ],
       partners: [
-        { src: 'assets/clientes/18.png', alt: 'ECOS', url: 'https://ecos-chile.com/' }
+        {src: 'assets/clientes/18.png', alt: 'ECOS', url: 'https://ecos-chile.com/' },
+        {src: 'assets/clientes/9.png', alt: 'Orion Power', url: 'https://orion-power.com/' },
+        {src: 'assets/clientes/5.png', alt: 'Urbano Proyectos', url: 'https://urbanoproyectos.com/' }
       ],
       deliverables: [
-        'Diagnóstico de sensibilidad del Área',
+        'Diagnóstico ecológico y caracterización de fauna objetivo',
+        'Microruteo y evaluación de áreas receptoras',
         'Diseño de medidas de enriquecimiento de hábitat',
-        'Zonificación de intervención',
-        'Recomendaciones para seguimiento y monitoreo'
+        'Diseño e implementación de refugios y microhábitats',
+        'Plan de perturbación controlada para fauna de baja movilidad',
+        'Zonificación y georreferenciación de medidas',
+        'Protocolos de implementación y liberación de áreas',
+        'Seguimiento ecológico y monitoreo post intervención',
+        'Indicadores de efectividad y trazabilidad técnica',
+        'Reporte técnico para cumplimiento ambiental'
       ],
       methodologies: [
-        'Análisis SIG y territorial',
-        'Evaluación de sensibilidad ambiental',
-        'Diseño de medidas de fomento de fauna',
-        'Definición de acciones de seguimiento'
+        'Análisis SIG y evaluación territorial',
+        'Caracterización de fauna silvestre y especies objetivo',
+        'Microruteo y búsqueda activa de fauna',
+        'Evaluación de aptitud de hábitat receptor',
+        'Diseño de refugios y estructuras de enriquecimiento',
+        'Perturbación controlada y desplazamiento dirigido',
+        'Monitoreo no invasivo y seguimiento ecológico',
+        'Evaluación de efectividad de medidas'
       ],
-      cta: 'Si tu proyecto energético requiere medidas de fomento de fauna, podemos ayudarte a definir una estrategia robusta y aplicable.'
+      cta:
+        'Si tu proyecto requiere medidas de manejo de fauna, perturbación controlada o enriquecimiento de hábitat, podemos ayudarte a diseñar una estrategia técnicamente robusta, verificable y aplicable en terreno.'
     },
     delhum: {
       title: 'Delimitación de Humedales Urbanos',
       summary: 'Delimitación técnica de humedales urbanos para cumplir con la normativa y orientar decisiones territoriales.',
-      tags: ['Inmobiliario', 'Humedales urbanos', 'Ley N° 21.202'],
+      tags: ['Territorio', 'Humedales urbanos', 'Ley N° 21.202'],
       heroImage: 'assets/img/proyecto3.jpg',
       highlight: 'Realizamos delimitaciones técnicas de humedales urbanos para respaldar cumplimiento normativo y orientar la planificación territorial del proyecto.',
       description: [

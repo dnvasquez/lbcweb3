@@ -19,12 +19,6 @@
   status = 302
   force = true
 
-[[redirects]]
-  from = "/proyecto.html"
-  to = "/construccion.html?tipo=proyecto"
-  status = 302
-  force = true
-
 [[headers]]
   for = "/*"
   [headers.values]
